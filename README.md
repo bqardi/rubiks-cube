@@ -4,6 +4,8 @@ Hvordan man løser en Rubiks Cube.
 Det er mega svært at løse en Rubiks Cube! NEJ, det er det faktisk ikke...
 Det er klart at det er svært at løse den, hvis du prøver at dreje nogle sider tilfældigt.
 Du har måske endda været nået så langt at du har løst én side, men sidder fast.
+Faktisk kan du løse den ved at huske blot [INDSÆT ANTAL ALGORITMER HER] algoritmer (uhh, farligt ord! En algoritme
+er blot et smart ord for "at dreje et antal bestemte sider et antal bestemte gange".)
 
 Så er det godt at du er landet her, for her kan du lære en nem metode til at løse den på.
 Der findes også mere avancerede måder til at løse den, men det er metoder der bruges til konkurrencer eller
