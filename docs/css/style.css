@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", "Helvetica Neue", "Helvetica", Arial, sans-serif;
+}
+
+:root {
+    /* Main colors */
+    --theme-light: #FDFFF8;
+    --theme-mid: #C9E28A;
+    --theme-dark: #5F6C3F;
+    --theme-darkest: #262C17;
+    /* Cube colors */
+    --cube-blue: #366CD9;
+    --cube-green: #59D955;
+    --cube-orange: #EBB947;
+    --cube-red: #D94343;
+    --cube-yellow: #FAF856;
+    --cube-white: #F7F7F7;
+}
+
+body {
+    color: var(--theme-darkest);
+    background-color: var(--theme-light);
+    font-weight: 300;
+    font-size: 18px;
+}
+
+a {
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--theme-darkest);
+    transition: color 150ms;
+}
+
+a:hover {
+    color: var(--theme-dark);
+}
