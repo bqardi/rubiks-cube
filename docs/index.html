@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="Her kan du lære hvordan man løser en Rubiks Cube/professor terning. Det er ikke så svært som de fleste går og tror. Det hele handler blot om at huske nogle bestemte dreje kombinationer og så kan du løse den, hver gang.">
-    <title>Professor terning</title>
+    <title>Professor terning - Lær at løse</title>
     <link rel="preload stylesheet" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="css/style.css"></noscript>
     <link rel="shortcut icon" href="./images/logo.svg" type="image/svg+xml">
@@ -14,8 +14,375 @@
 </head>
 
 <body>
-    <div class="wrapper">
-        Test tekst med et <a href="#">link</a> til noget.
+    <div class="page">
+        <div class="page__wrapper">
+            <header class="header">
+                <div class="header__background">
+                    <div class="header__placement">
+                        <div class="header__logo">
+                            <a class="icon" href="index.html">
+                                <svg viewBox="0 0 24 24"><path d="M21,16.5C21,16.88 20.79,17.21 20.47,17.38L12.57,21.82C12.41,21.94 12.21,22 12,22C11.79,22 11.59,21.94 11.43,21.82L3.53,17.38C3.21,17.21 3,16.88 3,16.5V7.5C3,7.12 3.21,6.79 3.53,6.62L11.43,2.18C11.59,2.06 11.79,2 12,2C12.21,2 12.41,2.06 12.57,2.18L20.47,6.62C20.79,6.79 21,7.12 21,7.5V16.5M12,4.15L6.04,7.5L12,10.85L17.96,7.5L12,4.15M5,15.91L11,19.29V12.58L5,9.21V15.91M19,15.91V9.21L13,12.58V19.29L19,15.91Z"></path></svg>
+                                <h2>Professor</h2>
+                            </a>
+                        </div>
+                        <nav class="burger">
+                            <a id="burger" class="icon" href="#">
+                                <svg viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"></path></svg>
+                            </a>
+                        </nav>
+                    </div>
+                </div>
+                <nav id="navigation-burger" class="navigation navigation--main">
+                    <h2 class="navigation__title">Menu</h2>
+                    <a class="navigation__link" href="#">Lær at løse</a>
+                    <a class="navigation__link" href="#">Algoritmer</a>
+                    <a class="navigation__link" href="#">Typer</a>
+                    <a class="navigation__link" href="#">Timer</a>
+                </nav>
+            </header>
+            <main id="main" class="main">
+                <div class="main__background">
+                    <div class="cube-wrapper cube-wrapper--background">
+                        <div class="cube cube--hero cube--perspective">
+                            <div class="cube__container cube__container--animated">
+                                <div class="cube__side cube__side-white cube__side-bottom">
+                                    <div class="cube__dirt"></div>
+                                </div>
+                                <div class="cube__side cube__side-yellow cube__side-up">
+                                    <div class="cube__dirt"></div>
+                                </div>
+                                <div class="cube__side cube__side-blue cube__side-front">
+                                    <div class="cube__dirt"></div>
+                                </div>
+                                <div class="cube__side cube__side-green cube__side-back">
+                                    <div class="cube__dirt"></div>
+                                </div>
+                                <div class="cube__side cube__side-red cube__side-right">
+                                    <div class="cube__dirt"></div>
+                                </div>
+                                <div class="cube__side cube__side-orange cube__side-left">
+                                    <div class="cube__dirt"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main__placement">
+                        <h1>Forord</h1>
+                        <ul>
+                            <li><a href="#solution">Spring direkte til løsningen</a></li>
+                            <li><a href="#daisy">Daisy / Marguerit</a></li>
+                            <li><a href="#white-cross">Det hvide kryds</a></li>
+                            <li><a href="#white-corners">De hvide hjørner</a></li>
+                            <li><a href="#second-layer">Andet lag</a></li>
+                            <li><a href="#yellow-cross">Det gule kryds</a></li>
+                            <li><a href="#yellow-edges">Byt de gule kanter</a></li>
+                            <li><a href="#position-yellow-corners">Placering af de gule hjørner</a></li>
+                            <li><a href="#orient-yellow-corners">Orientering af de gule hjørner</a></li>
+                        </ul>
+                        <p>
+                            Det er mega svært at løse en Rubiks Cube! NEJ, det er det faktisk ikke... Det er klart at det er svært at løse den, hvis du prøver at dreje nogle sider tilfældigt. Du har måske endda været nået så langt at du har løst én side, men sidder fast og du prøver
+                            virkelig kraftigt at tænke dig frem til, hvordan du skal dreje for at "flytte" de næste "klodser" på terningen og samtidig ikke ødelægge det der allerede er løst. Det er praktisk talt umuligt, for det samlede antal mulige kombinationer
+                            er et utænkeligt stort tal, nemlig 43.252.003.274.489.856.000 eller 43 trillioner.
+                        </p>
+                        <p>
+                            Men hvis du gerne vil have løst din professor terning, er det godt at du er landet her, for her kan du lære en nem metode til at løse den på. Faktisk kan du løse den ved bare at lære et fåtal algoritmer (uhh, algoritme! Farligt ord! En algoritme er blot
+                            et smart ord for "at dreje nogle bestemte sider et antal bestemte gange".) Der findes også mere avancerede måder at løse den på, men det er metoder der bruges til konkurrencer eller hvis du bare vil lære at løse den hurtigt
+                            (f.eks. under 20 sek. hver gang). Der skal dog lidt flere algoritmer ind i hukommelsen, men ja, det kan godt lade sig gøre! Det kræver blot lidt tålmodighed og måske lidt stædighed, hvis du virkelig vil lære det).
+                        </p>
+                        <p>
+                            Her på siden vil jeg vise dig den nemmeste måde at løse den på og så vil jeg fortælle lidt om de avancerede måder også.
+                        </p>
+                        <p>
+                            Du kan finde en liste over de algoritmer, jeg personligt bruger/foretrækker og jeg vil også vise lidt alternative algoritmer du kan bruge til at løse den samme udfordring.
+                        </p>
+                        <p>
+                            Du kan også finde et lille program, jeg har lavet i Unity, hvor du kan prøve at løse en professor terning på tid, ved at pege med musen på en side og så dreje med WASD tasterne på keyboardet (er kun tilgængelig på stor skærm/desktop).
+                        </p>
+                        <p>
+                            Du kan også finde en "Timer" her på siden. Den er specifikt lavet til brug for at måle din tid med en fysisk terning.
+                        </p>
+                        <div id="solution" class="anchor">
+                            <h2>Den nemme løsning</h2>
+                        </div>
+                        <p>
+                            Ja ja... Så..., at løse professor terningen på den nemme måde:
+                        </p>
+                        <div id="daisy" class="anchor">
+                            <h3>"Daisy"</h3>
+                        </div>
+                        <p>
+                            Vi starter med det jeg kalder "Daisy" eller margueritten. Hvad det går ud på er at gå fra en komplet blandet terning til noget a lá dette:
+                        </p>
+                        <div class="cube-example-container">
+                            <div class="cube-example">
+                                <div class="cube-example__wrapper cube-example__top">
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-white"><svg class="cube-example__pointer cube-example__pointer-dark" viewBox="0 0 24 24"><path d="M9,4H15V12H19.84L12,19.84L4.16,12H9V4Z"></path></svg></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-white"><svg class="cube-example__pointer cube-example__pointer-dark" viewBox="0 0 24 24"><path d="M9,4H15V12H19.84L12,19.84L4.16,12H9V4Z"></path></svg></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-white"><svg class="cube-example__pointer cube-example__pointer-dark" viewBox="0 0 24 24"><path d="M9,4H15V12H19.84L12,19.84L4.16,12H9V4Z"></path></svg></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-white"><svg class="cube-example__pointer cube-example__pointer-dark" viewBox="0 0 24 24"><path d="M9,4H15V12H19.84L12,19.84L4.16,12H9V4Z"></path></svg></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                </div>
+                                <div class="cube-example__wrapper cube-example__front">
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-green"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                </div>
+                                <div class="cube-example__wrapper cube-example__right">
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p>
+                            Altså, find den gule side (den side der har en gul brik i midten) og flyt alle de hvide kantstykker op ved siden af denne gule midterbrik (væn dig til at holde terningen, så den gule side <strong>altid</strong> vender op, så
+                            vil du aldrig være i tvivl, når du bruger disse notationer). Når "Daisy" er løst, ligner det lidt marguerit blomsten.
+                        </p>
+                        <p>
+                            Du er selvfølgelig velkommen til at prøve selv om du kan dreje siderne så de hvide brikker kommer op på plads, men for en god ordens skyld vil jeg prøve at vise de skridt du skal tage her. Før jeg kan vise det, er vi nødt til at navngive siderne for at
+                            forstå hvad- og hvilken vej, der skal drejes. Dette kaldes notationer (hvis du allerede kender notations-koderne, kan du springe videre til <a href="#daisy-back">resten af forklaringen</a>):
+                        </p>
+                        <p>
+                            Når du holder terningen foran dig, f.eks. med den blå side pegende ind mod dig selv, så kaldes denne side "Front" og betegnes med en forkortelse "F". Det samme gælder for de fem andre sider:
+                        </p>
+                        <ul>
+                            <li>F - <strong>F</strong>ront / Forside</li>
+                            <li>B - <strong>B</strong>ack / Bagside</li>
+                            <li>R - <strong>R</strong>ight / Højre side</li>
+                            <li>L - <strong>L</strong>eft / Venstre side</li>
+                            <li>U - <strong>U</strong>p / Oppe eller top</li>
+                            <li>D - <strong>D</strong>own / Nede eller bund</li>
+                        </ul>
+                        <p>
+                            Disse "dreje koder" betyder at man skal dreje den pågældende side i retning med uret. F.eks. et "R" betyder at højre side skal drejes en enkelt gang <strong>med</strong> uret:
+                        </p>
+                        <p>
+                            Her har du alle koderne med illustration:
+                        </p>
+                        <div class="grid-notation">
+                            <section class="cube-notation">
+                                <div class="cube-wrapper">
+                                    <div class="cube cube--small">
+                                        <div class="cube__container">
+                                            <div class="cube__side-none cube__side cube__side-up"></div>
+                                            <div class="cube__side-none cube__side cube__side-front">
+                                                <div class="cube__side-turn cube__side-turn-cw"></div>
+                                            </div>
+                                            <div class="cube__side-none cube__side cube__side-right"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="cube-notation__title">F</h3>
+                            </section>
+                            <section class="cube-notation">
+                                <div class="cube-wrapper">
+                                    <div class="cube cube--small">
+                                        <div class="cube__container">
+                                            <div class="cube__side-none cube__side cube__side-up">
+                                                <div class="cube__side-turn-alt cube__side-turn-back-cw"></div>
+                                            </div>
+                                            <div class="cube__side-none cube__side cube__side-front"></div>
+                                            <div class="cube__side-none cube__side cube__side-right"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="cube-notation__title">B</h3>
+                            </section>
+                            <section class="cube-notation">
+                                <div class="cube-wrapper">
+                                    <div class="cube cube--small">
+                                        <div class="cube__container">
+                                            <div class="cube__side-none cube__side cube__side-up"></div>
+                                            <div class="cube__side-none cube__side cube__side-front"></div>
+                                            <div class="cube__side-none cube__side cube__side-right">
+                                                <div class="cube__side-turn cube__side-turn-cw"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="cube-notation__title">R</h3>
+                            </section>
+                            <section class="cube-notation">
+                                <div class="cube-wrapper">
+                                    <div class="cube cube--small">
+                                        <div class="cube__container">
+                                            <div class="cube__side-none cube__side cube__side-up">
+                                                <div class="cube__side-turn-alt cube__side-turn-left-cw"></div>
+                                            </div>
+                                            <div class="cube__side-none cube__side cube__side-front"></div>
+                                            <div class="cube__side-none cube__side cube__side-right"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="cube-notation__title">L</h3>
+                            </section>
+                            <section class="cube-notation">
+                                <div class="cube-wrapper">
+                                    <div class="cube cube--small">
+                                        <div class="cube__container">
+                                            <div class="cube__side-none cube__side cube__side-up">
+                                                <div class="cube__side-turn cube__side-turn-cw"></div>
+                                            </div>
+                                            <div class="cube__side-none cube__side cube__side-front"></div>
+                                            <div class="cube__side-none cube__side cube__side-right"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="cube-notation__title">U</h3>
+                            </section>
+                            <section class="cube-notation">
+                                <div class="cube-wrapper">
+                                    <div class="cube cube--small">
+                                        <div class="cube__container">
+                                            <div class="cube__side-none cube__side cube__side-up"></div>
+                                            <div class="cube__side-none cube__side cube__side-front">
+                                                <div class="cube__side-turn-alt cube__side-turn-down-cw"></div>
+                                            </div>
+                                            <div class="cube__side-none cube__side cube__side-right"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="cube-notation__title">D</h3>
+                            </section>
+                        </div>
+                        <p>
+                            Omvendt hvis en side skal drejes <strong>mod</strong> uret, ser koderne således ud (bemærk apostrof'erne som indikerer en rotation <strong>mod</strong> uret):
+                        </p>
+                        <div class="grid-notation">
+                            <section class="cube-notation">
+                                <div class="cube-wrapper">
+                                    <div class="cube cube--small">
+                                        <div class="cube__container">
+                                            <div class="cube__side-none cube__side cube__side-up"></div>
+                                            <div class="cube__side-none cube__side cube__side-front">
+                                                <div class="cube__side-turn cube__side-turn-ccw"></div>
+                                            </div>
+                                            <div class="cube__side-none cube__side cube__side-right"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="cube-notation__title">F'</h3>
+                            </section>
+                            <section class="cube-notation">
+                                <div class="cube-wrapper">
+                                    <div class="cube cube--small">
+                                        <div class="cube__container">
+                                            <div class="cube__side-none cube__side cube__side-up">
+                                                <div class="cube__side-turn-alt cube__side-turn-back-ccw"></div>
+                                            </div>
+                                            <div class="cube__side-none cube__side cube__side-front"></div>
+                                            <div class="cube__side-none cube__side cube__side-right"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="cube-notation__title">B'</h3>
+                            </section>
+                            <section class="cube-notation">
+                                <div class="cube-wrapper">
+                                    <div class="cube cube--small">
+                                        <div class="cube__container">
+                                            <div class="cube__side-none cube__side cube__side-up"></div>
+                                            <div class="cube__side-none cube__side cube__side-front"></div>
+                                            <div class="cube__side-none cube__side cube__side-right">
+                                                <div class="cube__side-turn cube__side-turn-ccw"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="cube-notation__title">R'</h3>
+                            </section>
+                            <section class="cube-notation">
+                                <div class="cube-wrapper">
+                                    <div class="cube cube--small">
+                                        <div class="cube__container">
+                                            <div class="cube__side-none cube__side cube__side-up">
+                                                <div class="cube__side-turn-alt cube__side-turn-left-ccw"></div>
+                                            </div>
+                                            <div class="cube__side-none cube__side cube__side-front"></div>
+                                            <div class="cube__side-none cube__side cube__side-right"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="cube-notation__title">L'</h3>
+                            </section>
+                            <section class="cube-notation">
+                                <div class="cube-wrapper">
+                                    <div class="cube cube--small">
+                                        <div class="cube__container">
+                                            <div class="cube__side-none cube__side cube__side-up">
+                                                <div class="cube__side-turn cube__side-turn-ccw"></div>
+                                            </div>
+                                            <div class="cube__side-none cube__side cube__side-front"></div>
+                                            <div class="cube__side-none cube__side cube__side-right"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="cube-notation__title">U'</h3>
+                            </section>
+                            <section class="cube-notation">
+                                <div class="cube-wrapper">
+                                    <div class="cube cube--small">
+                                        <div class="cube__container">
+                                            <div class="cube__side-none cube__side cube__side-up"></div>
+                                            <div class="cube__side-none cube__side cube__side-front">
+                                                <div class="cube__side-turn-alt cube__side-turn-down-ccw"></div>
+                                            </div>
+                                            <div class="cube__side-none cube__side cube__side-right"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="cube-notation__title">D'</h3>
+                            </section>
+                        </div>
+                        <div id="daisy-back" class="anchor">
+                            <h3>Tilbage til "Daisy"</h3>
+                        </div>
+                        <p>
+                            Nu hvor vi kender notationerne, kan vi begynde for alvor (uhh).
+                        </p>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <footer class="footer">
+            <div class="footer__background">
+                <div class="footer__placement">
+                    <div class="footer__navigation">
+                        <nav class="footer__navigation-links navigation">
+                            <a href="#">Lær at løse</a>
+                            <a href="#">Algoritmer</a>
+                            <a href="#">Typer</a>
+                            <a href="#">Timer</a>
+                        </nav>
+                        <nav class="footer__navigation-social">
+                            <a class="icon" href="#"><svg viewBox="0 0 24 24"><path d="M16.36,14C16.44,13.34 16.5,12.68 16.5,12C16.5,11.32 16.44,10.66 16.36,10H19.74C19.9,10.64 20,11.31 20,12C20,12.69 19.9,13.36 19.74,14M14.59,19.56C15.19,18.45 15.65,17.25 15.97,16H18.92C17.96,17.65 16.43,18.93 14.59,19.56M14.34,14H9.66C9.56,13.34 9.5,12.68 9.5,12C9.5,11.32 9.56,10.65 9.66,10H14.34C14.43,10.65 14.5,11.32 14.5,12C14.5,12.68 14.43,13.34 14.34,14M12,19.96C11.17,18.76 10.5,17.43 10.09,16H13.91C13.5,17.43 12.83,18.76 12,19.96M8,8H5.08C6.03,6.34 7.57,5.06 9.4,4.44C8.8,5.55 8.35,6.75 8,8M5.08,16H8C8.35,17.25 8.8,18.45 9.4,19.56C7.57,18.93 6.03,17.65 5.08,16M4.26,14C4.1,13.36 4,12.69 4,12C4,11.31 4.1,10.64 4.26,10H7.64C7.56,10.66 7.5,11.32 7.5,12C7.5,12.68 7.56,13.34 7.64,14M12,4.03C12.83,5.23 13.5,6.57 13.91,8H10.09C10.5,6.57 11.17,5.23 12,4.03M18.92,8H15.97C15.65,6.75 15.19,5.55 14.59,4.44C16.43,5.07 17.96,6.34 18.92,8M12,2C6.47,2 2,6.5 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"></path></svg></a>
+                            <a class="icon" href="#"><svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z"></path></svg></a>
+                            <a class="icon" href="#"><svg viewBox="0 0 24 24"><path d="M21.35,11.1H12.18V13.83H18.69C18.36,17.64 15.19,19.27 12.19,19.27C8.36,19.27 5,16.25 5,12C5,7.9 8.2,4.73 12.2,4.73C15.29,4.73 17.1,6.7 17.1,6.7L19,4.72C19,4.72 16.56,2 12.1,2C6.42,2 2.03,6.8 2.03,12C2.03,17.05 6.16,22 12.25,22C17.6,22 21.5,18.33 21.5,12.91C21.5,11.76 21.35,11.1 21.35,11.1V11.1Z"></path></svg></a>
+                            <a class="icon" href="#"><svg viewBox="0 0 24 24"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z"></path></svg></a>
+                        </nav>
+                    </div>
+                    <div class="author">
+                        Webdesign <span class="author__name">Sune Seifert</span>, 2020
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
 </body>
 
