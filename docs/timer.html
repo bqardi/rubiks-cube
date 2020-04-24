@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Brug denne timer til at måle hvor hurtigt du kan løse din professor terning.">
+    <title>Professor terning - Timer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-timer.css">
+    <link rel="shortcut icon" href="./images/logo.svg" type="image/svg+xml">
+    <script src="js/script.js" defer></script>
+    <script src="js/timer.js" defer></script>
+</head>
+
+<body>
+    <div class="page">
+        <div class="page__wrapper page__wrapper-screen">
+            <header class="header">
+                <div class="header__background">
+                    <div class="header__placement">
+                        <div class="header__logo">
+                            <a class="icon" href="index.html">
+                                <svg viewBox="0 0 24 24"><path d="M21,16.5C21,16.88 20.79,17.21 20.47,17.38L12.57,21.82C12.41,21.94 12.21,22 12,22C11.79,22 11.59,21.94 11.43,21.82L3.53,17.38C3.21,17.21 3,16.88 3,16.5V7.5C3,7.12 3.21,6.79 3.53,6.62L11.43,2.18C11.59,2.06 11.79,2 12,2C12.21,2 12.41,2.06 12.57,2.18L20.47,6.62C20.79,6.79 21,7.12 21,7.5V16.5M12,4.15L6.04,7.5L12,10.85L17.96,7.5L12,4.15M5,15.91L11,19.29V12.58L5,9.21V15.91M19,15.91V9.21L13,12.58V19.29L19,15.91Z"></path></svg>
+                                <h2>Professor</h2>
+                            </a>
+                        </div>
+                        <nav class="burger">
+                            <a id="burger" class="icon" href="#">
+                                <svg viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"></path></svg>
+                            </a>
+                        </nav>
+                    </div>
+                </div>
+                <nav id="navigation-burger" class="navigation navigation--main">
+                    <h2 class="navigation__title">Menu</h2>
+                    <a class="navigation__link" href="index.html">Lær at løse</a>
+                    <a class="navigation__link" href="algorithms.html">Algoritmer</a>
+                    <a class="navigation__link" href="types.html">Typer</a>
+                    <a class="navigation__link" href="timer.html" id="active-page">Timer</a>
+                </nav>
+            </header>
+            <main id="main" class="main">
+                <div class="main__background">
+                    <div class="timer">
+                        <div class="timer__clock">
+                            <div class="timer__inner">
+                                <div class="timer__time-title timer__time-title-hours">t</div>
+                                <div class="timer__time-title timer__time-title-minutes">m</div>
+                                <div class="timer__time-title timer__time-title-seconds">s</div>
+                                <div class="timer__time-title timer__time-title-milli">s/100</div>
+                                <div id="timer-hour" class="timer__time timer__hours">0</div>
+                                <div id="timer-minute" class="timer__time timer__minutes">00</div>
+                                <div id="timer-second" class="timer__time timer__seconds">00</div>
+                                <div id="timer-milli" class="timer__time timer__milli">0</div>
+                            </div>
+                        </div>
+                        <div id="press-pad" class="timer__press-pad">
+                            <div id="pad-count-down" class="timer__count-down">
+                                <div class="timer__count-down-background">
+                                    <p id="timer-count-down" class="timer__count-down-text">15</p>
+                                </div>
+                            </div>
+                            <nobr id="timer-start-text" class="timer-start-text js-active">Tryk og slip i dette område<span class="desktop-only"> eller tryk mellemrum</span>,<br>for at starte tiden.</nobr>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer class="footer">
+                <div class="footer__background">
+                    <div class="footer__placement">
+                        <div class="author">
+                            Webdesign <span class="author__name">Sune Seifert</span>, 2020
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

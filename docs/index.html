@@ -7,10 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="Her kan du lære hvordan man løser en Rubiks Cube/professor terning. Det er ikke så svært som de fleste går og tror. Det hele handler blot om at huske nogle bestemte dreje kombinationer og så kan du løse den, hver gang.">
     <title>Professor terning - Lær at løse</title>
-    <link rel="preload stylesheet" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="css/style.css"></noscript>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-cube.css">
     <link rel="shortcut icon" href="./images/logo.svg" type="image/svg+xml">
-    <script src="js/index.js" defer></script>
+    <script src="js/script.js" defer></script>
 </head>
 
 <body>
@@ -173,12 +173,12 @@
                             Når du holder terningen foran dig, f.eks. med den blå side pegende ind mod dig selv, så kaldes denne side "Front" og betegnes med en forkortelse "F". Det samme gælder for de fem andre sider:
                         </p>
                         <ul>
-                            <li>F - <strong>F</strong>ront / Forside</li>
-                            <li>B - <strong>B</strong>ack / Bagside</li>
-                            <li>R - <strong>R</strong>ight / Højre side</li>
-                            <li>L - <strong>L</strong>eft / Venstre side</li>
-                            <li>U - <strong>U</strong>p / Oppe eller top</li>
-                            <li>D - <strong>D</strong>own / Nede eller bund</li>
+                            <li><span class="algorithm">F</span> - <strong>F</strong>ront / Forside</li>
+                            <li><span class="algorithm">B</span> - <strong>B</strong>ack / Bagside</li>
+                            <li><span class="algorithm">R</span> - <strong>R</strong>ight / Højre side</li>
+                            <li><span class="algorithm">L</span> - <strong>L</strong>eft / Venstre side</li>
+                            <li><span class="algorithm">U</span> - <strong>U</strong>p / Oppe eller top</li>
+                            <li><span class="algorithm">D</span> - <strong>D</strong>own / Nede eller bund</li>
                         </ul>
                         <p>
                             Disse "dreje koder" betyder at man skal dreje den pågældende side i retning med uret. F.eks. et "R" betyder at højre side skal drejes en enkelt gang <strong>med</strong> uret:
@@ -361,6 +361,30 @@
                                 <h3 class="cube-notation__title">D'</h3>
                             </section>
                         </div>
+                        <p>
+                            Der er i visse tilfælde, det kan være nødvendigt at dreje en side to omgange. I stedet for at skrive f.eks. R R for at indikere at højre side skal drejes én omgang med uret og så igen drejes én omgang med uret, kan man forkorte det sådan her: R2, hvilket
+                            blot betyder, drej højre side to omgange (du vælger selv i hvilken retning).
+                        </p>
+                        <p>
+                            Nu kan vi, med disse koder, lave algoritmer der fortæller os hvilke sider der skal roteres og i hvilken retning. F. eks.
+                        </p>
+                        <div class="algorithm algorithm--block">
+                            <span class="algorithm__title">Algoritme navn:</span>
+                            <span class="algorithm__name">Sune</span>
+                            <div class="algorithm__notation">R U R' U R U2 R'</div>
+                        </div>
+                        <p>
+                            Denne algoritme hedder sjovt nok <strong>Sune</strong>, lige som mig :-)) og den fortæller os at vi skal:
+                        </p>
+                        <ul>
+                            <li><span class="algorithm">R</span> - Dreje højre side, med uret</li>
+                            <li><span class="algorithm">U</span> - Dreje top siden, med uret</li>
+                            <li><span class="algorithm">R</span>' - Dreje højre side, mod uret</li>
+                            <li><span class="algorithm">U</span> - Dreje top siden, med uret</li>
+                            <li><span class="algorithm">R</span> - Dreje højre side, med uret</li>
+                            <li><span class="algorithm">U2</span> - Dreje top siden, to omgange</li>
+                            <li><span class="algorithm">R</span>' - Dreje højre side, mod uret</li>
+                        </ul>
                         <div id="daisy-back" class="anchor">
                             <h3>Tilbage til "Daisy"</h3>
                         </div>

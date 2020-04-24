@@ -1,0 +1,131 @@
+.page__wrapper-screen {
+    --footer-height: 50px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+}
+
+.footer {
+    height: var(--footer-height);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.timer {
+    height: calc(100vh - var(--header-height) - var(--footer-height));
+    display: grid;
+    grid-template-rows: 30% 70%;
+}
+
+.timer__clock {
+    --timer-border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.timer__inner {
+    display: grid;
+    grid-template-columns: 70px repeat(2, 1fr) 70px;
+    gap: 2px;
+}
+
+.timer__time {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    font-family: monospace;
+    font-size: 2rem;
+}
+
+.timer__hours {
+    justify-content: flex-end;
+    border-radius: var(--timer-border-radius) 0 0 var(--timer-border-radius);
+    padding-right: 16px;
+}
+
+.timer__milli {
+    justify-content: flex-start;
+    border-radius: 0 var(--timer-border-radius) var(--timer-border-radius) 0;
+    padding-left: 16px;
+}
+
+.timer__time-title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.timer__time-title-hours {
+    justify-content: flex-end;
+    padding-right: 16px;
+}
+
+.timer__time-title-milli {
+    justify-content: flex-start;
+    padding-left: 5px;
+}
+
+.timer__press-pad {
+    position: relative;
+    background-color: var(--theme-mid);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.timer__count-down {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 8rem;
+    color: var(--theme-light);
+}
+
+.timer__count-down.js-active {
+    display: flex;
+}
+
+.timer__count-down-background {
+    width: 200px;
+    height: 200px;
+    border: 10px solid var(--theme-light);
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.timer__count-down-text {
+    margin-bottom: 1rem;
+}
+
+.timer-start-text {
+    display: none;
+}
+
+.timer-start-text.js-active {
+    display: initial;
+}
+
+.desktop-only {
+    display: none;
+}
+
+@media only screen and (min-width: 768px) {
+    .desktop-only {
+        display: initial;
+    }
+}
