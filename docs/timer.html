@@ -45,16 +45,26 @@
                 <div class="main__background">
                     <div class="timer">
                         <div class="timer__clock">
+                            <div id="timer-interaction" class="timer__clock-interaction-container" style="--interaction-time: 1500ms;">
+                                <div class="timer__clock-interaction"></div>
+                            </div>
                             <div class="timer__inner">
                                 <div class="timer__time-title timer__time-title-hours">t</div>
                                 <div class="timer__time-title timer__time-title-minutes">m</div>
                                 <div class="timer__time-title timer__time-title-seconds">s</div>
                                 <div class="timer__time-title timer__time-title-milli">s/100</div>
-                                <div id="timer-hour" class="timer__time timer__hours">0</div>
-                                <div id="timer-minute" class="timer__time timer__minutes">00</div>
-                                <div id="timer-second" class="timer__time timer__seconds">00</div>
-                                <div id="timer-milli" class="timer__time timer__milli">0</div>
+                                <div id="timer-hour" class="timer__time timer__hours font-mono">0</div>
+                                <div id="timer-minute" class="timer__time timer__minutes font-mono">00</div>
+                                <div id="timer-second" class="timer__time timer__seconds font-mono">00</div>
+                                <div id="timer-milli" class="timer__time timer__milli font-mono">000</div>
                             </div>
+                            <section class="timer__record">
+                                <h2 class="timer__record-title">Bedste tid:</h2>
+                                <p id="record-time" class="timer__record-time">0:00:00.000</p>
+                                <a id="all-times" class="icon timer__all-times" href="#">
+                                    <svg class="timer__all-times-icon" viewBox="0 0 24 24"><path d="M18 2C17.1 2 16 3 16 4H8C8 3 6.9 2 6 2H2V11C2 12 3 13 4 13H6.2C6.6 15 7.9 16.7 11 17V19.08C8 19.54 8 22 8 22H16C16 22 16 19.54 13 19.08V17C16.1 16.7 17.4 15 17.8 13H20C21 13 22 12 22 11V2H18M6 11H4V4H6V11M16 11.5C16 13.43 15.42 15 12 15C8.59 15 8 13.43 8 11.5V6H16V11.5M20 11H18V4H20V11Z"></path></svg>
+                                </a>
+                            </section>
                         </div>
                         <div id="press-pad" class="timer__press-pad">
                             <div id="pad-count-down" class="timer__count-down">
@@ -62,7 +72,24 @@
                                     <p id="timer-count-down" class="timer__count-down-text">15</p>
                                 </div>
                             </div>
-                            <nobr id="timer-start-text" class="timer-start-text js-active">Tryk og slip i dette område<span class="desktop-only"> eller tryk mellemrum</span>,<br>for at starte tiden.</nobr>
+                            <div id="timer-visual" class="timer__visual">
+                                <div id="timer-visual-color" class="timer__visual-color" style="height: 0%;"></div>
+                            </div>
+                            <div id="timer-start-text" class="timer-start-text js-active">Tryk og slip i dette område<span class="desktop-only"> eller tryk mellemrum</span>,<br>for at starte tiden.</div>
+                            <div id="all-times-list" class="all-times-list">
+                                <div class="all-times-list__inner">
+                                    <div class="all-times-list__titles">
+                                        <h2>Rank</h2>
+                                        <h2>Tid</h2>
+                                        <a id="all-times-list-close" class="icon all-times-list__close" href="#">
+                                            <svg viewBox="0 0 24 24"><path d="M19,3H16.3H7.7H5A2,2 0 0,0 3,5V7.7V16.4V19A2,2 0 0,0 5,21H7.7H16.4H19A2,2 0 0,0 21,19V16.3V7.7V5A2,2 0 0,0 19,3M15.6,17L12,13.4L8.4,17L7,15.6L10.6,12L7,8.4L8.4,7L12,10.6L15.6,7L17,8.4L13.4,12L17,15.6L15.6,17Z"></path></svg>
+                                        </a>
+                                    </div>
+                                    <div class="all-times-list__items">
+                                        <ol id="all-times-list-items" class="all-times-list__item font-mono"></ol>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

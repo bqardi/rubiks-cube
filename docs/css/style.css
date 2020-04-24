@@ -93,6 +93,14 @@ a.icon {
     align-items: center;
 }
 
+a.icon svg {
+    transition: fill 150ms;
+}
+
+a.icon:hover svg {
+    fill: var(--theme-mid);
+}
+
 
 /* #endregion BASE/GLOBAL */
 
