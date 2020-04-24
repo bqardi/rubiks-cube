@@ -7,10 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="Her kan du lære hvordan man løser en Rubiks Cube/professor terning. Det er ikke så svært som de fleste går og tror. Det hele handler blot om at huske nogle bestemte dreje kombinationer og så kan du løse den, hver gang.">
     <title>Professor terning - Lær at løse</title>
-    <link rel="preload stylesheet" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="css/style.css"></noscript>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-cube.css">
     <link rel="shortcut icon" href="./images/logo.svg" type="image/svg+xml">
-    <script src="js/index.js" defer></script>
+    <script src="js/script.js" defer></script>
 </head>
 
 <body>
@@ -34,10 +34,10 @@
                 </div>
                 <nav id="navigation-burger" class="navigation navigation--main">
                     <h2 class="navigation__title">Menu</h2>
-                    <a class="navigation__link" href="#">Lær at løse</a>
-                    <a class="navigation__link" href="#">Algoritmer</a>
-                    <a class="navigation__link" href="#">Typer</a>
-                    <a class="navigation__link" href="#">Timer</a>
+                    <a class="navigation__link" href="index.html" id="active-page">Lær at løse</a>
+                    <a class="navigation__link" href="algorithms.html">Algoritmer</a>
+                    <a class="navigation__link" href="types.html">Typer</a>
+                    <a class="navigation__link" href="timer.html">Timer</a>
                 </nav>
             </header>
             <main id="main" class="main">
@@ -66,19 +66,30 @@
                             </div>
                         </div>
                     </div>
+                    <div class="main__page-navigation">
+                        <button class="main__page-navigation-button cube__side-orange">Lær at løse</button>
+                        <button class="main__page-navigation-button cube__side-red">Algoritmer</button>
+                        <button class="main__page-navigation-button cube__side-green">Typer</button>
+                        <button class="main__page-navigation-button cube__side-blue">Timer</button>
+                    </div>
                     <div class="main__placement">
-                        <h1>Forord</h1>
-                        <ul>
-                            <li><a href="#solution">Spring direkte til løsningen</a></li>
-                            <li><a href="#daisy">Daisy / Marguerit</a></li>
-                            <li><a href="#white-cross">Det hvide kryds</a></li>
-                            <li><a href="#white-corners">De hvide hjørner</a></li>
-                            <li><a href="#second-layer">Andet lag</a></li>
-                            <li><a href="#yellow-cross">Det gule kryds</a></li>
-                            <li><a href="#yellow-edges">Byt de gule kanter</a></li>
-                            <li><a href="#position-yellow-corners">Placering af de gule hjørner</a></li>
-                            <li><a href="#orient-yellow-corners">Orientering af de gule hjørner</a></li>
-                        </ul>
+                        <div id="start" class="anchor">
+                            <h1>Lær at løse</h1>
+                        </div>
+                        <nav class="page-navigation">
+                            <h3>Spring til de forskellige sektioner</h3>
+                            <ul>
+                                <li><a href="#solution">Spring direkte til løsningen</a></li>
+                                <li><a href="#daisy">Daisy / Marguerit</a></li>
+                                <li><a href="#white-cross">Det hvide kryds</a></li>
+                                <li><a href="#white-corners">De hvide hjørner</a></li>
+                                <li><a href="#second-layer">Andet lag</a></li>
+                                <li><a href="#yellow-cross">Det gule kryds</a></li>
+                                <li><a href="#yellow-edges">Byt de gule kanter</a></li>
+                                <li><a href="#position-yellow-corners">Placering af de gule hjørner</a></li>
+                                <li><a href="#orient-yellow-corners">Orientering af de gule hjørner</a></li>
+                            </ul>
+                        </nav>
                         <p>
                             Det er mega svært at løse en Rubiks Cube! NEJ, det er det faktisk ikke... Det er klart at det er svært at løse den, hvis du prøver at dreje nogle sider tilfældigt. Du har måske endda været nået så langt at du har løst én side, men sidder fast og du prøver
                             virkelig kraftigt at tænke dig frem til, hvordan du skal dreje for at "flytte" de næste "klodser" på terningen og samtidig ikke ødelægge det der allerede er løst. Det er praktisk talt umuligt, for det samlede antal mulige kombinationer
@@ -162,12 +173,12 @@
                             Når du holder terningen foran dig, f.eks. med den blå side pegende ind mod dig selv, så kaldes denne side "Front" og betegnes med en forkortelse "F". Det samme gælder for de fem andre sider:
                         </p>
                         <ul>
-                            <li>F - <strong>F</strong>ront / Forside</li>
-                            <li>B - <strong>B</strong>ack / Bagside</li>
-                            <li>R - <strong>R</strong>ight / Højre side</li>
-                            <li>L - <strong>L</strong>eft / Venstre side</li>
-                            <li>U - <strong>U</strong>p / Oppe eller top</li>
-                            <li>D - <strong>D</strong>own / Nede eller bund</li>
+                            <li><span class="algorithm">F</span> - <strong>F</strong>ront / Forside</li>
+                            <li><span class="algorithm">B</span> - <strong>B</strong>ack / Bagside</li>
+                            <li><span class="algorithm">R</span> - <strong>R</strong>ight / Højre side</li>
+                            <li><span class="algorithm">L</span> - <strong>L</strong>eft / Venstre side</li>
+                            <li><span class="algorithm">U</span> - <strong>U</strong>p / Oppe eller top</li>
+                            <li><span class="algorithm">D</span> - <strong>D</strong>own / Nede eller bund</li>
                         </ul>
                         <p>
                             Disse "dreje koder" betyder at man skal dreje den pågældende side i retning med uret. F.eks. et "R" betyder at højre side skal drejes en enkelt gang <strong>med</strong> uret:
@@ -350,11 +361,35 @@
                                 <h3 class="cube-notation__title">D'</h3>
                             </section>
                         </div>
+                        <p>
+                            Der er i visse tilfælde, det kan være nødvendigt at dreje en side to omgange. I stedet for at skrive f.eks. R R for at indikere at højre side skal drejes én omgang med uret og så igen drejes én omgang med uret, kan man forkorte det sådan her: R2, hvilket
+                            blot betyder, drej højre side to omgange (du vælger selv i hvilken retning).
+                        </p>
+                        <p>
+                            Nu kan vi, med disse koder, lave algoritmer der fortæller os hvilke sider der skal roteres og i hvilken retning. F. eks.
+                        </p>
+                        <div class="algorithm algorithm--block">
+                            <span class="algorithm__title">Algoritme navn:</span>
+                            <span class="algorithm__name">Sune</span>
+                            <div class="algorithm__notation">R U R' U R U2 R'</div>
+                        </div>
+                        <p>
+                            Denne algoritme hedder sjovt nok <strong>Sune</strong>, lige som mig :-)) og den fortæller os at vi skal:
+                        </p>
+                        <ul>
+                            <li><span class="algorithm">R</span> - Dreje højre side, med uret</li>
+                            <li><span class="algorithm">U</span> - Dreje top siden, med uret</li>
+                            <li><span class="algorithm">R</span>' - Dreje højre side, mod uret</li>
+                            <li><span class="algorithm">U</span> - Dreje top siden, med uret</li>
+                            <li><span class="algorithm">R</span> - Dreje højre side, med uret</li>
+                            <li><span class="algorithm">U2</span> - Dreje top siden, to omgange</li>
+                            <li><span class="algorithm">R</span>' - Dreje højre side, mod uret</li>
+                        </ul>
                         <div id="daisy-back" class="anchor">
                             <h3>Tilbage til "Daisy"</h3>
                         </div>
                         <p>
-                            Nu hvor vi kender notationerne, kan vi begynde for alvor (uhh).
+                            Nu hvor vi kender notationerne, kan vi begynde for alvor at løse terningen (uhh).
                         </p>
                     </div>
                 </div>
@@ -365,10 +400,10 @@
                 <div class="footer__placement">
                     <div class="footer__navigation">
                         <nav class="footer__navigation-links navigation">
-                            <a href="#">Lær at løse</a>
-                            <a href="#">Algoritmer</a>
-                            <a href="#">Typer</a>
-                            <a href="#">Timer</a>
+                            <a href="#start">Lær at løse</a>
+                            <a href="algorithms.html">Algoritmer</a>
+                            <a href="types.html">Typer</a>
+                            <a href="timer.html">Timer</a>
                         </nav>
                         <nav class="footer__navigation-social">
                             <a class="icon" href="#"><svg viewBox="0 0 24 24"><path d="M16.36,14C16.44,13.34 16.5,12.68 16.5,12C16.5,11.32 16.44,10.66 16.36,10H19.74C19.9,10.64 20,11.31 20,12C20,12.69 19.9,13.36 19.74,14M14.59,19.56C15.19,18.45 15.65,17.25 15.97,16H18.92C17.96,17.65 16.43,18.93 14.59,19.56M14.34,14H9.66C9.56,13.34 9.5,12.68 9.5,12C9.5,11.32 9.56,10.65 9.66,10H14.34C14.43,10.65 14.5,11.32 14.5,12C14.5,12.68 14.43,13.34 14.34,14M12,19.96C11.17,18.76 10.5,17.43 10.09,16H13.91C13.5,17.43 12.83,18.76 12,19.96M8,8H5.08C6.03,6.34 7.57,5.06 9.4,4.44C8.8,5.55 8.35,6.75 8,8M5.08,16H8C8.35,17.25 8.8,18.45 9.4,19.56C7.57,18.93 6.03,17.65 5.08,16M4.26,14C4.1,13.36 4,12.69 4,12C4,11.31 4.1,10.64 4.26,10H7.64C7.56,10.66 7.5,11.32 7.5,12C7.5,12.68 7.56,13.34 7.64,14M12,4.03C12.83,5.23 13.5,6.57 13.91,8H10.09C10.5,6.57 11.17,5.23 12,4.03M18.92,8H15.97C15.65,6.75 15.19,5.55 14.59,4.44C16.43,5.07 17.96,6.34 18.92,8M12,2C6.47,2 2,6.5 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"></path></svg></a>
