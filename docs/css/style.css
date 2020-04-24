@@ -178,7 +178,7 @@ a.icon:hover svg {
     padding: 5px;
 }
 
-.main__page-navigation-button {
+a.main__page-navigation-button {
     height: 45vw;
     border: 2px solid var(--theme-darkest);
     border-radius: 12px;
@@ -188,12 +188,13 @@ a.icon:hover svg {
     align-content: flex-end;
     padding: 10px;
     color: var(--theme-light);
+    text-decoration: none;
     font-size: 1.1rem;
     cursor: pointer;
     transition: opacity 150ms;
 }
 
-.main__page-navigation-button:hover {
+a.main__page-navigation-button:hover {
     opacity: 0.8;
 }
 
