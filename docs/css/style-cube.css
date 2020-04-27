@@ -6,7 +6,7 @@
 }
 
 .cube-wrapper--background {
-    background-image: url(../images/background.jpg);
+    background-image: url(../images/krabbe-kredit-ting.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -223,6 +223,7 @@
     --cube-example-divide-factor: 1;
     --cube-example-height: 80vw;
     --cube-example-max-height: 400px;
+    position: relative;
     height: calc(var(--cube-example-height) / var(--cube-example-divide-factor));
     max-height: calc(var(--cube-example-max-height) / var(--cube-example-divide-factor));
 }
@@ -233,6 +234,42 @@
     justify-content: center;
     align-items: center;
     height: 100%;
+}
+
+.cube-example__invalid-icon {
+    fill: var(--cube-red);
+}
+
+.cube-example__valid-icon {
+    fill: var(--cube-green);
+}
+
+.cube-example__notation {
+    margin: -20px 0 20px;
+}
+
+.cube-example__notation-text:before {
+    content: " - (";
+}
+
+.cube-example__notation-text:after {
+    content: ")";
+}
+
+.cube-example__notation-text {
+    font-weight: 400;
+    font-size: 0.75em;
+}
+
+.cube__example-turn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .cube-example__wrapper {
@@ -270,6 +307,34 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.cube-example__piece-bottom-left {
+    width: 100%;
+    height: 100%;
+    border: 1px dashed black;
+    transform: translateY(350%) translateX(225%);
+}
+
+.cube-example__piece-bottom-right {
+    width: 100%;
+    height: 100%;
+    border: 1px dashed black;
+    transform: translateX(350%) translateY(225%);
+}
+
+.cube-example__piece-top-left {
+    width: 100%;
+    height: 100%;
+    border: 1px dashed black;
+    transform: translateX(-120%);
+}
+
+.cube-example__piece-top-right {
+    width: 100%;
+    height: 100%;
+    border: 1px dashed black;
+    transform: translateY(-120%);
 }
 
 .cube-example__piece-none {
@@ -310,6 +375,7 @@
     animation-duration: 3s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
+    z-index: 1;
 }
 
 .cube-example__pointer-dark {
