@@ -88,6 +88,16 @@ svg {
     fill: var(--theme-light);
 }
 
+svg.dark {
+    fill: var(--theme-darkest);
+}
+
+svg.icon-text {
+    width: 24px;
+    height: 24px;
+    vertical-align: -6px;
+}
+
 a.icon {
     display: flex;
     align-items: center;
@@ -99,6 +109,13 @@ a.icon svg {
 
 a.icon:hover svg {
     fill: var(--theme-mid);
+}
+
+.separator {
+    border: none;
+    height: 2px;
+    background-image: linear-gradient(to right, transparent, var(--theme-mid), transparent);
+    margin: 0 0 20px;
 }
 
 

@@ -59,12 +59,16 @@ document.addEventListener("DOMContentLoaded", event => {
             for (let i = 0; i < savedTimes.length; i++) {
                 const saved = savedTimes[i];
                 let listItem = document.createElement("LI");
-                listItem.textContent = concatTime(saved);
+                listItem.textContent = concatTime(saved.time);
                 let listItemDelete = document.createElement("A");
                 listItemDelete.classList.add("all-times-list__item-delete");
                 listItemDelete.href = "#";
                 listItemDelete.textContent = "SLET";
                 listItem.appendChild(listItemDelete);
+                let listItemAlg = document.createElement("SPAN");
+                listItemAlg.classList.add("all-times-list__item-algorithm");
+                listItemAlg.textContent = saved.alg;
+                listItem.appendChild(listItemAlg);
                 allTimesListItems.appendChild(listItem);
                 listItemDelete.addEventListener("click", function(e) {
                     savedTimes.splice(i, 1);
@@ -75,7 +79,11 @@ document.addEventListener("DOMContentLoaded", event => {
                     `;
                     setTimeout(() => {
                         toggleAllTimesList(e, false);
-                    }, slideTime);
+                        if (savedTimes.length == 0) {
+                            toggleAllTimesList(e);
+                            allTimes.classList.remove("js-active");
+                        }
+                    }, slideTime / 2);
                     record = minValueInArray(savedTimes);
                     record = record == -1 ? 0 : record;
                     recordTime.textContent = concatTime(record);
@@ -125,12 +133,18 @@ document.addEventListener("DOMContentLoaded", event => {
         time = 0;
         visualTimer();
         allTimes.classList.add("js-active");
+
+        //RANDOM ALGORITHM
+        generateAlg();
     }
 
     function saveTime() {
-        savedTimes.push(time);
+        let obj = new Object();
+        obj.time = time;
+        obj.alg = alg;
+        savedTimes.push(obj);
         savedTimes.sort(function(a, b) {
-            return a - b;
+            return a.time - b.time;
         });
     }
 
@@ -270,13 +284,51 @@ document.addEventListener("DOMContentLoaded", event => {
         let lowest = -1;
         for (let i = 0; i < arr.length; i++) {
             const item = arr[i];
-            if (!isNaN(item)) {
-                if (lowest == -1 || item < lowest) {
-                    lowest = item;
+            if (!isNaN(item.time)) {
+                if (lowest == -1 || item.time < lowest) {
+                    lowest = item.time;
                 }
             }
         }
         return lowest;
     }
     //#endregion TIMER
+
+    //#region RANDOM ALGORITHM
+    const timerStartAlgorithm = document.getElementById("timer-start-algorithm");
+
+    const algs = ["F", "B", "R", "L", "U", "D"];
+    const algDirs = ["", "'", "2"];
+
+    let alg = "";
+    let lastAlg = "";
+
+    generateAlg();
+
+    function generateAlg() {
+        alg = "";
+        for (let i = 0; i < 20; i++) {
+            alg += getRandomAlg() + getRandomDir() + " ";
+        }
+        timerStartAlgorithm.textContent = alg.slice(0, -1);
+    }
+
+    function getRandomAlg() {
+        let rndAlg = algs[randomInteger(0, algs.length)];
+        while (rndAlg == lastAlg) {
+            rndAlg = algs[randomInteger(0, algs.length)];
+        }
+        lastAlg = rndAlg;
+        return rndAlg;
+    }
+
+    function getRandomDir() {
+        let rndDir = algDirs[randomInteger(0, algDirs.length)];
+        return rndDir;
+    }
+
+    function randomInteger(min, max) {
+        return Math.floor(Math.random() * (max - min)) + min;
+    }
+    //#endregion RANDOM ALGORITHM
 });

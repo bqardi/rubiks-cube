@@ -288,6 +288,19 @@ ol>li a.all-times-list__item-delete:hover {
     height: 0;
 }
 
+.timer-start-algorithm {
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+.all-times-list__item-algorithm {
+    font-weight: 300;
+    font-size: 0.8rem;
+    display: block;
+    color: var(--theme-mid);
+    margin: -3px 0 5px;
+}
+
 .desktop-only {
     display: none;
 }
