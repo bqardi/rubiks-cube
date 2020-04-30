@@ -85,7 +85,7 @@
                                 <li><a href="#white-corners">De hvide hjørner</a></li>
                                 <li><a href="#second-layer">Andet lag</a></li>
                                 <li><a href="#yellow-cross">Det gule kryds</a></li>
-                                <li><a href="#yellow-edges">Byt de gule kanter</a></li>
+                                <li><a href="#yellow-edges">Orientering af de gule kanter</a></li>
                                 <li><a href="#position-yellow-corners">Placering af de gule hjørner</a></li>
                                 <li><a href="#orient-yellow-corners">Orientering af de gule hjørner</a></li>
                             </ul>
@@ -1508,7 +1508,822 @@
                             <h2>Det andet lag</h2>
                         </div>
                         <p>
-                            Andet lag er de fire brikker der skal sidde ved siden af center brikkerne. Der er den blå/røde brik, den røde/grønne brik, den grønne/orange og den orange/blå.
+                            Andet lag er de fire brikker der skal sidde ved siden af center brikkerne. Der er den blå/røde brik, den røde/grønne brik, den grønne/orange og den orange/blå. Igen skal du justere top laget før du udfører algoritmen. Måden du flytter top laget er ved
+                            at finde en af de fire brikker, f.eks. den blå/røde brik og så dreje top laget så brikkens farve matcher med center farven og så bruge denne farve som forsiden. Hmm, lidt forvirrende forklaret, men se her:
+                        </p>
+                        <div class="cube-example-container">
+                            <div class="cube-example">
+                                <div class="cube-example__wrapper cube-example__top">
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                </div>
+                                <div class="cube-example__wrapper cube-example__front">
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-red">
+                                        <svg class="cube-example__pointer cube-example__pointer-dark" viewBox="0 0 24 24"><path d="M9,4H15V12H19.84L12,19.84L4.16,12H9V4Z"></path></svg>
+                                    </div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-red">
+                                        <svg class="cube-example__pointer cube-example__pointer-dark" viewBox="0 0 24 24"><path d="M9,4H15V12H19.84L12,19.84L4.16,12H9V4Z"></path></svg>
+                                    </div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                </div>
+                                <div class="cube-example__wrapper cube-example__right">
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-green"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-green"></div>
+                                    <div class="cube-example__piece cube-example__piece-green"></div>
+                                    <div class="cube-example__piece cube-example__piece-green"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="cube-example__notation">Rød matcher<span class="cube-example__notation-text">Den blå/røde briks røde flade matcher med den røde center brik</span></h3>
+                        <hr class="separator">
+                        <p>
+                            Hvis den blå/røde brik "vender omvendt", altså så den blå er nederst og den røde er øverst, skal top laget drejes så den blå matches med den blå center brik:
+                        </p>
+                        <div class="cube-example-container">
+                            <div class="cube-example">
+                                <div class="cube-example__wrapper cube-example__top">
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                </div>
+                                <div class="cube-example__wrapper cube-example__front">
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue">
+                                        <svg class="cube-example__pointer cube-example__pointer-dark" viewBox="0 0 24 24"><path d="M9,4H15V12H19.84L12,19.84L4.16,12H9V4Z"></path></svg>
+                                    </div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue">
+                                        <svg class="cube-example__pointer cube-example__pointer-dark" viewBox="0 0 24 24"><path d="M9,4H15V12H19.84L12,19.84L4.16,12H9V4Z"></path></svg>
+                                    </div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                </div>
+                                <div class="cube-example__wrapper cube-example__right">
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="cube-example__notation">Blå matcher<span class="cube-example__notation-text">Den blå/røde briks blå flade matcher med den blå center brik</span></h3>
+                        <hr class="separator">
+                        <p>
+                            Dernæst skal du identificere hvorvidt den blå/røde brik hører til i højre side eller venstre side:
+                        </p>
+                        <div class="cube-example-container">
+                            <div class="cube-example">
+                                <div class="cube-example__wrapper cube-example__top">
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                </div>
+                                <div class="cube-example__wrapper cube-example__front">
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-none">
+                                        <svg class="cube-example__pointer cube-example__pointer-dark" viewBox="0 0 24 24"><path d="M9,4H15V12H19.84L12,19.84L4.16,12H9V4Z"></path></svg>
+                                    </div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                </div>
+                                <div class="cube-example__wrapper cube-example__right">
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="cube-example__notation">Hører til højre<span class="cube-example__notation-text">Den blå/røde brik hører til i højre side</span></h3>
+                        <p>
+                            Når brikken hører til i højre side, skal denne algoritme bruges:
+                        </p>
+                        <div class="algorithm algorithm--block">
+                            <span class="algorithm__title">Algoritme navn (ikke officiel):</span>
+                            <span class="algorithm__name">Højre</span>
+                            <div class="algorithm__notation">U' R U R' U' F' U' F</div>
+                        </div>
+                        <hr class="separator">
+                        <div class="cube-example-container">
+                            <div class="cube-example">
+                                <div class="cube-example__wrapper cube-example__top">
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                </div>
+                                <div class="cube-example__wrapper cube-example__front">
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none">
+                                        <svg class="cube-example__pointer cube-example__pointer-dark" viewBox="0 0 24 24"><path d="M9,4H15V12H19.84L12,19.84L4.16,12H9V4Z"></path></svg>
+                                    </div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                </div>
+                                <div class="cube-example__wrapper cube-example__right">
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-green"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-green"></div>
+                                    <div class="cube-example__piece cube-example__piece-green"></div>
+                                    <div class="cube-example__piece cube-example__piece-green"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="cube-example__notation">Hører til venstre<span class="cube-example__notation-text">Den blå/røde brik hører til i venstre side</span></h3>
+                        <p>
+                            Når brikken hører til i venstre side, skal denne algoritme bruges:
+                        </p>
+                        <div class="algorithm algorithm--block">
+                            <span class="algorithm__title">Algoritme navn (ikke officiel):</span>
+                            <span class="algorithm__name">Venstre</span>
+                            <div class="algorithm__notation">U L' U' L U F U F'</div>
+                        </div>
+                        <p>
+                            (Det er faktisk nøjagtig den samme algoritme som "Højre" -algoritmen, blot spejlvendt)
+                        </p>
+                        <hr class="separator">
+                        <p>
+                            I nogle tilfælde kan du komme ud for at kant brikken du skal løse ikke sidder i top laget:
+                        </p>
+                        <div class="cube-example-container">
+                            <div class="cube-example">
+                                <div class="cube-example__wrapper cube-example__top">
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                </div>
+                                <div class="cube-example__wrapper cube-example__front">
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue">
+                                        <svg class="cube-example__pointer cube-example__pointer-dark" viewBox="0 0 24 24"><path d="M9,4H15V12H19.84L12,19.84L4.16,12H9V4Z"></path></svg>
+                                    </div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                </div>
+                                <div class="cube-example__wrapper cube-example__right">
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-green"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-green"></div>
+                                    <div class="cube-example__piece cube-example__piece-green"></div>
+                                    <div class="cube-example__piece cube-example__piece-green"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p>
+                            Her skal du bare udføre én af ovenstående algoritmer for at få den ud igen. Du skal bruge "højre" -algoritmen hvis brikken befinder sig i højre side og "venstre" hvis den er til venstre. På billedet er brikken til højre hvis du har den røde side som forside
+                            og den er til venstre hvis du har den grønne side som forside.
+                        </p>
+                        <hr class="separator">
+                        <div id="yellow-cross" class="anchor">
+                            <h2>Det gule kryds</h2>
+                        </div>
+                        <p>
+                            Nu har vi løst to lag (bunden og midten) og vi mangler kun top laget. For at opnå en komplet løst terning, starter vi med det gule kryds og den ser sådan her ud:
+                        </p>
+                        <div class="cube-example-container">
+                            <div class="cube-example">
+                                <div class="cube-example__wrapper cube-example__top">
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                </div>
+                                <div class="cube-example__wrapper cube-example__front">
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                </div>
+                                <div class="cube-example__wrapper cube-example__right">
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p>
+                            For nu, ignorerer vi hjørnerne samt hvorvidt de gule kantbrikker er placeret korrekt i forhold til resten af terningen. Det eneste vi er interesseret i, er det gule kryds.
+                        </p>
+                        <p>
+                            Hvis du er så heldig at det gule kryds allerede er løst, kan du springe videre til <a href="#yellow-edges">placeringen af de gule kanter</a>.
+                        </p>
+                        <p>
+                            Ellers vil du (hvis man ser bort fra hjørnerne) se enten center brikken alene, "et L formet mønster", eller en "lige streg". Lyder lidt mærkeligt, I know, men se de forskellige scenarier her:
+                        </p>
+                        <div class="cube-example-2d">
+                            <div class="cube-example-2d__wrapper">
+                                <div class="cube-example-2d__cube">
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                </div>
+                                <div class="cube-example-2d__title">
+                                    <p>Prikken</p>
+                                </div>
+                            </div>
+                            <div class="cube-example-2d__wrapper">
+                                <div class="cube-example-2d__cube">
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                </div>
+                                <div class="cube-example-2d__title">
+                                    <p>L'et</p>
+                                </div>
+                            </div>
+                            <div class="cube-example-2d__wrapper">
+                                <div class="cube-example-2d__cube">
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                </div>
+                                <div class="cube-example-2d__title">
+                                    <p>Stregen</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p>
+                            For at løse enhver af disse scenarier, skal vi bruge en enkelt algoritme:
+                        </p>
+                        <div class="algorithm algorithm--block">
+                            <span class="algorithm__title">Algoritme navn (ikke officiel):</span>
+                            <span class="algorithm__name">Fru Ruf</span>
+                            <div class="algorithm__notation">F R U R' U' F'</div>
+                        </div>
+                        <p>
+                            Hver gang vi udfører algoritmen, "lander" vi på det næste scenarie. Dvs. hvis vi er på "Prikken", lander vi på "L'et", fra "L'et" lander vi på "Stregen", fra "Stregen" lander vi på krydset.
+                        </p>
+                        <h3>Prikken</h3>
+                        <p>
+                            Hvis vi er på det scenarie vi kaldte "Prikken" og udfører algoritmen, lander vi ganske enkelt på "L'et"
+                        </p>
+                        <h3>L'et</h3>
+                        <p>
+                            Hvis vi er på det scenarie vi kaldte "L'et" skal vi dreje top laget, så "L'et" befinder sig i øverste venstre hjørne:
+                        </p>
+                        <div class="cube-example-2d">
+                            <div class="cube-example-2d__wrapper">
+                                <div class="cube-example-2d__cube">
+                                    <div class="cube-example__piece cube-example__piece-none">
+                                        <svg class="icon cube-example__valid-icon" viewBox="0 0 24 24"><path d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z"></path></svg>
+                                    </div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cube-example-2d">
+                            <div class="cube-example-2d__wrapper">
+                                <div class="cube-example-2d__cube">
+                                    <div class="cube-example__piece cube-example__piece-none">
+                                        <svg class="icon cube-example__invalid-icon" viewBox="0 0 24 24"><path d="M20 6.91L17.09 4L12 9.09L6.91 4L4 6.91L9.09 12L4 17.09L6.91 20L12 14.91L17.09 20L20 17.09L14.91 12L20 6.91Z"></path></svg>
+                                    </div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                </div>
+                            </div>
+                            <div class="cube-example-2d__wrapper">
+                                <div class="cube-example-2d__cube">
+                                    <div class="cube-example__piece cube-example__piece-none">
+                                        <svg class="icon cube-example__invalid-icon" viewBox="0 0 24 24"><path d="M20 6.91L17.09 4L12 9.09L6.91 4L4 6.91L9.09 12L4 17.09L6.91 20L12 14.91L17.09 20L20 17.09L14.91 12L20 6.91Z"></path></svg>
+                                    </div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                </div>
+                            </div>
+                            <div class="cube-example-2d__wrapper">
+                                <div class="cube-example-2d__cube">
+                                    <div class="cube-example__piece cube-example__piece-none">
+                                        <svg class="icon cube-example__invalid-icon" viewBox="0 0 24 24"><path d="M20 6.91L17.09 4L12 9.09L6.91 4L4 6.91L9.09 12L4 17.09L6.91 20L12 14.91L17.09 20L20 17.09L14.91 12L20 6.91Z"></path></svg>
+                                    </div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p>
+                            Og derefter kan vi udføre algoritmen og når vi har gjort det, lander vi på "Stregen".
+                        </p>
+                        <h3>Stregen</h3>
+                        <p>
+                            Til sidst hvis vi er på "Stregen" skal vi justere top laget så "stregen" vender vandret:
+                        </p>
+                        <div class="cube-example-2d">
+                            <div class="cube-example-2d__wrapper">
+                                <div class="cube-example-2d__cube">
+                                    <div class="cube-example__piece cube-example__piece-none">
+                                        <svg class="icon cube-example__valid-icon" viewBox="0 0 24 24"><path d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z"></path></svg>
+                                    </div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                </div>
+                            </div>
+                            <div class="cube-example-2d__wrapper">
+                                <div class="cube-example-2d__cube">
+                                    <div class="cube-example__piece cube-example__piece-none">
+                                        <svg class="icon cube-example__invalid-icon" viewBox="0 0 24 24"><path d="M20 6.91L17.09 4L12 9.09L6.91 4L4 6.91L9.09 12L4 17.09L6.91 20L12 14.91L17.09 20L20 17.09L14.91 12L20 6.91Z"></path></svg>
+                                    </div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p>
+                            Så udfører vi algoritmen og lander på det gule kryds:
+                        </p>
+                        <div class="cube-example-2d">
+                            <div class="cube-example-2d__wrapper">
+                                <div class="cube-example-2d__cube">
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="yellow-edges" class="anchor">
+                            <h2>De gule kanter</h2>
+                        </div>
+                        <p>
+                            Nu hvor vi har det gule kryds, skal vi have orienteret dem så de matcher farvemæssigt med sidernes center brikker:
+                        </p>
+                        <div class="cube-example-container">
+                            <div class="cube-example">
+                                <div class="cube-example__wrapper cube-example__top">
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                </div>
+                                <div class="cube-example__wrapper cube-example__front">
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue">
+                                        <svg class="cube-example__pointer cube-example__pointer-dark" viewBox="0 0 24 24"><path d="M9,4H15V12H19.84L12,19.84L4.16,12H9V4Z"></path></svg>
+                                    </div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue">
+                                        <svg class="cube-example__pointer cube-example__pointer-dark" viewBox="0 0 24 24"><path d="M9,4H15V12H19.84L12,19.84L4.16,12H9V4Z"></path></svg>
+                                    </div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                </div>
+                                <div class="cube-example__wrapper cube-example__right">
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-red">
+                                        <svg class="cube-example__pointer cube-example__pointer-dark" viewBox="0 0 24 24"><path d="M9,4H15V12H19.84L12,19.84L4.16,12H9V4Z"></path></svg>
+                                    </div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-red">
+                                        <svg class="cube-example__pointer cube-example__pointer-dark" viewBox="0 0 24 24"><path d="M9,4H15V12H19.84L12,19.84L4.16,12H9V4Z"></path></svg>
+                                    </div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p>
+                            Hvis de alle allerede matcher, fint, så kan du springe videre til <a href="#position-yellow-corners">positioneringen af de gule hjørner</a>.
+                        </p>
+                        <p>
+                            Ellers er vi nødt til at udføre en ny algoritme (kan du huske denne fra toppen af siden?):
+                        </p>
+                        <div class="algorithm algorithm--block">
+                            <span class="algorithm__title">Algoritme navn:</span>
+                            <span class="algorithm__name">Sune</span>
+                            <div class="algorithm__notation">R U R' U R U2 R'</div>
+                        </div>
+                        <p>
+                            Måden vi løser den på er, igen, ved at justere top laget før vi udfører algoritmen. Justeringen af top laget er simpel. Vælg en farve fra én af siderne, f.eks. blå og drej top laget indtil den gul/blå kantbrik's blå flade matcher med den blå center brik:
+                        </p>
+                        <div class="cube-example-container">
+                            <div class="cube-example">
+                                <div class="cube-example__wrapper cube-example__top">
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow">
+                                        <div class="cube-example__piece-top-right cube-example__piece-orange"></div>
+                                    </div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow">
+                                        <div class="cube-example__piece-top-left cube-example__piece-red"></div>
+                                    </div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                </div>
+                                <div class="cube-example__wrapper cube-example__front">
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue">
+                                        <svg class="cube-example__pointer cube-example__pointer-dark" viewBox="0 0 24 24"><path d="M9,4H15V12H19.84L12,19.84L4.16,12H9V4Z"></path></svg>
+                                    </div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue">
+                                        <svg class="cube-example__pointer cube-example__pointer-dark" viewBox="0 0 24 24"><path d="M9,4H15V12H19.84L12,19.84L4.16,12H9V4Z"></path></svg>
+                                    </div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                </div>
+                                <div class="cube-example__wrapper cube-example__right">
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-green"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p>
+                            Nu kan du udføre algoritmen for at orientere kantbrikkerne korrekt. <strong>Bemærk</strong> dog at det kan være nødvendigt at udføre algoritmen to gange. Så, hvis de gule kantbrikker ikke er orienteret korrekt efter første
+                            udførelse, må du igennem algoritmen én gang mere og så skulle kantbrikkerne være løst.
+                        </p>
+                        <div id="position-yellow-corners" class="anchor">
+                            <h2>Placering af de gule hjørner</h2>
+                        </div>
+                        <p>
+                            Nu mangler vi kun hjørnerne, juhuu. Vi starter med at placere dem uden at bekymre os om orienteringen af dem, eller sagt på en anden måde, hvilken vej de vender. Igen, hvis alle hjørnerne allerde sidder på deres korrekte placering, kan du springe videre
+                            til <a href="#orient-yellow-corners">orienteringen af de gule hjørner</a>.
+                        </p>
+                        <p>
+                            Først finder vi et hjørne der allerede sidder korrekt og vender terningen, så denne korrekt placerede hjørnebrik kan ses på forsiden, oppe i højre hjørne:
+                        </p>
+                        <div class="cube-example-container cube-example--margin-large">
+                            <div class="cube-example">
+                                <div class="cube-example__wrapper cube-example__top">
+                                    <div class="cube-example__piece cube-example__piece-yellow">
+                                        <div class="cube-example__piece-top-right cube-example__piece-red">
+                                            <div class="cube-example__piece-top-left-offset cube-example__piece-green"></div>
+                                        </div>
+                                    </div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue">
+                                        <div class="cube-example__piece-top-right cube-example__piece-orange"></div>
+                                    </div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow">
+                                        <div class="cube-example__piece-top-left cube-example__piece-green"></div>
+                                    </div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue">
+                                        <svg class="cube-example__pointer cube-example__pointer-dark" viewBox="0 0 24 24"><path d="M9,4H15V12H19.84L12,19.84L4.16,12H9V4Z"></path></svg>
+                                    </div>
+                                </div>
+                                <div class="cube-example__wrapper cube-example__front">
+                                    <div class="cube-example__piece cube-example__piece-orange"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                </div>
+                                <div class="cube-example__wrapper cube-example__right">
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="cube-example__notation">Blå forside<span class="cube-example__notation-text">Den gule/blå/røde brik sidder på den korrekte plads og den blå side skal derfor være forsiden.</span></h3>
+                        <p>
+                            Når terningen vender korrekt, kan vi udføre algoritmen:
+                        </p>
+                        <div class="algorithm algorithm--block">
+                            <span class="algorithm__title">Algoritme navn:</span>
+                            <span class="algorithm__name">?</span>
+                            <div class="algorithm__notation">U R U' L' U R' U' L</div>
+                        </div>
+                        <p>
+                            Hvis ikke alle fire hjørner sidder korrekt efter udførelsen af algoritmen, må du køre algoritmen igennem én gang mere og så er de fire hjørner placeret korrekt (er det bare mig eller har vi set det her algoritme-gentagelses-scenarie før?).
+                        </p>
+                        <div id="orient-yellow-corners" class="anchor">
+                            <h2>Orientering af de gule hjørner</h2>
+                        </div>
+                        <p>
+                            Så er vi nået til sidste step, venner, hæng i lidt endnu...
+                        </p>
+                        <p>
+                            Den her metode er lidt speciel. Vi skal med denne metode bruge "Sexy move" en hel del.
+                        </p>
+                        <p>
+                            Start med at vende terningen på hovedet, så den hvide side er top laget.
+                        </p>
+                        <div class="cube-example-container cube-example--margin-large">
+                            <div class="cube-example">
+                                <div class="cube-example__wrapper cube-example__top">
+                                    <div class="cube-example__piece cube-example__piece-white"></div>
+                                    <div class="cube-example__piece cube-example__piece-white"></div>
+                                    <div class="cube-example__piece cube-example__piece-white"></div>
+                                    <div class="cube-example__piece cube-example__piece-white"></div>
+                                    <div class="cube-example__piece cube-example__piece-white"></div>
+                                    <div class="cube-example__piece cube-example__piece-white"></div>
+                                    <div class="cube-example__piece cube-example__piece-white"></div>
+                                    <div class="cube-example__piece cube-example__piece-white"></div>
+                                    <div class="cube-example__piece cube-example__piece-white"></div>
+                                </div>
+                                <div class="cube-example__wrapper cube-example__front">
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                </div>
+                                <div class="cube-example__wrapper cube-example__right">
+                                    <div class="cube-example__piece cube-example__piece-orange"></div>
+                                    <div class="cube-example__piece cube-example__piece-orange"></div>
+                                    <div class="cube-example__piece cube-example__piece-orange"></div>
+                                    <div class="cube-example__piece cube-example__piece-orange"></div>
+                                    <div class="cube-example__piece cube-example__piece-orange"></div>
+                                    <div class="cube-example__piece cube-example__piece-orange"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-orange"></div>
+                                    <div class="cube-example__piece cube-example__piece-green"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p>
+                            Så bliver du ved med at bruge algoritmen indtil hjørnebrikken (som er nede i bunden til højre) vender korrekt.
+                        </p>
+                        <div class="algorithm algorithm--block">
+                            <span class="algorithm__title">Algoritme navn:</span>
+                            <span class="algorithm__name">Sexy move</span>
+                            <div class="algorithm__notation">R U R' U'</div>
+                        </div>
+                        <p>
+                            Bliv ikke nervøs! Terningen vil komme til at se ud som om den er fuldstændig blandet igen, men hold dig til "planen (Sexy move)", så lover jeg dig at terningen bliver løst til sidst:
+                        </p>
+                        <p>
+                            Vender den nye hjørnebrik forkert anvender du algoritmen (flere gane) indtil brikken vender rigtigt.
+                        </p>
+                        <div class="cube-example-container cube-example--margin-large">
+                            <div class="cube-example">
+                                <div class="cube-example__wrapper cube-example__top">
+                                    <div class="cube-example__piece cube-example__piece-white"></div>
+                                    <div class="cube-example__piece cube-example__piece-white"></div>
+                                    <div class="cube-example__piece cube-example__piece-green"></div>
+                                    <div class="cube-example__piece cube-example__piece-white"></div>
+                                    <div class="cube-example__piece cube-example__piece-white"></div>
+                                    <div class="cube-example__piece cube-example__piece-white"></div>
+                                    <div class="cube-example__piece cube-example__piece-orange"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-orange"></div>
+                                </div>
+                                <div class="cube-example__wrapper cube-example__front">
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-orange"></div>
+                                    <div class="cube-example__piece cube-example__piece-green"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-white"></div>
+                                    <div class="cube-example__piece cube-example__piece-orange"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                </div>
+                                <div class="cube-example__wrapper cube-example__right">
+                                    <div class="cube-example__piece cube-example__piece-white"></div>
+                                    <div class="cube-example__piece cube-example__piece-orange"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-green"></div>
+                                    <div class="cube-example__piece cube-example__piece-orange"></div>
+                                    <div class="cube-example__piece cube-example__piece-orange"></div>
+                                    <div class="cube-example__piece cube-example__piece-orange"></div>
+                                    <div class="cube-example__piece cube-example__piece-orange"></div>
+                                    <div class="cube-example__piece cube-example__piece-green"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="cube-example__notation">R U R' U'<span class="cube-example__notation-text">Efter flere udførelser af algoritmen, vender den gule/blå/orange brik nu korrekt.</span></h3>
+                        <p>
+                            Når hjørnebrikken vender korrekt (med den gule flade vendende nedad), skal du nu dreje bunden en enkelt gang (retningen er ligegyldig: D eller D', det vigtige er at dreje i samme retning hver gang bunden skal drejes).
+                        </p>
+                        <p>
+                            Når du har vendt alle hjørnebrikkerne til deres korrekte orientering vil du opdage at terningen er løst (bunden skal eventuelt lige drejes en enkelt gang for at terningen er funldstændig løst, men det burde være enkelt nok at se når du når dertil).
+                        </p>
+
+                        <div class="cube-example-container cube-example--margin-large">
+                            <div class="cube-example">
+                                <div class="cube-example__wrapper cube-example__top">
+                                    <div class="cube-example__piece cube-example__piece-white"></div>
+                                    <div class="cube-example__piece cube-example__piece-white"></div>
+                                    <div class="cube-example__piece cube-example__piece-white"></div>
+                                    <div class="cube-example__piece cube-example__piece-white"></div>
+                                    <div class="cube-example__piece cube-example__piece-white"></div>
+                                    <div class="cube-example__piece cube-example__piece-white"></div>
+                                    <div class="cube-example__piece cube-example__piece-white"></div>
+                                    <div class="cube-example__piece cube-example__piece-white"></div>
+                                    <div class="cube-example__piece cube-example__piece-white"></div>
+                                </div>
+                                <div class="cube-example__wrapper cube-example__front">
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    <div class="cube-example__piece cube-example__piece-blue"></div>
+                                </div>
+                                <div class="cube-example__wrapper cube-example__right">
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                    <div class="cube-example__piece cube-example__piece-red"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <h2>Tillykke</h2>
+                        <p>
+                            Du har nu løst terningen og du er en superhelt. Nu kan du prøve <a href="timer.html">timeren</a> og se hvor hurtig du er til at løse den.
                         </p>
                     </div>
                 </div>

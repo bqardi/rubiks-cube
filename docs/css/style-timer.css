@@ -289,7 +289,7 @@ ol>li a.all-times-list__item-delete:hover {
 }
 
 .timer-start-algorithm {
-    margin-top: 10px;
+    padding: 10px 1rem;
     font-weight: 500;
 }
 

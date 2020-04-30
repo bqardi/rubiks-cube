@@ -115,7 +115,7 @@ a.icon:hover svg {
     border: none;
     height: 2px;
     background-image: linear-gradient(to right, transparent, var(--theme-mid), transparent);
-    margin: 0 0 20px;
+    margin: 40px 0;
 }
 
 
@@ -246,6 +246,10 @@ a.main__page-navigation-button:hover {
     visibility: hidden;
 }
 
+.anchor h2 {
+    margin: 20px 0 0;
+}
+
 .page-navigation {
     margin: 20px 0 30px;
 }
@@ -338,3 +342,24 @@ a.main__page-navigation-button:hover {
 
 
 /* #endregion NAVIGATION */
+
+@media only screen and (min-width: 550px) {
+    .main__page-navigation {
+        grid-template: 1fr / repeat(4, 1fr);
+    }
+    a.main__page-navigation-button {
+        height: 23vw;
+        /* border: 2px solid var(--theme-darkest);
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-content: flex-end;
+        padding: 10px;
+        color: var(--theme-light);
+        text-decoration: none;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: opacity 150ms; */
+    }
+}

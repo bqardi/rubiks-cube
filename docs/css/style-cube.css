@@ -228,12 +228,57 @@
     max-height: calc(var(--cube-example-max-height) / var(--cube-example-divide-factor));
 }
 
+.cube-example--margin-large {
+    margin-top: 30px;
+}
+
 .cube-example {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
+}
+
+.cube-example-2d {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 20px 0;
+}
+
+.cube-example-2d__wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.cube-example-2d__cube {
+    margin: 4px;
+    width: 25vw;
+    height: 25vw;
+    display: grid;
+    gap: 1px;
+    background-color: black;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+}
+
+.cube-example-2d__title {
+    text-align: center;
+}
+
+.cube-example__wrapper {
+    position: absolute;
+    top: 2vw;
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    gap: 4px;
+    background-color: black;
+    border: 2px solid black;
+    width: calc(var(--cube-example-height) / 2 / var(--cube-example-divide-factor));
+    height: calc(var(--cube-example-height) / 2 / var(--cube-example-divide-factor));
+    max-width: calc(var(--cube-example-max-height) / 2 / var(--cube-example-divide-factor));
+    max-height: calc(var(--cube-example-max-height) / 2 / var(--cube-example-divide-factor));
 }
 
 .cube-example__invalid-icon {
@@ -270,20 +315,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.cube-example__wrapper {
-    position: absolute;
-    top: 2vw;
-    display: grid;
-    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
-    gap: 4px;
-    background-color: black;
-    border: 2px solid black;
-    width: calc(var(--cube-example-height) / 2 / var(--cube-example-divide-factor));
-    height: calc(var(--cube-example-height) / 2 / var(--cube-example-divide-factor));
-    max-width: calc(var(--cube-example-max-height) / 2 / var(--cube-example-divide-factor));
-    max-height: calc(var(--cube-example-max-height) / 2 / var(--cube-example-divide-factor));
 }
 
 .cube-example-center {
@@ -337,6 +368,13 @@
     transform: translateY(-120%);
 }
 
+.cube-example__piece-top-left-offset {
+    width: 100%;
+    height: 100%;
+    border: 1px dashed black;
+    transform: translateX(-125%) translateY(125%);
+}
+
 .cube-example__piece-none {
     background-color: gray;
 }
@@ -366,6 +404,7 @@
 }
 
 .cube-example__pointer {
+    --pointer-orientation: -45deg;
     position: absolute;
     width: calc(14vw / var(--cube-example-divide-factor));
     height: calc(14vw / var(--cube-example-divide-factor));
@@ -378,19 +417,23 @@
     z-index: 1;
 }
 
+.cube-example__right .cube-example__pointer {
+    --pointer-orientation: 45deg;
+}
+
 .cube-example__pointer-dark {
     fill: var(--theme-darkest);
 }
 
 @keyframes arrow-hover {
     0% {
-        transform: rotateZ(-45deg) translateY(-10px);
+        transform: rotateZ(var(--pointer-orientation)) translateY(-10px);
     }
     50% {
-        transform: rotateZ(-45deg) translateY(-20px);
+        transform: rotateZ(var(--pointer-orientation)) translateY(-20px);
     }
     100% {
-        transform: rotateZ(-45deg) translateY(-10px);
+        transform: rotateZ(var(--pointer-orientation)) translateY(-10px);
     }
 }
 
