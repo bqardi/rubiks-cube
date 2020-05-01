@@ -225,8 +225,12 @@
     max-height: calc(var(--cube-example-max-height) / var(--cube-example-divide-factor));
 }
 
-.cube-example--margin-large {
+.cube-example--margin-top {
     margin-top: 30px;
+}
+
+.cube-example--margin-bottom {
+    margin-bottom: 30px;
 }
 
 .cube-example {
