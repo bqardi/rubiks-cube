@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Her kan du lære hvordan man løser en Rubiks Cube/professor terning. Det er ikke så svært som de fleste går og tror. Det hele handler blot om at huske nogle bestemte dreje kombinationer og så kan du løse den, hver gang.">
+    <title>Professor terning - Lær at løse</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-cube.css">
+    <link rel="shortcut icon" href="./images/logo.svg" type="image/svg+xml">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+    <div class="page">
+        <div class="page__wrapper">
+            <header class="header">
+                <div class="header__background">
+                    <div class="header__placement">
+                        <div class="header__logo">
+                            <a class="icon" href="index.html">
+                                <svg viewBox="0 0 24 24"><path d="M21,16.5C21,16.88 20.79,17.21 20.47,17.38L12.57,21.82C12.41,21.94 12.21,22 12,22C11.79,22 11.59,21.94 11.43,21.82L3.53,17.38C3.21,17.21 3,16.88 3,16.5V7.5C3,7.12 3.21,6.79 3.53,6.62L11.43,2.18C11.59,2.06 11.79,2 12,2C12.21,2 12.41,2.06 12.57,2.18L20.47,6.62C20.79,6.79 21,7.12 21,7.5V16.5M12,4.15L6.04,7.5L12,10.85L17.96,7.5L12,4.15M5,15.91L11,19.29V12.58L5,9.21V15.91M19,15.91V9.21L13,12.58V19.29L19,15.91Z"></path></svg>
+                                <h2>Professor</h2>
+                            </a>
+                        </div>
+                        <nav class="burger">
+                            <a id="burger" class="icon" href="#" aria-label="Menu">
+                                <svg viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"></path></svg>
+                            </a>
+                        </nav>
+                    </div>
+                </div>
+                <nav id="navigation-burger" class="navigation navigation--main">
+                    <h2 class="navigation__title">Menu</h2>
+                    <a class="navigation__link" href="index.html">Lær at løse</a>
+                    <a class="navigation__link" href="my-method.html" id="active-page">Min metode</a>
+                    <a class="navigation__link desktop-only-flex" href="https://bqardi.dk/unity-games/dummycube/index.html">Online terning</a>
+                    <a class="navigation__link" href="timer.html">Timer</a>
+                </nav>
+            </header>
+            <main id="main" class="main">
+                <div class="main__background">
+                    <div class="cube-wrapper cube-wrapper--background">
+                        <div class="cube cube--hero cube--perspective">
+                            <div class="cube__container cube__container--animated">
+                                <div class="cube__side cube__side-white cube__side-bottom">
+                                    <div class="cube__dirt"></div>
+                                </div>
+                                <div class="cube__side cube__side-yellow cube__side-up">
+                                    <div class="cube__dirt"></div>
+                                </div>
+                                <div class="cube__side cube__side-blue cube__side-front">
+                                    <div class="cube__dirt"></div>
+                                </div>
+                                <div class="cube__side cube__side-green cube__side-back">
+                                    <div class="cube__dirt"></div>
+                                </div>
+                                <div class="cube__side cube__side-red cube__side-right">
+                                    <div class="cube__dirt"></div>
+                                </div>
+                                <div class="cube__side cube__side-orange cube__side-left">
+                                    <div class="cube__dirt"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="main__page-navigation">
+                        <a href="index.html" class="main__page-navigation-button cube__side-orange">Lær at løse</a>
+                        <a href="algorithms.html" class="main__page-navigation-button cube__side-red">Algoritmer</a>
+                        <a href="types.html" class="main__page-navigation-button cube__side-green">Typer</a>
+                        <a href="timer.html" class="main__page-navigation-button cube__side-blue">Timer</a>
+                    </div> -->
+                    <div class="main__placement">
+                        <div class="algorithm-container">
+                            <div class="cube-example-container">
+                                <div class="cube-example">
+                                    <div class="cube-example__wrapper cube-example__top">
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-white"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__front">
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-white"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__right">
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="algorithm algorithm--block">
+                                <span class="algorithm__title">Algoritme navn:</span>
+                                <span class="algorithm__name">Sune</span>
+                                <div class="algorithm__notation">R U R' U R U2 R'</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <footer class="footer">
+            <div class="footer__background">
+                <div class="footer__placement">
+                    <div class="footer__navigation">
+                        <nav class="footer__navigation-links navigation">
+                            <a href="index.html">Lær at løse</a>
+                            <a href="my-method.html">Min metode</a>
+                            <a class="desktop-only-flex" href="https://bqardi.dk/unity-games/dummycube/index.html">Online terning</a>
+                            <a href="timer.html">Timer</a>
+                        </nav>
+                        <nav class="footer__navigation-social">
+                            <a class="icon" href="https://bqardi.dk" aria-label="Homepage"><svg viewBox="0 0 24 24"><path d="M16.36,14C16.44,13.34 16.5,12.68 16.5,12C16.5,11.32 16.44,10.66 16.36,10H19.74C19.9,10.64 20,11.31 20,12C20,12.69 19.9,13.36 19.74,14M14.59,19.56C15.19,18.45 15.65,17.25 15.97,16H18.92C17.96,17.65 16.43,18.93 14.59,19.56M14.34,14H9.66C9.56,13.34 9.5,12.68 9.5,12C9.5,11.32 9.56,10.65 9.66,10H14.34C14.43,10.65 14.5,11.32 14.5,12C14.5,12.68 14.43,13.34 14.34,14M12,19.96C11.17,18.76 10.5,17.43 10.09,16H13.91C13.5,17.43 12.83,18.76 12,19.96M8,8H5.08C6.03,6.34 7.57,5.06 9.4,4.44C8.8,5.55 8.35,6.75 8,8M5.08,16H8C8.35,17.25 8.8,18.45 9.4,19.56C7.57,18.93 6.03,17.65 5.08,16M4.26,14C4.1,13.36 4,12.69 4,12C4,11.31 4.1,10.64 4.26,10H7.64C7.56,10.66 7.5,11.32 7.5,12C7.5,12.68 7.56,13.34 7.64,14M12,4.03C12.83,5.23 13.5,6.57 13.91,8H10.09C10.5,6.57 11.17,5.23 12,4.03M18.92,8H15.97C15.65,6.75 15.19,5.55 14.59,4.44C16.43,5.07 17.96,6.34 18.92,8M12,2C6.47,2 2,6.5 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"></path></svg></a>
+                            <a class="icon" href="https://github.com/bqardi" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z"></path></svg></a>
+                            <a class="icon" href="https://www.facebook.com/sune.seifert" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z"></path></svg></a>
+                        </nav>
+                    </div>
+                    <div class="author">
+                        Webdesign <span class="author__name">Sune Seifert</span>, 2020
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

@@ -26,17 +26,17 @@
                             </a>
                         </div>
                         <nav class="burger">
-                            <a id="burger" class="icon" href="#">
+                            <a id="burger" class="icon" href="#" aria-label="Menu">
                                 <svg viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"></path></svg>
                             </a>
                         </nav>
                     </div>
                 </div>
-                <nav id="navigation-burger" class="navigation navigation--main">
+                <nav id="navigation-burger" class="navigation navigation--column navigation--main">
                     <h2 class="navigation__title">Menu</h2>
                     <a class="navigation__link" href="index.html" id="active-page">Lær at løse</a>
-                    <a class="navigation__link" href="algorithms.html">Algoritmer</a>
-                    <a class="navigation__link" href="types.html">Typer</a>
+                    <a class="navigation__link" href="my-method.html">Min metode</a>
+                    <a class="navigation__link desktop-only-flex" href="https://bqardi.dk/unity-games/dummycube/index.html">Online terning</a>
                     <a class="navigation__link" href="timer.html">Timer</a>
                 </nav>
             </header>
@@ -66,19 +66,19 @@
                             </div>
                         </div>
                     </div>
-                    <div class="main__page-navigation">
+                    <!-- <div class="main__page-navigation">
                         <a href="index.html" class="main__page-navigation-button cube__side-orange">Lær at løse</a>
                         <a href="algorithms.html" class="main__page-navigation-button cube__side-red">Algoritmer</a>
                         <a href="types.html" class="main__page-navigation-button cube__side-green">Typer</a>
                         <a href="timer.html" class="main__page-navigation-button cube__side-blue">Timer</a>
-                    </div>
+                    </div> -->
                     <div class="main__placement">
                         <div id="start" class="anchor">
                             <h1>Lær at løse</h1>
                         </div>
                         <nav class="page-navigation">
                             <h3>Spring til de forskellige sektioner</h3>
-                            <ul>
+                            <ul class="page-navigation__list">
                                 <li><a href="#solution">Spring direkte til løsningen</a></li>
                                 <li><a href="#daisy">Daisy / Marguerit</a></li>
                                 <li><a href="#white-cross">Det hvide kryds</a></li>
@@ -106,7 +106,7 @@
                         <p>
                             Du kan finde en liste over de algoritmer, jeg personligt bruger/foretrækker og jeg vil også vise lidt alternative algoritmer du kan bruge til at løse den samme udfordring.
                         </p>
-                        <p>
+                        <p class="desktop-only">
                             Du kan også finde et lille program, jeg har lavet i Unity, hvor du kan prøve at løse en professor terning på tid, ved at pege med musen på en side og så dreje med WASD tasterne på keyboardet (er kun tilgængelig på stor skærm/desktop).
                         </p>
                         <p>
@@ -397,6 +397,46 @@
                             <div class="cube-example">
                                 <div class="cube-example__wrapper cube-example__top">
                                     <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-white"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"><svg class="cube-example__pointer cube-example__pointer-dark" viewBox="0 0 24 24"><path d="M9,4H15V12H19.84L12,19.84L4.16,12H9V4Z"></path></svg></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                </div>
+                                <div class="cube-example__wrapper cube-example__front">
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-white"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                </div>
+                                <div class="cube-example__wrapper cube-example__right">
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube__side-turn cube__example-turn cube__side-turn-cw"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="cube-example__notation"><svg class="icon cube-example__valid-icon" viewBox="0 0 24 24"><path d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z"></path></svg>R<span class="cube-example__notation-text">Når top siden drejes så der er en "tom" plads (pilen), kan højre side drejes</span></h3>
+                        <hr class="separator">
+                        <div class="cube-example-container">
+                            <div class="cube-example">
+                                <div class="cube-example__wrapper cube-example__top">
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
                                     <div class="cube-example__piece cube-example__piece-none"></div>
                                     <div class="cube-example__piece cube-example__piece-none"></div>
                                     <div class="cube-example__piece cube-example__piece-none"></div>
@@ -435,90 +475,9 @@
                         </div>
                         <h3 class="cube-example__notation"><svg class="icon cube-example__invalid-icon" viewBox="0 0 24 24"><path d="M20 6.91L17.09 4L12 9.09L6.91 4L4 6.91L9.09 12L4 17.09L6.91 20L12 14.91L17.09 20L20 17.09L14.91 12L20 6.91Z"></path></svg>R<span class="cube-example__notation-text">Den øverste hvide brik (pilen) "forsvinder", hvis du drejer højre side</span></h3>
                         <hr class="separator">
-                        <div class="cube-example-container">
-                            <div class="cube-example">
-                                <div class="cube-example__wrapper cube-example__top">
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-white"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"><svg class="cube-example__pointer cube-example__pointer-dark" viewBox="0 0 24 24"><path d="M9,4H15V12H19.84L12,19.84L4.16,12H9V4Z"></path></svg></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                </div>
-                                <div class="cube-example__wrapper cube-example__front">
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-white"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                </div>
-                                <div class="cube-example__wrapper cube-example__right">
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube__side-turn cube__example-turn cube__side-turn-cw"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <h3 class="cube-example__notation"><svg class="icon cube-example__valid-icon" viewBox="0 0 24 24"><path d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z"></path></svg>R<span class="cube-example__notation-text">Når top siden drejes så der er en "tom" plads (pilen), kan højre side drejes</span></h3>
-                        <hr class="separator">
                         <p>
                             Hvis den hvide kant-brik er i venstre side, skal du blot gøre det samme, bare for venstre side i stedet for højre:
                         </p>
-                        <div class="cube-example-container">
-                            <div class="cube-example">
-                                <div class="cube-example__wrapper cube-example__top">
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-white"><svg class="cube-example__pointer cube-example__pointer-dark" viewBox="0 0 24 24"><path d="M9,4H15V12H19.84L12,19.84L4.16,12H9V4Z"></path></svg></div>
-                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                </div>
-                                <div class="cube-example__wrapper cube-example__front">
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-white"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                </div>
-                                <div class="cube-example__wrapper cube-example__right">
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <h3 class="cube-example__notation">
-                            <svg class="icon cube-example__invalid-icon" viewBox="0 0 24 24"><path d="M20 6.91L17.09 4L12 9.09L6.91 4L4 6.91L9.09 12L4 17.09L6.91 20L12 14.91L17.09 20L20 17.09L14.91 12L20 6.91Z"></path></svg>L'<span class="cube-example__notation-text">Den øverste hvide brik (pilen) "forsvinder", hvis du drejer venstre side</span>
-                        </h3>
-                        <hr class="separator">
                         <div class="cube-example-container">
                             <div class="cube-example">
                                 <div class="cube-example__wrapper cube-example__top">
@@ -558,6 +517,47 @@
                         </div>
                         <h3 class="cube-example__notation">
                             <svg class="icon cube-example__valid-icon" viewBox="0 0 24 24"><path d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z"></path></svg>L'<span class="cube-example__notation-text">Når top siden drejes så der er en "tom" plads (pilen), kan venstre side drejes</span>
+                        </h3>
+                        <hr class="separator">
+                        <div class="cube-example-container">
+                            <div class="cube-example">
+                                <div class="cube-example__wrapper cube-example__top">
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-white"><svg class="cube-example__pointer cube-example__pointer-dark" viewBox="0 0 24 24"><path d="M9,4H15V12H19.84L12,19.84L4.16,12H9V4Z"></path></svg></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                </div>
+                                <div class="cube-example__wrapper cube-example__front">
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-white"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                </div>
+                                <div class="cube-example__wrapper cube-example__right">
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="cube-example__notation">
+                            <svg class="icon cube-example__invalid-icon" viewBox="0 0 24 24"><path d="M20 6.91L17.09 4L12 9.09L6.91 4L4 6.91L9.09 12L4 17.09L6.91 20L12 14.91L17.09 20L20 17.09L14.91 12L20 6.91Z"></path></svg>L'<span class="cube-example__notation-text">Den øverste hvide brik (pilen) "forsvinder", hvis du drejer venstre side</span>
                         </h3>
                         <hr class="separator">
                         <p>
@@ -613,47 +613,6 @@
                                     <div class="cube-example__piece cube-example__piece-none"></div>
                                     <div class="cube-example__piece cube-example__piece-none"></div>
                                     <div class="cube-example__piece cube-example__piece-yellow"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-white"><svg class="cube-example__pointer cube-example__pointer-dark" viewBox="0 0 24 24"><path d="M9,4H15V12H19.84L12,19.84L4.16,12H9V4Z"></path></svg></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                </div>
-                                <div class="cube-example__wrapper cube-example__front">
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-white"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                </div>
-                                <div class="cube-example__wrapper cube-example__right">
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <h3 class="cube-example__notation">
-                            <svg class="icon cube-example__invalid-icon" viewBox="0 0 24 24"><path d="M20 6.91L17.09 4L12 9.09L6.91 4L4 6.91L9.09 12L4 17.09L6.91 20L12 14.91L17.09 20L20 17.09L14.91 12L20 6.91Z"></path></svg>F' U' R<span class="cube-example__notation-text">Den øverste hvide brik (pilen) "forsvinder", hvis du udfører algoritmen</span>
-                        </h3>
-                        <hr class="separator">
-                        <div class="cube-example-container">
-                            <div class="cube-example">
-                                <div class="cube-example__wrapper cube-example__top">
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
                                     <div class="cube-example__piece cube-example__piece-white"></div>
                                     <div class="cube-example__piece cube-example__piece-none"></div>
                                     <div class="cube-example__piece cube-example__piece-none"><svg class="cube-example__pointer cube-example__pointer-dark" viewBox="0 0 24 24"><path d="M9,4H15V12H19.84L12,19.84L4.16,12H9V4Z"></path></svg></div>
@@ -685,6 +644,47 @@
                         </div>
                         <h3 class="cube-example__notation">
                             <svg class="icon cube-example__valid-icon" viewBox="0 0 24 24"><path d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z"></path></svg>F' U' R<span class="cube-example__notation-text">Når top siden drejes så der er en "tom" plads (pilen), kan algoritmen udføres</span>
+                        </h3>
+                        <hr class="separator">
+                        <div class="cube-example-container">
+                            <div class="cube-example">
+                                <div class="cube-example__wrapper cube-example__top">
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-white"><svg class="cube-example__pointer cube-example__pointer-dark" viewBox="0 0 24 24"><path d="M9,4H15V12H19.84L12,19.84L4.16,12H9V4Z"></path></svg></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                </div>
+                                <div class="cube-example__wrapper cube-example__front">
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-white"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                </div>
+                                <div class="cube-example__wrapper cube-example__right">
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="cube-example__notation">
+                            <svg class="icon cube-example__invalid-icon" viewBox="0 0 24 24"><path d="M20 6.91L17.09 4L12 9.09L6.91 4L4 6.91L9.09 12L4 17.09L6.91 20L12 14.91L17.09 20L20 17.09L14.91 12L20 6.91Z"></path></svg>F' U' R<span class="cube-example__notation-text">Den øverste hvide brik (pilen) "forsvinder", hvis du udfører algoritmen</span>
                         </h3>
                         <hr class="separator">
                         <p>
@@ -2325,6 +2325,10 @@
                         <p>
                             Du har nu løst terningen og du er en superhelt. Nu kan du prøve <a href="timer.html">timeren</a> og se hvor hurtig du er til at løse den.
                         </p>
+                        <p>
+                            Min personlige rekord er <strong>23,61 sekunder</strong>, verdensrekorden bliver slået med jævne mellemrum og favoritten pt. er Feliks Zemdegs med en tid på <strong>4,167 sekunder</strong>, men den er blevet slået af en meget
+                            heldig cuber, Yusheng Du, med en tid på <a href="https://ruwix.com/blog/yusheng-du-record-347/">3,47 sekunder</a>. Det hurtigste solve jeg har set, blev løst af en maskine i løbet af <strong>0,38 sekunder</strong>!
+                        </p>
                     </div>
                 </div>
             </main>
@@ -2333,17 +2337,16 @@
             <div class="footer__background">
                 <div class="footer__placement">
                     <div class="footer__navigation">
-                        <nav class="footer__navigation-links navigation">
-                            <a href="#start">Lær at løse</a>
-                            <a href="algorithms.html">Algoritmer</a>
-                            <a href="types.html">Typer</a>
+                        <nav class="footer__navigation-links navigation navigation--column">
+                            <a href="index.html">Lær at løse</a>
+                            <a href="my-method.html">Min metode</a>
+                            <a class="desktop-only-flex" href="https://bqardi.dk/unity-games/dummycube/index.html">Online terning</a>
                             <a href="timer.html">Timer</a>
                         </nav>
                         <nav class="footer__navigation-social">
-                            <a class="icon" href="#"><svg viewBox="0 0 24 24"><path d="M16.36,14C16.44,13.34 16.5,12.68 16.5,12C16.5,11.32 16.44,10.66 16.36,10H19.74C19.9,10.64 20,11.31 20,12C20,12.69 19.9,13.36 19.74,14M14.59,19.56C15.19,18.45 15.65,17.25 15.97,16H18.92C17.96,17.65 16.43,18.93 14.59,19.56M14.34,14H9.66C9.56,13.34 9.5,12.68 9.5,12C9.5,11.32 9.56,10.65 9.66,10H14.34C14.43,10.65 14.5,11.32 14.5,12C14.5,12.68 14.43,13.34 14.34,14M12,19.96C11.17,18.76 10.5,17.43 10.09,16H13.91C13.5,17.43 12.83,18.76 12,19.96M8,8H5.08C6.03,6.34 7.57,5.06 9.4,4.44C8.8,5.55 8.35,6.75 8,8M5.08,16H8C8.35,17.25 8.8,18.45 9.4,19.56C7.57,18.93 6.03,17.65 5.08,16M4.26,14C4.1,13.36 4,12.69 4,12C4,11.31 4.1,10.64 4.26,10H7.64C7.56,10.66 7.5,11.32 7.5,12C7.5,12.68 7.56,13.34 7.64,14M12,4.03C12.83,5.23 13.5,6.57 13.91,8H10.09C10.5,6.57 11.17,5.23 12,4.03M18.92,8H15.97C15.65,6.75 15.19,5.55 14.59,4.44C16.43,5.07 17.96,6.34 18.92,8M12,2C6.47,2 2,6.5 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"></path></svg></a>
-                            <a class="icon" href="#"><svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z"></path></svg></a>
-                            <a class="icon" href="#"><svg viewBox="0 0 24 24"><path d="M21.35,11.1H12.18V13.83H18.69C18.36,17.64 15.19,19.27 12.19,19.27C8.36,19.27 5,16.25 5,12C5,7.9 8.2,4.73 12.2,4.73C15.29,4.73 17.1,6.7 17.1,6.7L19,4.72C19,4.72 16.56,2 12.1,2C6.42,2 2.03,6.8 2.03,12C2.03,17.05 6.16,22 12.25,22C17.6,22 21.5,18.33 21.5,12.91C21.5,11.76 21.35,11.1 21.35,11.1V11.1Z"></path></svg></a>
-                            <a class="icon" href="#"><svg viewBox="0 0 24 24"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z"></path></svg></a>
+                            <a class="icon" href="https://bqardi.dk" aria-label="Homepage"><svg viewBox="0 0 24 24"><path d="M16.36,14C16.44,13.34 16.5,12.68 16.5,12C16.5,11.32 16.44,10.66 16.36,10H19.74C19.9,10.64 20,11.31 20,12C20,12.69 19.9,13.36 19.74,14M14.59,19.56C15.19,18.45 15.65,17.25 15.97,16H18.92C17.96,17.65 16.43,18.93 14.59,19.56M14.34,14H9.66C9.56,13.34 9.5,12.68 9.5,12C9.5,11.32 9.56,10.65 9.66,10H14.34C14.43,10.65 14.5,11.32 14.5,12C14.5,12.68 14.43,13.34 14.34,14M12,19.96C11.17,18.76 10.5,17.43 10.09,16H13.91C13.5,17.43 12.83,18.76 12,19.96M8,8H5.08C6.03,6.34 7.57,5.06 9.4,4.44C8.8,5.55 8.35,6.75 8,8M5.08,16H8C8.35,17.25 8.8,18.45 9.4,19.56C7.57,18.93 6.03,17.65 5.08,16M4.26,14C4.1,13.36 4,12.69 4,12C4,11.31 4.1,10.64 4.26,10H7.64C7.56,10.66 7.5,11.32 7.5,12C7.5,12.68 7.56,13.34 7.64,14M12,4.03C12.83,5.23 13.5,6.57 13.91,8H10.09C10.5,6.57 11.17,5.23 12,4.03M18.92,8H15.97C15.65,6.75 15.19,5.55 14.59,4.44C16.43,5.07 17.96,6.34 18.92,8M12,2C6.47,2 2,6.5 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"></path></svg></a>
+                            <a class="icon" href="https://github.com/bqardi" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z"></path></svg></a>
+                            <a class="icon" href="https://www.facebook.com/sune.seifert" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z"></path></svg></a>
                         </nav>
                     </div>
                     <div class="author">

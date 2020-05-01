@@ -118,6 +118,11 @@ a.icon:hover svg {
     margin: 40px 0;
 }
 
+.desktop-only,
+.desktop-only-flex {
+    display: none !important;
+}
+
 
 /* #endregion BASE/GLOBAL */
 
@@ -168,6 +173,10 @@ a.icon:hover svg {
     align-items: center;
     height: 100%;
     padding: 0 1rem;
+}
+
+.burger {
+    display: block;
 }
 
 .header__logo {
@@ -254,6 +263,11 @@ a.main__page-navigation-button:hover {
     margin: 20px 0 30px;
 }
 
+.page-navigation__list li,
+.page-navigation__list li a {
+    padding: 0.25rem 0;
+}
+
 
 /* #endregion MAIN STYLING */
 
@@ -262,6 +276,9 @@ a.main__page-navigation-button:hover {
 
 .navigation {
     display: flex;
+}
+
+.navigation--column {
     flex-direction: column;
 }
 
@@ -320,7 +337,8 @@ a.main__page-navigation-button:hover {
     border: 1px solid var(--theme-dark);
     border-radius: 0.5rem;
     padding: 0.25rem 1rem;
-    margin: 1rem 0;
+    margin: 1rem auto;
+    max-width: 500px;
 }
 
 .algorithm__title {
@@ -349,17 +367,52 @@ a.main__page-navigation-button:hover {
     }
     a.main__page-navigation-button {
         height: 23vw;
-        /* border: 2px solid var(--theme-darkest);
-        border-radius: 12px;
-        display: flex;
-        flex-direction: column;
+    }
+    .main__placement,
+    .footer__placement {
+        padding: 2rem 10%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .desktop-only {
+        display: initial !important;
+    }
+    .desktop-only-flex {
+        display: flex !important;
+    }
+    .burger {
+        display: none;
+    }
+    #active-page {
+        color: var(--theme-mid);
+        background-color: unset;
+    }
+    #active-page:hover {
+        color: var(--theme-darkest);
+        background-color: unset;
+    }
+    .navigation--main {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: unset;
+        flex-direction: row;
         justify-content: flex-end;
-        align-content: flex-end;
-        padding: 10px;
-        color: var(--theme-light);
-        text-decoration: none;
-        font-size: 1.1rem;
-        cursor: pointer;
-        transition: opacity 150ms; */
+        background-color: unset;
+    }
+    .navigation__title {
+        display: none;
+    }
+    .navigation__link {
+        display: flex;
+        justify-content: center;
+        padding: 0.75rem 1rem 0.75rem 0;
+        width: unset;
+    }
+    .navigation__link:hover {
+        color: var(--theme-darkest);
+        background-color: unset;
+        font-weight: unset;
     }
 }
