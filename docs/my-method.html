@@ -73,50 +73,1444 @@
                         <a href="timer.html" class="main__page-navigation-button cube__side-blue">Timer</a>
                     </div> -->
                     <div class="main__placement">
-                        <div class="algorithm-container">
-                            <div class="cube-example-container">
-                                <div class="cube-example">
-                                    <div class="cube-example__wrapper cube-example__top">
-                                        <div class="cube-example__piece cube-example__piece-none"></div>
-                                        <div class="cube-example__piece cube-example__piece-none"></div>
-                                        <div class="cube-example__piece cube-example__piece-none"></div>
-                                        <div class="cube-example__piece cube-example__piece-none"></div>
-                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
-                                        <div class="cube-example__piece cube-example__piece-white"></div>
-                                        <div class="cube-example__piece cube-example__piece-none"></div>
-                                        <div class="cube-example__piece cube-example__piece-none"></div>
-                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                        <h1>Min metode</h1>
+                        <h2>Det hvide kryds</h2>
+                        <p>
+                            Jeg starter altid med det hvide kryds og med lidt træning kan den løses rigtig hurtigt ved at holde den hvide side nedad og huske hvor de hvide kantbrikker skal placeres og så dreje dem på plads (faktisk i blinde).
+                        </p>
+                        <p>
+                            Jo færre gange man drejer hele terningen, jo mere overblik har man og jo hurtigere kan terningen løses.
+                        </p>
+                        <h2>F2L</h2>
+                        <p>
+                            Dette stadie er mere eller mindre en kombination af <a href="index.html#white-corners">de hvide hjørner</a> og <a href="index.html#second-layer">andet lag</a>, hvor man på denne måde løser to lag på én gang. Denne metode kaldes
+                            <a href="https://ruwix.com/the-rubiks-cube/advanced-cfop-fridrich/first-two-layers-f2l/">F2L eller First 2 Layers</a>.
+                        </p>
+                        <h2>2 Look OLL</h2>
+                        <p>
+                            OLL står for Orientation of Last Layer, som er en metode til at orientere top laget, så alle brikkerne vender rigtigt (men ikke nødvendigvis placeret korrekt). OLL kræver at man lærer 57 forskellige algoritmer og kan være en mundfuld.
+                        </p>
+                        <p>
+                            Der findes derfor også en lettere metode som kaldes 2 Look OLL og denne metode er en mellemting mellem begyndermetoden og den svære OLL. 2 Look OLL kræver kun at man lærer 9 algoritmer, men udføres i to steps og er derfor en smule langsommere end OLL.
+                        </p>
+                        <p>
+                            Første step i 2 Look OLL kender du sikkert fra begyndermetoden og er stort set den samme som når du løser <a href="index.html#yellow-cross">det gule kryds</a> (F R U R' U' F'), men en smule mere effektiv da vi tilføjer en ekstra
+                            algoritme (F U R U' R' F'), så vi kan løse krydset hurtigere:
+                        </p>
+                        <h3>Første step</h3>
+                        <div class="cube-example-grid">
+                            <div class="cube-example-2d__wrapper">
+                                <div class="cube-example-2d__cube">
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                </div>
+                            </div>
+                            <strong class="cube-example-2d__algorithm">[F (R U R' U') F'] U2 [F (U R U' R') F']</strong>
+                        </div>
+                        <div class="cube-example-grid">
+                            <div class="cube-example-2d__wrapper">
+                                <div class="cube-example-2d__cube">
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                </div>
+                            </div>
+                            <strong class="cube-example-2d__algorithm">[F (U R U' R') F']</strong>
+                        </div>
+                        <div class="cube-example-grid">
+                            <div class="cube-example-2d__wrapper">
+                                <div class="cube-example-2d__cube">
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                </div>
+                            </div>
+                            <strong class="cube-example-2d__algorithm">[F (R U R' U') F']</strong>
+                        </div>
+                        <div class="cube-example-grid">
+                            <div class="cube-example-2d__wrapper">
+                                <div class="cube-example-2d__cube">
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                </div>
+                            </div>
+                            <p class="cube-example-2d__algorithm">Resultat af udførelsen af hver af ovenstående scenarier</p>
+                        </div>
+                        <h3>Andet step</h3>
+                        <p>
+                            Her har vi brug for at lære 7 algoritmer mere for at orientere alle brikkerne i top laget korrekt (så gul flade vender opad på alle brikkerne):
+                        </p>
+                        <div class="cube-example-grid">
+                            <div class="cube-example-2d__wrapper">
+                                <div class="cube-example-2d__cube">
+                                    <div class="cube-example__piece cube-example__piece-none">
+                                        <div class="cube-example__piece-side-up cube-example__piece-yellow"></div>
                                     </div>
-                                    <div class="cube-example__wrapper cube-example__front">
-                                        <div class="cube-example__piece cube-example__piece-none"></div>
-                                        <div class="cube-example__piece cube-example__piece-none"></div>
-                                        <div class="cube-example__piece cube-example__piece-none"></div>
-                                        <div class="cube-example__piece cube-example__piece-none"></div>
-                                        <div class="cube-example__piece cube-example__piece-none"></div>
-                                        <div class="cube-example__piece cube-example__piece-white"></div>
-                                        <div class="cube-example__piece cube-example__piece-none"></div>
-                                        <div class="cube-example__piece cube-example__piece-none"></div>
-                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none">
+                                        <div class="cube-example__piece-side-right cube-example__piece-yellow"></div>
                                     </div>
-                                    <div class="cube-example__wrapper cube-example__right">
-                                        <div class="cube-example__piece cube-example__piece-none"></div>
-                                        <div class="cube-example__piece cube-example__piece-none"></div>
-                                        <div class="cube-example__piece cube-example__piece-none"></div>
-                                        <div class="cube-example__piece cube-example__piece-none"></div>
-                                        <div class="cube-example__piece cube-example__piece-none"></div>
-                                        <div class="cube-example__piece cube-example__piece-none"></div>
-                                        <div class="cube-example__piece cube-example__piece-none"></div>
-                                        <div class="cube-example__piece cube-example__piece-none"></div>
-                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none">
+                                        <div class="cube-example__piece-side-down cube-example__piece-yellow"></div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="algorithm algorithm--block">
-                                <span class="algorithm__title">Algoritme navn:</span>
-                                <span class="algorithm__name">Sune</span>
-                                <div class="algorithm__notation">R U R' U R U2 R'</div>
+                            <strong class="cube-example-2d__algorithm">R U R' U R U2 R'</strong>
+                        </div>
+                        <div class="cube-example-grid">
+                            <div class="cube-example-2d__wrapper">
+                                <div class="cube-example-2d__cube">
+                                    <div class="cube-example__piece cube-example__piece-none">
+                                        <div class="cube-example__piece-side-left cube-example__piece-yellow"></div>
+                                    </div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none">
+                                        <div class="cube-example__piece-side-down cube-example__piece-yellow"></div>
+                                    </div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none">
+                                        <div class="cube-example__piece-side-right cube-example__piece-yellow"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <strong class="cube-example-2d__algorithm">R U2 R' U R U R'</strong>
+                        </div>
+                        <div class="cube-example-grid">
+                            <div class="cube-example-2d__wrapper">
+                                <div class="cube-example-2d__cube">
+                                    <div class="cube-example__piece cube-example__piece-none">
+                                        <div class="cube-example__piece-side-up cube-example__piece-yellow"></div>
+                                    </div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none">
+                                        <div class="cube-example__piece-side-down cube-example__piece-yellow"></div>
+                                    </div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                </div>
+                            </div>
+                            <strong class="cube-example-2d__algorithm">r U R' U' L' U R U' x'</strong>
+                        </div>
+                        <div class="cube-example-grid">
+                            <div class="cube-example-2d__wrapper">
+                                <div class="cube-example-2d__cube">
+                                    <div class="cube-example__piece cube-example__piece-none">
+                                        <div class="cube-example__piece-side-left cube-example__piece-yellow"></div>
+                                    </div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none">
+                                        <div class="cube-example__piece-side-down cube-example__piece-yellow"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <strong class="cube-example-2d__algorithm">F' (r U R' U') r' F R</strong>
+                        </div>
+                        <div class="cube-example-grid">
+                            <div class="cube-example-2d__wrapper">
+                                <div class="cube-example-2d__cube">
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none">
+                                        <div class="cube-example__piece-side-down cube-example__piece-yellow"></div>
+                                    </div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none">
+                                        <div class="cube-example__piece-side-down cube-example__piece-yellow"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <strong class="cube-example-2d__algorithm">R2 D R' U2 R D' R' U2 R'</strong>
+                        </div>
+                        <div class="cube-example-grid">
+                            <div class="cube-example-2d__wrapper">
+                                <div class="cube-example-2d__cube">
+                                    <div class="cube-example__piece cube-example__piece-none">
+                                        <div class="cube-example__piece-side-up cube-example__piece-yellow"></div>
+                                    </div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none">
+                                        <div class="cube-example__piece-side-up cube-example__piece-yellow"></div>
+                                    </div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none">
+                                        <div class="cube-example__piece-side-down cube-example__piece-yellow"></div>
+                                    </div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none">
+                                        <div class="cube-example__piece-side-down cube-example__piece-yellow"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <strong class="cube-example-2d__algorithm">F (R U R' U') (R U R' U') (R U R' U') F'</strong>
+                        </div>
+                        <div class="cube-example-grid">
+                            <div class="cube-example-2d__wrapper">
+                                <div class="cube-example-2d__cube">
+                                    <div class="cube-example__piece cube-example__piece-none">
+                                        <div class="cube-example__piece-side-left cube-example__piece-yellow"></div>
+                                    </div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none">
+                                        <div class="cube-example__piece-side-up cube-example__piece-yellow"></div>
+                                    </div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none">
+                                        <div class="cube-example__piece-side-left cube-example__piece-yellow"></div>
+                                    </div>
+                                    <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    <div class="cube-example__piece cube-example__piece-none">
+                                        <div class="cube-example__piece-side-down cube-example__piece-yellow"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <strong class="cube-example-2d__algorithm">R U2 R2 U' R2 U' R2 U2 R</strong>
+                        </div>
+                        <h2>PLL</h2>
+                        <p>
+                            PLL står for Permutate Last Layer og betyder blot at man flytter rundt på brikkerne uden at vende dem.
+                        </p>
+                        <p>
+                            Her skal man lære 21 algoritmer og efter udførelsen har man en komplet løst terning.
+                        </p>
+                        <P>
+                            Her er de 21 algoritmer:
+                        </P>
+                        <div class="cube-example-grid">
+                            <div class="cube-example-container cube-example-small cube-example--margin-top">
+                                <div class="cube-example">
+                                    <div class="cube-example__wrapper cube-example__top">
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-red">
+                                                <div class="cube-example__piece-top-left-offset cube-example__piece-green"></div>
+                                            </div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-green"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-red"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-left cube-example__piece-orange"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-left cube-example__piece-orange"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__front">
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-green"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__right">
+                                        <div class="cube-example__piece cube-example__piece-orange"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cube-example-2d__algorithm">
+                                <h3>A-Perm : a</h3>
+                                <strong>l' U R' D2 R U' R' D2 R l</strong>
                             </div>
                         </div>
+                        <hr class="separator">
+                        <div class="cube-example-grid">
+                            <div class="cube-example-container cube-example-small cube-example--margin-top">
+                                <div class="cube-example">
+                                    <div class="cube-example__wrapper cube-example__top">
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-blue">
+                                                <div class="cube-example__piece-top-left-offset cube-example__piece-red"></div>
+                                            </div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-green"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-orange"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-left cube-example__piece-orange"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-left cube-example__piece-orange"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__front">
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__right">
+                                        <div class="cube-example__piece cube-example__piece-green"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-green"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cube-example-2d__algorithm">
+                                <h3>A-Perm : b</h3>
+                                <strong>l' R' D2 R U R' D2 R U' l</strong>
+                            </div>
+                        </div>
+                        <hr class="separator">
+                        <div class="cube-example-grid">
+                            <div class="cube-example-container cube-example-small cube-example--margin-top">
+                                <div class="cube-example">
+                                    <div class="cube-example__wrapper cube-example__top">
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-orange">
+                                                <div class="cube-example__piece-top-left-offset cube-example__piece-blue"></div>
+                                            </div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-green"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-red"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-left cube-example__piece-orange"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-left cube-example__piece-green"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__front">
+                                        <div class="cube-example__piece cube-example__piece-orange"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__right">
+                                        <div class="cube-example__piece cube-example__piece-green"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cube-example-2d__algorithm">
+                                <h3>E-Perm</h3>
+                                <strong>x' R U' R' D R U R' D' R U R' D R U' R' D' X</strong>
+                            </div>
+                        </div>
+                        <hr class="separator">
+                        <div class="cube-example-grid">
+                            <div class="cube-example-container cube-example-small cube-example--margin-top">
+                                <div class="cube-example">
+                                    <div class="cube-example__wrapper cube-example__top">
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-green">
+                                                <div class="cube-example__piece-top-left-offset cube-example__piece-orange"></div>
+                                            </div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-blue"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-red"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-left cube-example__piece-orange"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-left cube-example__piece-orange"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__front">
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-green"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__right">
+                                        <div class="cube-example__piece cube-example__piece-green"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cube-example-2d__algorithm">
+                                <h3>F-Perm</h3>
+                                <strong>R' U' F' [R U R' U' R' F R2 U' R' U' R U R'] U R</strong>
+                                <p>(R' U' F' [T-Perm uden sidste F'] U R)</p>
+                            </div>
+                        </div>
+                        <hr class="separator">
+                        <div class="cube-example-grid">
+                            <div class="cube-example-container cube-example-small cube-example--margin-top">
+                                <div class="cube-example">
+                                    <div class="cube-example__wrapper cube-example__top">
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-green">
+                                                <div class="cube-example__piece-top-left-offset cube-example__piece-orange"></div>
+                                            </div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-blue"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-red"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-left cube-example__piece-green"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-left cube-example__piece-orange"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__front">
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__right">
+                                        <div class="cube-example__piece cube-example__piece-green"></div>
+                                        <div class="cube-example__piece cube-example__piece-orange"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cube-example-2d__algorithm">
+                                <h3>G-Perm : a</h3>
+                                <strong>R2 U R' U R' U' R U' R2 D U' R' U R D'</strong>
+                            </div>
+                        </div>
+                        <hr class="separator">
+                        <div class="cube-example-grid">
+                            <div class="cube-example-container cube-example-small cube-example--margin-top">
+                                <div class="cube-example">
+                                    <div class="cube-example__wrapper cube-example__top">
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-green">
+                                                <div class="cube-example__piece-top-left-offset cube-example__piece-orange"></div>
+                                            </div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-orange"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-red"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-left cube-example__piece-red"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-left cube-example__piece-orange"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__front">
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-green"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__right">
+                                        <div class="cube-example__piece cube-example__piece-green"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cube-example-2d__algorithm">
+                                <h3>G-Perm : b</h3>
+                                <strong>R' U' R U D' R2 U R' U R U' R U' R2 D</strong>
+                            </div>
+                        </div>
+                        <hr class="separator">
+                        <div class="cube-example-grid">
+                            <div class="cube-example-container cube-example-small cube-example--margin-top">
+                                <div class="cube-example">
+                                    <div class="cube-example__wrapper cube-example__top">
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-green">
+                                                <div class="cube-example__piece-top-left-offset cube-example__piece-orange"></div>
+                                            </div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-red"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-red"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-left cube-example__piece-blue"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-left cube-example__piece-orange"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__front">
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-green"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__right">
+                                        <div class="cube-example__piece cube-example__piece-green"></div>
+                                        <div class="cube-example__piece cube-example__piece-orange"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cube-example-2d__algorithm">
+                                <h3>G-Perm : c</h3>
+                                <strong>R2 U' R U' R U R' U R2 D' U R U' R' D</strong>
+                            </div>
+                        </div>
+                        <hr class="separator">
+                        <div class="cube-example-grid">
+                            <div class="cube-example-container cube-example-small cube-example--margin-top">
+                                <div class="cube-example">
+                                    <div class="cube-example__wrapper cube-example__top">
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-green">
+                                                <div class="cube-example__piece-top-left-offset cube-example__piece-orange"></div>
+                                            </div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-blue"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-red"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-left cube-example__piece-red"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-left cube-example__piece-orange"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__front">
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-orange"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__right">
+                                        <div class="cube-example__piece cube-example__piece-green"></div>
+                                        <div class="cube-example__piece cube-example__piece-green"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cube-example-2d__algorithm">
+                                <h3>G-Perm : d</h3>
+                                <strong>R U R' U' D R2 U' R U' R' U R' U R2 D'</strong>
+                                <p>([Sexy move] D R2 U' R U' R' U R' U R2 D')</p>
+                            </div>
+                        </div>
+                        <hr class="separator">
+                        <div class="cube-example-grid">
+                            <div class="cube-example-container cube-example-small cube-example--margin-top">
+                                <div class="cube-example">
+                                    <div class="cube-example__wrapper cube-example__top">
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-green">
+                                                <div class="cube-example__piece-top-left-offset cube-example__piece-orange"></div>
+                                            </div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-blue"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-green"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-left cube-example__piece-red"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-left cube-example__piece-orange"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__front">
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-green"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__right">
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-orange"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cube-example-2d__algorithm">
+                                <h3>H-Perm</h3>
+                                <strong>M2' U M2' U2 M2' U M2'</strong>
+                            </div>
+                        </div>
+                        <hr class="separator">
+                        <div class="cube-example-grid">
+                            <div class="cube-example-container cube-example-small cube-example--margin-top">
+                                <div class="cube-example">
+                                    <div class="cube-example__wrapper cube-example__top">
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-green">
+                                                <div class="cube-example__piece-top-left-offset cube-example__piece-orange"></div>
+                                            </div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-red"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-red"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-left cube-example__piece-orange"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-left cube-example__piece-orange"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__front">
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__right">
+                                        <div class="cube-example__piece cube-example__piece-green"></div>
+                                        <div class="cube-example__piece cube-example__piece-green"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cube-example-2d__algorithm">
+                                <h3>J-Perm : a</h3>
+                                <strong>x R2 F R F' R U2 r' U r U2 x'</strong>
+                            </div>
+                        </div>
+                        <hr class="separator">
+                        <div class="cube-example-grid">
+                            <div class="cube-example-container cube-example-small cube-example--margin-top">
+                                <div class="cube-example">
+                                    <div class="cube-example__wrapper cube-example__top">
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-green">
+                                                <div class="cube-example__piece-top-left-offset cube-example__piece-orange"></div>
+                                            </div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-green"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-red"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-left cube-example__piece-orange"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-left cube-example__piece-orange"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__front">
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__right">
+                                        <div class="cube-example__piece cube-example__piece-green"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cube-example-2d__algorithm">
+                                <h3>J-Perm : b</h3>
+                                <strong>R U R' F' R U R' U' R' F R2 U' R' U'</strong>
+                                <p>(R U R' F' [Sexy move] R' F R2 U' R' U')</p>
+                            </div>
+                        </div>
+                        <hr class="separator">
+                        <div class="cube-example-grid">
+                            <div class="cube-example-container cube-example-small cube-example--margin-top">
+                                <div class="cube-example">
+                                    <div class="cube-example__wrapper cube-example__top">
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-green">
+                                                <div class="cube-example__piece-top-left-offset cube-example__piece-orange"></div>
+                                            </div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-green"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-blue"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-left cube-example__piece-red"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-left cube-example__piece-red"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__front">
+                                        <div class="cube-example__piece cube-example__piece-green"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__right">
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-orange"></div>
+                                        <div class="cube-example__piece cube-example__piece-orange"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cube-example-2d__algorithm">
+                                <h3>N-Perm : a</h3>
+                                <strong>R U R' U R U R' F' R U R' U' R' F R2 U' R' U2 R U' R'</strong>
+                                <p>(Jeg glemmer ofte den her og bruger [J-Perm : b] to gange i stedet)</p>
+                            </div>
+                        </div>
+                        <hr class="separator">
+                        <div class="cube-example-grid">
+                            <div class="cube-example-container cube-example-small cube-example--margin-top">
+                                <div class="cube-example">
+                                    <div class="cube-example__wrapper cube-example__top">
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-red">
+                                                <div class="cube-example__piece-top-left-offset cube-example__piece-green"></div>
+                                            </div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-orange"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-orange"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-left cube-example__piece-green"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-left cube-example__piece-blue"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__front">
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-orange"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__right">
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-green"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cube-example-2d__algorithm">
+                                <h3>N-Perm : b</h3>
+                                <strong>z D' R U' R2' D R' U D' R U' R2' D R' U z'</strong>
+                            </div>
+                        </div>
+                        <hr class="separator">
+                        <div class="cube-example-grid">
+                            <div class="cube-example-container cube-example-small cube-example--margin-top">
+                                <div class="cube-example">
+                                    <div class="cube-example__wrapper cube-example__top">
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-green">
+                                                <div class="cube-example__piece-top-left-offset cube-example__piece-orange"></div>
+                                            </div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-orange"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-red"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-left cube-example__piece-green"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-left cube-example__piece-orange"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__front">
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__right">
+                                        <div class="cube-example__piece cube-example__piece-green"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cube-example-2d__algorithm">
+                                <h3>R-Perm : a</h3>
+                                <strong>R U R' F' R U2 R' U2 R' F R U R U2 R' U'</strong>
+                            </div>
+                        </div>
+                        <hr class="separator">
+                        <div class="cube-example-grid">
+                            <div class="cube-example-container cube-example-small cube-example--margin-top">
+                                <div class="cube-example">
+                                    <div class="cube-example__wrapper cube-example__top">
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-orange">
+                                                <div class="cube-example__piece-top-left-offset cube-example__piece-blue"></div>
+                                            </div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-red"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-green"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-left cube-example__piece-orange"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-left cube-example__piece-green"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__front">
+                                        <div class="cube-example__piece cube-example__piece-orange"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__right">
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-green"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cube-example-2d__algorithm">
+                                <h3>R-Perm : b</h3>
+                                <strong>R U2 R' U2 R' F R2 U' R' U' R U R' F' R U R' U R U2 R'</strong>
+                                <p>(R U2 R' U2 R' F R2 U' R' U' R U R' F' [Sune])</p>
+                            </div>
+                        </div>
+                        <hr class="separator">
+                        <div class="cube-example-grid">
+                            <div class="cube-example-container cube-example-small cube-example--margin-top">
+                                <div class="cube-example">
+                                    <div class="cube-example__wrapper cube-example__top">
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-green">
+                                                <div class="cube-example__piece-top-left-offset cube-example__piece-orange"></div>
+                                            </div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-green"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-red"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-left cube-example__piece-red"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-left cube-example__piece-orange"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__front">
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__right">
+                                        <div class="cube-example__piece cube-example__piece-green"></div>
+                                        <div class="cube-example__piece cube-example__piece-orange"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cube-example-2d__algorithm">
+                                <h3>T-Perm</h3>
+                                <strong>R U R' U' R' F R2 U' R' U' R U R' F'</strong>
+                                <p>([Sexy move] R' F R2 U' R' U' R U R' F')</p>
+                            </div>
+                        </div>
+                        <hr class="separator">
+                        <div class="cube-example-grid">
+                            <div class="cube-example-container cube-example-small cube-example--margin-top">
+                                <div class="cube-example">
+                                    <div class="cube-example__wrapper cube-example__top">
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-green">
+                                                <div class="cube-example__piece-top-left-offset cube-example__piece-orange"></div>
+                                            </div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-green"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-green"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-left cube-example__piece-blue"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-left cube-example__piece-orange"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__front">
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__right">
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-orange"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cube-example-2d__algorithm">
+                                <h3>U-Perm : a</h3>
+                                <strong>M2 U M U2 M' U M2</strong>
+                            </div>
+                        </div>
+                        <hr class="separator">
+                        <div class="cube-example-grid">
+                            <div class="cube-example-container cube-example-small cube-example--margin-top">
+                                <div class="cube-example">
+                                    <div class="cube-example__wrapper cube-example__top">
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-green">
+                                                <div class="cube-example__piece-top-left-offset cube-example__piece-orange"></div>
+                                            </div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-green"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-green"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-left cube-example__piece-red"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-left cube-example__piece-orange"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__front">
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-orange"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__right">
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cube-example-2d__algorithm">
+                                <h3>U-Perm : b</h3>
+                                <strong>M2 U' M U2 M' U' M2</strong>
+                            </div>
+                        </div>
+                        <hr class="separator">
+                        <div class="cube-example-grid">
+                            <div class="cube-example-container cube-example-small cube-example--margin-top">
+                                <div class="cube-example">
+                                    <div class="cube-example__wrapper cube-example__top">
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-blue">
+                                                <div class="cube-example__piece-top-left-offset cube-example__piece-red"></div>
+                                            </div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-red"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-green"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-left cube-example__piece-orange"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-left cube-example__piece-orange"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__front">
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-green"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__right">
+                                        <div class="cube-example__piece cube-example__piece-orange"></div>
+                                        <div class="cube-example__piece cube-example__piece-green"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cube-example-2d__algorithm">
+                                <h3>V-Perm</h3>
+                                <strong>z D' R2 D R2 U R' D' R U' R U R' D R U' z'</strong>
+                            </div>
+                        </div>
+                        <hr class="separator">
+                        <div class="cube-example-grid">
+                            <div class="cube-example-container cube-example-small cube-example--margin-top">
+                                <div class="cube-example">
+                                    <div class="cube-example__wrapper cube-example__top">
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-blue">
+                                                <div class="cube-example__piece-top-left-offset cube-example__piece-red"></div>
+                                            </div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-orange"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-green"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-left cube-example__piece-green"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-left cube-example__piece-orange"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__front">
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-green"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__right">
+                                        <div class="cube-example__piece cube-example__piece-orange"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cube-example-2d__algorithm">
+                                <h3>Y-Perm</h3>
+                                <strong>F R U' R' U' R U R' F' (R U R' U') (R' F R F')</strong>
+                                <p>F R U' R' U' R U R' F' [Sexy move] [Sledgehammer]</p>
+                            </div>
+                        </div>
+                        <hr class="separator">
+                        <div class="cube-example-grid">
+                            <div class="cube-example-container cube-example-small cube-example--margin-top">
+                                <div class="cube-example">
+                                    <div class="cube-example__wrapper cube-example__top">
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-green">
+                                                <div class="cube-example__piece-top-left-offset cube-example__piece-orange"></div>
+                                            </div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-orange"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-right cube-example__piece-green"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-left cube-example__piece-green"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow">
+                                            <div class="cube-example__piece-top-left cube-example__piece-orange"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__front">
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__right">
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cube-example-2d__algorithm">
+                                <h3>Z-Perm</h3>
+                                <strong>M2 U M2 U M U2 M2 U2 M U2</strong>
+                            </div>
+                        </div>
+                        <hr class="separator">
                     </div>
                 </div>
             </main>

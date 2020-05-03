@@ -225,6 +225,12 @@
     max-height: calc(var(--cube-example-max-height) / var(--cube-example-divide-factor));
 }
 
+.cube-example-small {
+    --cube-example-divide-factor: 2;
+    /* width: 40%;
+    max-width: 200px; */
+}
+
 .cube-example--margin-top {
     margin-top: 30px;
 }
@@ -249,13 +255,36 @@
     margin: 20px 0;
 }
 
+.cube-example-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+
+/* .cube-example-grid {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 2rem 0;
+} */
+
+.cube-example-2d__algorithm {
+    margin-left: 1rem;
+}
+
 .cube-example-2d__wrapper {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .cube-example-2d__cube {
-    margin: 4px;
+    margin: 20px 4px;
     width: 25vw;
     height: 25vw;
     max-width: 150px;
@@ -338,9 +367,42 @@
 }
 
 .cube-example__piece {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.cube-example__piece-side-up {
+    position: absolute;
+    width: 100%;
+    height: 16%;
+    margin-top: -70%;
+    border: 1px dashed black;
+}
+
+.cube-example__piece-side-down {
+    position: absolute;
+    width: 100%;
+    height: 16%;
+    margin-top: 70%;
+    border: 1px dashed black;
+}
+
+.cube-example__piece-side-right {
+    position: absolute;
+    width: 16%;
+    height: 100%;
+    margin-left: 70%;
+    border: 1px dashed black;
+}
+
+.cube-example__piece-side-left {
+    position: absolute;
+    width: 16%;
+    height: 100%;
+    margin-left: -70%;
+    border: 1px dashed black;
 }
 
 .cube-example__piece-bottom-left {
@@ -372,10 +434,10 @@
 }
 
 .cube-example__piece-top-left-offset {
-    width: 100%;
-    height: 100%;
+    width: 103%;
+    height: 103%;
     border: 1px dashed black;
-    transform: translateX(-125%) translateY(125%);
+    transform: translateX(-120%) translateY(120%);
 }
 
 .cube-example__piece-none {
@@ -437,6 +499,17 @@
     }
     100% {
         transform: rotateZ(var(--pointer-orientation)) translateY(-10px);
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .cube-example-grid {
+        grid-template-columns: minmax(50px, 200px) auto;
+        align-items: center;
+        margin: 2rem 0;
+    }
+    .cube-example-2d__wrapper {
+        align-items: flex-start;
     }
 }
 
