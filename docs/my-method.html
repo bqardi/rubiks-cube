@@ -86,6 +86,308 @@
                             Dette stadie er mere eller mindre en kombination af <a href="index.html#white-corners">de hvide hjørner</a> og <a href="index.html#second-layer">andet lag</a>, hvor man på denne måde løser to lag på én gang. Denne metode kaldes
                             <a href="https://ruwix.com/the-rubiks-cube/advanced-cfop-fridrich/first-two-layers-f2l/">F2L eller First 2 Layers</a>.
                         </p>
+                        <p>
+                            For kort at illustrere hvad det går ud på, vil jeg starte med at vise "ønske scenarierne" og dem er der to af:
+                        </p>
+                        <div class="cube-example-grid">
+                            <div class="cube-example-container cube-example-small cube-example--margin-top">
+                                <div class="cube-example">
+                                    <div class="cube-example__wrapper cube-example__top">
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue">
+                                            <div class="cube-example__piece-top-right cube-example__piece-red"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__front">
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__right">
+                                        <div class="cube-example__piece cube-example__piece-white"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cube-example-2d__algorithm">
+                                <h3>Sexy move</h3>
+                                <strong>R U R' <span class="cube-example-2d__algorithm-irrelevant">U'</span></strong>
+                                <p>(Det røde <span class="cube-example-2d__algorithm-irrelevant">U'</span> er irrelevant, da R U R' alene får de to brikker korrekt ned på plads. Mens det ikke "ødelægger" noget at udføre dette U', er det hurtigere at lade
+                                    være.)
+                                </p>
+                            </div>
+                        </div>
+                        <hr class="separator">
+                        <div class="cube-example-grid">
+                            <div class="cube-example-container cube-example-small cube-example--margin-top">
+                                <div class="cube-example">
+                                    <div class="cube-example__wrapper cube-example__top">
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__front">
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-white"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__right">
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cube-example-2d__algorithm">
+                                <h3>Sexy move inverted</h3>
+                                <strong>U R U' R'</strong>
+                            </div>
+                        </div>
+                        <hr class="separator">
+                        <p>
+                            Ved udførelsen af én af de to "ønske scenarier", får vi "kastet" de to brikker ned på plads i samme move:
+                        </p>
+                        <div class="cube-example-grid">
+                            <div class="cube-example-container cube-example-small cube-example--margin-top">
+                                <div class="cube-example">
+                                    <div class="cube-example__wrapper cube-example__top">
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__front">
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__right">
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cube-example-2d__algorithm">
+                                <h3>Resultat</h3>
+                                <strong>To lag er "kastet" ned i hjørnet på én gang</strong>
+                            </div>
+                        </div>
+                        <hr class="separator">
+                        <p>
+                            Idéen er så at opstille brikkerne så vi får én af de to ønskescenarier, for derefter nemt at kunne "kaste" de to brikker ned på plads i ét move.
+                        </p>
+                        <p>
+                            Opstillingen skal gøres mere eller mindre intuitivt, da der ellers er for mange scenarier/algoritmer der skal læres. Denne opstillingsmetode kræver træning og kendskab til terningen. Man skal vide hvordan man flytter rundt på brikkerne, uden at ødelægge
+                            det man allerede har løst. Tag f.eks. de her scenarier:
+                        </p>
+                        <div class="cube-example-grid">
+                            <div class="cube-example-container cube-example-small cube-example--margin-top">
+                                <div class="cube-example">
+                                    <div class="cube-example__wrapper cube-example__top">
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__front">
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__right">
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cube-example-2d__algorithm">
+                                <h3>Gyldigt move</h3>
+                                <strong>R</strong> og <strong>F'</strong>
+                                <span class="cube-example-2d__algorithm-irrelevant">
+                                    <h3>Ødelæggene move</h3>
+                                    <strong>R'</strong> og <strong>F</strong>
+                                </span>
+                            </div>
+                        </div>
+                        <hr class="separator">
+                        <div class="cube-example-grid">
+                            <div class="cube-example-container cube-example-small cube-example--margin-top">
+                                <div class="cube-example">
+                                    <div class="cube-example__wrapper cube-example__top">
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__front">
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__right">
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cube-example-2d__algorithm">
+                                <h3>Gyldigt move</h3>
+                                <strong>R'</strong>
+                                <span class="cube-example-2d__algorithm-irrelevant">
+                                    <h3>Ødelæggene move</h3>
+                                    <strong>R</strong> og <strong>F</strong> og <strong>F'</strong>
+                                </span>
+                            </div>
+                        </div>
+                        <hr class="separator">
+                        <p>
+                            Hvis man holder øje med hvilke sider man kan rotere uden at ødelægge noget der allerede er løst, er det lige pludselig meget nemmere at flytte rundt på de brikker man har fokus på og opstille dem, så vi f.eks. kan få vores føromtalte "ønskescenarier".
+                        </p>
+                        <p>
+                            Det kan måske være nemmere at forklare med nogle eksempler. Hvis vi starter med opstillingsalgoritmen, kan vi derefter gennemgå hvert step, for at forstå det intuitive aspekt i opstillingsprocessen:
+                        </p>
+                        <div class="cube-example-grid">
+                            <div class="cube-example-container cube-example-small cube-example--margin-top">
+                                <div class="cube-example">
+                                    <div class="cube-example__wrapper cube-example__top">
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none">
+                                            <svg class="cube-example__pointer cube-example__pointer-dark" viewBox="0 0 24 24"><path d="M9,4H15V12H19.84L12,19.84L4.16,12H9V4Z"></path></svg>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue">
+                                            <div class="cube-example__piece-top-left cube-example__piece-red"></div>
+                                        </div>
+                                        <div class="cube-example__piece cube-example__piece-yellow"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-red">
+                                            <svg class="cube-example__pointer cube-example__pointer-dark" viewBox="0 0 24 24"><path d="M9,4H15V12H19.84L12,19.84L4.16,12H9V4Z"></path></svg>
+                                        </div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__front">
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-blue"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                    </div>
+                                    <div class="cube-example__wrapper cube-example__right">
+                                        <div class="cube-example__piece cube-example__piece-white"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-none"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                        <div class="cube-example__piece cube-example__piece-red"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cube-example-2d__algorithm">
+                                <h3>Opstillingsalgoritme:</h3>
+                                <strong>U' R U R' U</strong>
+                            </div>
+                        </div>
+                        <hr class="separator">
                         <h2>2 Look OLL</h2>
                         <p>
                             OLL står for Orientation of Last Layer, som er en metode til at orientere top laget, så alle brikkerne vender rigtigt (men ikke nødvendigvis placeret korrekt). OLL kræver at man lærer 57 forskellige algoritmer og kan være en mundfuld.

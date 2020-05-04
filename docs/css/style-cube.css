@@ -277,6 +277,10 @@
     margin-left: 1rem;
 }
 
+.cube-example-2d__algorithm-irrelevant {
+    color: var(--cube-red);
+}
+
 .cube-example-2d__wrapper {
     display: flex;
     flex-direction: column;
