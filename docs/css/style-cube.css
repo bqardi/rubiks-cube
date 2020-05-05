@@ -33,7 +33,7 @@
     position: relative;
     top: calc(var(--cube-size) / 2);
     transform-style: preserve-3d;
-    transform: rotateX(-45deg) rotateY(-45deg) rotateZ(0deg);
+    transform: rotateX(-25deg) rotateY(-45deg) rotateZ(0deg);
 }
 
 .cube__container--animated {
@@ -41,6 +41,29 @@
     animation-duration: 30s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+}
+
+.cube__pause-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.cube__pause-button svg {
+    fill: var(--theme-light);
+}
+
+.cube__pause-button:hover svg {
+    fill: var(--cube-red);
+}
+
+@keyframes cube-rotation {
+    0% {
+        transform: rotateX(-25deg) rotateY(0deg) rotateZ(0deg);
+    }
+    100% {
+        transform: rotateX(-25deg) rotateY(360deg) rotateZ(0deg);
+    }
 }
 
 .cube__dirt {
@@ -178,15 +201,6 @@
     margin: -20% 0 0 -45%;
 }
 
-@keyframes cube-rotation {
-    0% {
-        transform: rotateX(-25deg) rotateY(0deg) rotateZ(0deg);
-    }
-    100% {
-        transform: rotateX(-25deg) rotateY(360deg) rotateZ(0deg);
-    }
-}
-
 @media only screen and (min-width: 768px) {
     .cube--hero {
         --cube-size: 277px;
@@ -223,6 +237,42 @@
     position: relative;
     height: calc(var(--cube-example-height) / var(--cube-example-divide-factor));
     max-height: calc(var(--cube-example-max-height) / var(--cube-example-divide-factor));
+}
+
+.js-anim-hidden {
+    visibility: hidden;
+}
+
+.js-anim-slide-in-left {
+    visibility: visible;
+    transform: translate(0);
+    animation-name: slideInLeft;
+    animation-duration: 300ms;
+}
+
+.js-anim-slide-in-right {
+    visibility: visible;
+    transform: translate(0);
+    animation-name: slideInRight;
+    animation-duration: 300ms;
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translate(-100vw);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translate(100vw);
+    }
+    100% {
+        transform: translate(0);
+    }
 }
 
 .cube-example-small {
@@ -318,10 +368,14 @@
 }
 
 .cube-example__invalid-icon {
+    width: 8vw;
+    height: 8vw;
     fill: var(--cube-red);
 }
 
 .cube-example__valid-icon {
+    width: 8vw;
+    height: 8vw;
     fill: var(--cube-green);
 }
 

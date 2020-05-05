@@ -36,15 +36,18 @@
                     <h2 class="navigation__title">Menu</h2>
                     <a class="navigation__link" href="index.html">Lær at løse</a>
                     <a class="navigation__link" href="my-method.html" id="active-page">Min metode</a>
-                    <a class="navigation__link desktop-only-flex" href="https://bqardi.dk/unity-games/dummycube/index.html">Online terning</a>
+                    <a class="navigation__link desktop-only-flex" href="online-cube.html">Online terning</a>
                     <a class="navigation__link" href="timer.html">Timer</a>
                 </nav>
             </header>
             <main id="main" class="main">
                 <div class="main__background">
-                    <div class="cube-wrapper cube-wrapper--background">
+                    <div id="cube-background" class="cube-wrapper cube-wrapper--background">
+                        <a id="pause-button" class="cube__pause-button" href="#" aria-label="Pause">
+                            <svg viewBox="0 0 24 24"><path d="M15,16H13V8H15M11,16H9V8H11M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"></path></svg>
+                        </a>
                         <div class="cube cube--hero cube--perspective">
-                            <div class="cube__container cube__container--animated">
+                            <div id="cube-animation" class="cube__container cube__container--animated">
                                 <div class="cube__side cube__side-white cube__side-bottom">
                                     <div class="cube__dirt"></div>
                                 </div>
@@ -687,7 +690,7 @@
                             <div class="cube-example-2d__algorithm">
                                 <h3>Sexy move</h3>
                                 <strong>R U R'</strong>
-                                <p>Løs de to brikker på én gang med sexy move.</p>
+                                <p>Løs de to brikker på én gang med den "korte version" af sexy move.</p>
                             </div>
                         </div>
                         <hr class="separator">
@@ -2131,7 +2134,7 @@
                         <nav class="footer__navigation-links navigation navigation--column">
                             <a href="index.html">Lær at løse</a>
                             <a href="my-method.html">Min metode</a>
-                            <a class="desktop-only-flex" href="https://bqardi.dk/unity-games/dummycube/index.html">Online terning</a>
+                            <a class="desktop-only-flex" href="online-cube.html">Online terning</a>
                             <a href="timer.html">Timer</a>
                         </nav>
                         <nav class="footer__navigation-social">
