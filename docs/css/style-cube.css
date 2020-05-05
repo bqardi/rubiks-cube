@@ -413,14 +413,21 @@
     width: 100%;
     height: 100%;
     border: 1px dashed black;
-    transform: translateY(350%) translateX(225%);
+    transform: translateY(375%) translateX(245%);
 }
 
 .cube-example__piece-bottom-right {
     width: 100%;
     height: 100%;
     border: 1px dashed black;
-    transform: translateX(350%) translateY(225%);
+    transform: translateX(375%) translateY(245%);
+}
+
+.cube-example__piece-back {
+    width: 100%;
+    height: 100%;
+    border: 1px dashed black;
+    transform: translateX(130%) translateY(-10%);
 }
 
 .cube-example__piece-top-left {
