@@ -249,7 +249,7 @@ ol>li a.all-times-list__item-delete:hover {
 .timer__count-down-background {
     width: 25vh;
     height: 25vh;
-    font-size: 18vh;
+    font-size: 5rem;
     border: 1vh solid var(--theme-light);
     background-color: rgba(0, 0, 0, 0.5);
     box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5);
