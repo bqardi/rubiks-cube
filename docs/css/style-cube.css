@@ -51,31 +51,32 @@
     height: 9vw;
     max-width: 70px;
     max-height: 70px;
-    border: 4px solid var(--theme-light);
     border-radius: 50%;
+    background-color: var(--theme-dark);
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: border 150ms;
+    transition: border 500ms, background-color 500ms;
+    transition-timing-function: ease;
 }
 
 .cube__pause-button svg {
     fill: var(--theme-light);
     width: 100%;
     height: 100%;
-    transition: fill 150ms;
+    transition: fill 500ms;
 }
 
 .cube__pause-button:hover {
-    border: 4px solid var(--cube-blue);
+    background-color: var(--theme-light);
 }
 
 .cube__pause-button.cube__pause-playing:hover {
-    border: 4px solid var(--cube-red);
+    background-color: var(--theme-light);
 }
 
 .cube__pause-button:hover svg {
-    fill: var(--cube-blue);
+    fill: var(--cube-green);
 }
 
 .cube__pause-button.cube__pause-playing:hover svg {

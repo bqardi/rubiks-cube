@@ -465,7 +465,7 @@ a.main__page-navigation-button:hover {
     }
     .navigation--main {
         top: 0;
-        left: 0;
+        left: 200px;
         right: 0;
         bottom: unset;
         flex-direction: row;
