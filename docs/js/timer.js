@@ -305,6 +305,7 @@ document.addEventListener("DOMContentLoaded", event => {
 
     let alg = "";
     let lastAlg = "";
+    let nextToLastAlg = "";
 
     generateAlg();
 
@@ -318,9 +319,10 @@ document.addEventListener("DOMContentLoaded", event => {
 
     function getRandomAlg() {
         let rndAlg = algs[randomInteger(0, algs.length)];
-        while (rndAlg == lastAlg) {
+        while (rndAlg == lastAlg || rndAlg == nextToLastAlg) {
             rndAlg = algs[randomInteger(0, algs.length)];
         }
+        nextToLastAlg = lastAlg;
         lastAlg = rndAlg;
         return rndAlg;
     }
