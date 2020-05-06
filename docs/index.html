@@ -43,8 +43,9 @@
             <main id="main" class="main">
                 <div class="main__background">
                     <div id="cube-background" class="cube-wrapper cube-wrapper--background">
-                        <a id="pause-button" class="cube__pause-button" href="#" aria-label="Pause">
-                            <svg viewBox="0 0 24 24"><path d="M15,16H13V8H15M11,16H9V8H11M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"></path></svg>
+                        <a id="pause-button" class="cube__pause-button cube__pause-playing" href="#" aria-label="Pause">
+                            <svg class="cube__pause-pause-icon" viewBox="0 0 24 24"><path d="M15,16H13V8H15M11,16H9V8H11M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"></path></svg>
+                            <svg class="cube__pause-play-icon" viewBox="0 0 24 24"><path d="M10,16.5V7.5L16,12M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"></path></svg>
                         </a>
                         <div class="cube cube--hero cube--perspective">
                             <div id="cube-animation" class="cube__container cube__container--animated" style="transform: rotateX(-25deg) rotateY(-45deg) rotateZ(0deg);">
@@ -2498,7 +2499,7 @@
                             </div>
                         </div>
                         <p>
-                            Så bliver du ved med at bruge algoritmen indtil hjørnebrikken (som er nede i bunden til højre) vender korrekt, dvs. vender hjørnebrikken forkert, anvender du algoritmen igen og igen, indtil brikken vender rigtigt..
+                            Så bliver du ved med at bruge algoritmen indtil hjørnebrikken (som er nede i bunden til højre) vender korrekt, dvs. vender hjørnebrikken forkert, anvender du algoritmen igen og igen, indtil brikken vender rigtigt.
                         </p>
                         <div class="algorithm algorithm--block">
                             <span class="algorithm__title">Algoritme navn:</span>

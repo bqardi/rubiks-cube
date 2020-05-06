@@ -35,31 +35,34 @@ document.addEventListener("DOMContentLoaded", event => {
     let playing = true;
     let turnTimeout;
 
-    pauseButton.addEventListener("click", togglePause);
+    if (pauseButton) {
+        pauseButton.addEventListener("click", togglePause);
 
-    cubeBackground.addEventListener("mousemove", function(evt) {
-        if (canTurn && !playing) {
-            const backWidth = cubeBackground.offsetWidth;
-            const backHeight = cubeBackground.offsetHeight;
-            const centerX = -45;
-            const offsetX = 25;
-            const centerY = -25;
-            const offsetY = 5;
-            canTurn = false;
-            const mousePosX = evt.pageX / backWidth * (offsetX * 2);
-            const mousePosY = (evt.pageY / backHeight * (offsetY * 2) - (offsetY * 2)) * -1;
-            turnCube(mousePosX - (offsetX - centerX), mousePosY - (offsetY - centerY));
-            turnTimeout = setTimeout(() => {
-                canTurn = true;
-            }, 50);
-        }
-    });
+        cubeBackground.addEventListener("mousemove", function(evt) {
+            if (canTurn && !playing) {
+                const backWidth = cubeBackground.offsetWidth;
+                const backHeight = cubeBackground.offsetHeight;
+                const centerX = -45;
+                const offsetX = 25;
+                const centerY = -25;
+                const offsetY = 5;
+                const mousePosX = evt.pageX / backWidth * (offsetX * 2);
+                const mousePosY = (evt.pageY / backHeight * (offsetY * 2) - (offsetY * 2)) * -1;
+                canTurn = false;
+                turnCube(mousePosX - (offsetX - centerX), mousePosY - (offsetY - centerY));
+                turnTimeout = setTimeout(() => {
+                    canTurn = true;
+                }, 50);
+            }
+        });
+    }
 
     function togglePause() {
         playing = !playing;
         canTurn = !playing;
         clearTimeout(turnTimeout);
         cubeAnimation.classList.toggle("cube__container--animated");
+        pauseButton.classList.toggle("cube__pause-playing");
     }
 
     function turnCube(x, y) {
@@ -80,12 +83,29 @@ document.addEventListener("DOMContentLoaded", event => {
         for (let i = 0; i < entries.length; i++) {
             const entry = entries[i];
             if (entry.isIntersecting) {
-                const rnd = randomInteger(0, 2);
-                if (rnd == 0) {
-                    entry.target.classList.add("js-anim-slide-in-left");
-                } else {
-                    entry.target.classList.add("js-anim-slide-in-right");
+                const rnd = randomInteger(0, 4);
+                switch (rnd) {
+                    case 0:
+                        entry.target.classList.add("js-anim-slide-in-top-left");
+                        break;
+                    case 1:
+                        entry.target.classList.add("js-anim-slide-in-top-right");
+                        break;
+                    case 2:
+                        entry.target.classList.add("js-anim-slide-in-bottom-left");
+                        break;
+                    case 3:
+                        entry.target.classList.add("js-anim-slide-in-bottom-right");
+                        break;
+
+                    default:
+                        break;
                 }
+                // if (rnd == 0) {
+                //     entry.target.classList.add("js-anim-slide-in-top-left");
+                // } else {
+                //     entry.target.classList.add("js-anim-slide-in-top-right");
+                // }
                 observer.unobserve(entry.target);
             } else {
                 entry.target.classList.add("js-anim-hidden");

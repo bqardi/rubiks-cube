@@ -92,7 +92,10 @@ document.addEventListener("DOMContentLoaded", event => {
         }
     }
 
-    function toggleTimer() {
+    function toggleTimer(evt = null) {
+        if (evt) {
+            showEffect(evt.offsetX, evt.offsetY);
+        }
         if (allTimesList.classList.contains("js-active")) {
             return;
         }
@@ -331,4 +334,23 @@ document.addEventListener("DOMContentLoaded", event => {
         return Math.floor(Math.random() * (max - min)) + min;
     }
     //#endregion RANDOM ALGORITHM
+
+    //#region MOUSE EFFECT
+    const mouseEffect = document.getElementById("mouse-effect");
+    const mouseEffectTime = 150;
+
+    function showEffect(x, y) {
+        mouseEffect.style.top = y + "px";
+        mouseEffect.style.left = x + "px";
+        const effectRing = document.createElement("DIV");
+        effectRing.classList.add("timer__mouse-effect-ring");
+        effectRing.style.animationDuration = mouseEffectTime + "ms";
+        mouseEffect.appendChild(effectRing);
+        mouseEffect.classList.add("js-animate");
+        setTimeout(() => {
+            mouseEffect.classList.remove("js-animate");
+            mouseEffect.removeChild(effectRing);
+        }, mouseEffectTime);
+    }
+    //#endregion MOUSE EFFECT
 });

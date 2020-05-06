@@ -47,14 +47,55 @@
     position: absolute;
     top: 1rem;
     right: 1rem;
+    width: 9vw;
+    height: 9vw;
+    max-width: 70px;
+    max-height: 70px;
+    border: 4px solid var(--theme-light);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: border 150ms;
 }
 
 .cube__pause-button svg {
     fill: var(--theme-light);
+    width: 100%;
+    height: 100%;
+    transition: fill 150ms;
+}
+
+.cube__pause-button:hover {
+    border: 4px solid var(--cube-blue);
+}
+
+.cube__pause-button.cube__pause-playing:hover {
+    border: 4px solid var(--cube-red);
 }
 
 .cube__pause-button:hover svg {
+    fill: var(--cube-blue);
+}
+
+.cube__pause-button.cube__pause-playing:hover svg {
     fill: var(--cube-red);
+}
+
+.cube__pause-button .cube__pause-pause-icon {
+    display: none;
+}
+
+.cube__pause-button .cube__pause-play-icon {
+    display: unset;
+}
+
+.cube__pause-button.cube__pause-playing .cube__pause-pause-icon {
+    display: unset;
+}
+
+.cube__pause-button.cube__pause-playing .cube__pause-play-icon {
+    display: none;
 }
 
 @keyframes cube-rotation {
@@ -243,32 +284,64 @@
     visibility: hidden;
 }
 
-.js-anim-slide-in-left {
+.js-anim-slide-in-top-left {
     visibility: visible;
     transform: translate(0);
-    animation-name: slideInLeft;
-    animation-duration: 300ms;
+    animation-name: slideInTopLeft;
+    animation-duration: 600ms;
 }
 
-.js-anim-slide-in-right {
+.js-anim-slide-in-top-right {
     visibility: visible;
     transform: translate(0);
-    animation-name: slideInRight;
-    animation-duration: 300ms;
+    animation-name: slideInTopRight;
+    animation-duration: 600ms;
 }
 
-@keyframes slideInLeft {
+.js-anim-slide-in-bottom-left {
+    visibility: visible;
+    transform: translate(0);
+    animation-name: slideInBottomLeft;
+    animation-duration: 600ms;
+}
+
+.js-anim-slide-in-bottom-right {
+    visibility: visible;
+    transform: translate(0);
+    animation-name: slideInBottomRight;
+    animation-duration: 600ms;
+}
+
+@keyframes slideInTopLeft {
     0% {
-        transform: translate(-100vw);
+        transform: translate(-100vw, -100vh);
     }
     100% {
         transform: translate(0);
     }
 }
 
-@keyframes slideInRight {
+@keyframes slideInTopRight {
     0% {
-        transform: translate(100vw);
+        transform: translate(100vw, -100vh);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
+@keyframes slideInBottomLeft {
+    0% {
+        transform: translate(-100vw, 100vh);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
+@keyframes slideInBottomRight {
+    0% {
+        transform: translate(100vw, 100vh);
     }
     100% {
         transform: translate(0);
@@ -277,8 +350,6 @@
 
 .cube-example-small {
     --cube-example-divide-factor: 2;
-    /* width: 40%;
-    max-width: 200px; */
 }
 
 .cube-example--margin-top {

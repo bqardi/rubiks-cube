@@ -301,6 +301,46 @@ ol>li a.all-times-list__item-delete:hover {
     margin: -3px 0 5px;
 }
 
+.timer__mouse-effect {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    z-index: 1;
+}
+
+.timer__mouse-effect-ring {
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border: 0px solid var(--theme-light);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.timer__mouse-effect.js-animate .timer__mouse-effect-ring {
+    animation-name: mouseEffect;
+    animation-timing-function: ease-out;
+}
+
+@keyframes mouseEffect {
+    0% {
+        opacity: 0;
+        width: 0px;
+        height: 0px;
+        border-width: 0px;
+    }
+    50% {
+        opacity: 1;
+        border-width: 10px;
+    }
+    100% {
+        opacity: 0;
+        width: 100px;
+        height: 100px;
+        border-width: 0px;
+    }
+}
+
 .desktop-only {
     display: none;
 }

@@ -43,8 +43,9 @@
             <main id="main" class="main">
                 <div class="main__background">
                     <div id="cube-background" class="cube-wrapper cube-wrapper--background">
-                        <a id="pause-button" class="cube__pause-button" href="#" aria-label="Pause">
-                            <svg viewBox="0 0 24 24"><path d="M15,16H13V8H15M11,16H9V8H11M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"></path></svg>
+                        <a id="pause-button" class="cube__pause-button cube__pause-playing" href="#" aria-label="Pause">
+                            <svg class="cube__pause-pause-icon" viewBox="0 0 24 24"><path d="M15,16H13V8H15M11,16H9V8H11M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"></path></svg>
+                            <svg class="cube__pause-play-icon" viewBox="0 0 24 24"><path d="M10,16.5V7.5L16,12M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"></path></svg>
                         </a>
                         <div class="cube cube--hero cube--perspective">
                             <div id="cube-animation" class="cube__container cube__container--animated">
@@ -71,12 +72,119 @@
                     </div>
                     <div class="main__placement">
                         <h1>Min metode</h1>
+                        <p>
+                            Den metode jeg bruger til at løse terningen er lidt mere avanceret end begyndermetoden og kræver en smule kendskab til professorterningen. Du skal bl.a. kunne løse det hvide kryds intuitivt.
+                        </p>
+                        <h3>CFOP</h3>
+                        <p>
+                            Den er baseret på Jessica Fridrich's metode som hedder Fridrich method eller full CFOP og er nok den mest populære metode blandt speedcubers verden over. Der findes selvfølgelig andre metoder, som jeg dog ikke vil gennemgå. Nogle populære som kan nævnes
+                            er ROUX og ZZ og så er der videreudviklinger af disse.
+                        </p>
+                        <h3>Teknikker</h3>
+                        <p>
+                            Jeg bruger også specielle teknikker med fingrene for at dreje siderne hurtigere, hvilket kræver en terning der kan dreje siderne flydende og uden det store besvær. Sådan en cube kaldes en "Speedcube" og bygger på bedre teknologi end den originale Rubiks
+                            Cube.
+                        </p>
+                        <p>
+                            Personligt er min farvorit terning: <a href="https://iqleg.dk/qiyi-95/qiyi-valk-3-p851">QiYi Valk 3 (stickerless)</a>, som jeg har købt hos <a href="https://iqleg.dk/">IQ Leg</a> (de har rigtig mange sjove puzzles).
+                        </p>
+                        <p>
+                            For at udnytte terningens smidige/flydende drejeegenskaber, kan man med fordel lære de forskellige fingerteknikker:
+                        </p>
+                        <p>
+                            Væn dig til at holde terningen med tommelfingrerne på forsidens midterste horisontale lag og langefingrer på bagsidens midterste horisontale lag. Dette gør at du kan bruge pegefingrene til at dreje top laget:
+                        </p>
+                        <ul>
+                            <li><strong>U'</strong> - Venstre pegefinger</li>
+                            <li><strong>U</strong> - Højre pegefinger</li>
+                        </ul>
+                        <p>
+                            Og ringfingrene til bunden:
+                        </p>
+                        <ul>
+                            <li><strong>D</strong> - Venstre ringfinger</li>
+                            <li><strong>D'</strong> - Højre ringfinger</li>
+                        </ul>
+                        <p>
+                            Siderne drejer du ved at bruge de respektive hænder og dreje med hele hånden. Det kan være nødvendigt at flytte hånden/fingrene til en anden position, alt efter hvad der falder naturligt (eller teknisk er hurtigere) i forhold til den algoritme der udføres.
+                            F.eks. kan Sexy move udføres hurtigere ved at flytte højre hånd:
+                        </p>
+                        <h3>Fingerteknik til Sexy move:</h3>
+                        <p>
+                            Først lige algoritmen:
+                        </p>
+                        <div class="algorithm algorithm--block">
+                            <span class="algorithm__title">Algoritme navn:</span>
+                            <span class="algorithm__name">Sexy move</span>
+                            <div class="algorithm__notation">R U R' U'</div>
+                        </div>
+                        <p>
+                            Start med at placere højre hånd så du har tommelfingeren i bunden (og i midten) af terningen og pege-, lang- og ringfinger i toppen (hver finger på hvert sit lag):
+                        </p>
+                        <ul>
+                            <li><strong>R</strong> - Drej hånden med uret så højre side drejes en enkelt gang og tommelfingeren dermed nu er på forsiden (og de andre fingre bagved).</li>
+                            <li><strong>U</strong> - Højre hånd burde nu være placeret så pegefingeren med det samme kan bruges til at dreje top laget med uret.</li>
+                            <li><strong>R'</strong> - Drej hånden tilbage mod uret igen.</li>
+                            <li><strong>U'</strong> - Brug til sidst venstre pegefinger til at dreje top laget.</li>
+                        </ul>
+                        <p>
+                            Dette skal selvfølgelig øves nogle gange, så algoritmen kan udføres flydende, samtidig med at det føles naturligt og intuitivt. Og resultatet er jo at du kan udføre denne algoritme ekstremt hurtigt.
+                        </p>
+                        <p>
+                            Jeg kan f.eks. dreje de fire sider i Sexy move på under et sekund (og jeg er bestemt ikke verdens hurtigste cuber!). De hurtigste cubere kan dreje omkring 10-12 sider per sekund (10-12 tps)!
+                        </p>
+                        <h4>Dobbelt rotation</h4>
+                        <p>
+                            Ud over at dreje en side med en enkelt finger, kan du også dreje f.eks. top laget to gange (<strong>U2</strong>) hurtigere hvis du bruger to fingre, ved at dreje én gang med pegefingeren og hurtigt efter dreje én gang mere
+                            med langefingeren.
+                        </p>
+                        <h4>Up reversed/top laget bagvendt</h4>
+                        <p>
+                            Nogen gange kan det være hurtigere at skubbe top laget med pegefingeren i stedet for at "trække", f.eks. ved at lave en <strong>U</strong> med venstre pegefinger der skubber laget.
+                        </p>
+                        <h4>Front face/forsiden</h4>
+                        <p>
+                            Forsiden kan drejes ved enten at flytte pegefingeren hen og dreje eller ved at bruge tommelfingeren.
+                        </p>
+                        <h4>Back face/bagsiden</h4>
+                        <p>
+                            Bagsiden kan drejes med ringfingeren.
+                        </p>
+                        <h3>Brug fingerteknikkerne altid</h3>
+                        <p>
+                            Disse fingerteknikker kan du selvfølgelig bruge på alle algoritmer og du kan prøve forskellige hånd- og fingerplaceringer for at finde ud af hvad der er hurtigst for dig til at udføre de forskellige algoritmer.
+                        </p>
+                        <p>
+                            Efter jeg har lært at bruge fingerteknikkerne, bruger jeg ikke andet mere, da det er hurtigere, nemmere (når det er lært selvfølgelig) og bare meget mere tilfredsstillende at se en algoritme blive kværnet igennem på nul komma fem.
+                        </p>
+                        <p>
+                            Fingerfærdighed kan trænes så du drejer hurtigere, men metoden til at løse bør også være smartere (og hurtigere) end begyndermetoden, så læs videre for at se den metode jeg bruger:
+                        </p>
                         <h2>Det hvide kryds</h2>
                         <p>
                             Jeg starter altid med det hvide kryds og med lidt træning kan den løses rigtig hurtigt ved at holde den hvide side nedad og huske hvor de hvide kantbrikker skal placeres og så dreje dem på plads (faktisk i blinde).
                         </p>
                         <p>
                             Jo færre gange man drejer hele terningen, jo mere overblik har man og jo hurtigere kan terningen løses.
+                        </p>
+                        <p>
+                            Hvis du vil forbedre dette stadie endnu mere, skal du være det man kalder "color neutral" eller farve neutral, hvilket betyder at du kan løse terningen med en hvilken som helst farve som startfarve/bundfarve (ikke kun den hvide som start/bund).
+                        </p>
+
+                        <h2>Look ahead / Se fremad</h2>
+                        <p>
+                            Denne teknik er mere fokuseret på hjernen og dine evner til at se mønstrene på terningen og forudse hvad der sker fremadrettet når (og mens) du udfører en algoritme.
+                        </p>
+                        <p>
+                            Vi kan bryde det op i steps og tage den fra starten. Ved officielle konkurrencer får du 15 sekunder til at gennemse terningen før du begynder at løse den. På dette stadie planlægger du f.eks. det hvide kryds på forhånd og husker den algoritme der skal
+                            til for at løse den. Når du så går i gang med denne algoritme, kigger du allerede her fremad og holder øje med F2L brikkerne og planlægger de næste algoritmer <strong>mens</strong> du løser det hvide
+                            kryds. Dvs. du holder ikke nogen pauser for at se hvad dit næste træk er, du kører bare på og bliver ved med at udføre algoritme efter algoritme.
+                        </p>
+                        <p>
+                            Igen når du løser et hjørne i F2L stadiet (læs mere om F2L længere nede) holder du øje med de næste hjørnebrikker og planlægger næste algoritme, <strong>mens</strong> du løser det første hjørne.
+                        </p>
+                        <p>
+                            Det lyder- og er rigtig svært, men er måske lidt nemmere hvis man er god til at multitaske (hvilket jeg er elendig til).
                         </p>
                         <h2>F2L</h2>
                         <p>
@@ -275,10 +383,10 @@
                             </div>
                             <div class="cube-example-2d__algorithm">
                                 <h3>Gyldigt move</h3>
-                                <strong>R</strong> og <strong>F'</strong>
+                                <strong>R</strong> og <strong>F'</strong> efterfulgt af U / U' / U2
                                 <span class="cube-example-2d__algorithm-irrelevant">
                                     <h3>Ødelæggene move</h3>
-                                    <strong>R'</strong> og <strong>F</strong>
+                                    <strong>R'</strong> og <strong>F</strong> efterfulgt af U / U' / U2
                                 </span>
                             </div>
                         </div>
@@ -323,10 +431,10 @@
                             </div>
                             <div class="cube-example-2d__algorithm">
                                 <h3>Gyldigt move</h3>
-                                <strong>R'</strong>
+                                <strong>R'</strong> efterfulgt af U / U' / U2
                                 <span class="cube-example-2d__algorithm-irrelevant">
                                     <h3>Ødelæggene move</h3>
-                                    <strong>R</strong> og <strong>F</strong> og <strong>F'</strong>
+                                    <strong>R</strong> og <strong>F</strong> og <strong>F'</strong> efterfulgt af U / U' / U2
                                 </span>
                             </div>
                         </div>
@@ -647,7 +755,7 @@
                         </div>
                         <hr class="separator">
                         <p>
-                            Så mangler vi bare at "kaste" de to brikker ned på plads med et <strong>Sexy move</strong> og så har vi løst vores første hjørne i F2L fasen:
+                            Så mangler vi bare at "kaste" de to brikker ned på plads med et <strong>Sexy move</strong> og så har vi løst det blå/røde hjørne i F2L fasen:
                         </p>
                         <div class="cube-example-grid">
                             <div class="cube-example-container cube-example-small">
@@ -697,10 +805,9 @@
                         <p>
                             Dette var blot et enkelt eksempel på et F2L scenarie (og der er mange), så forhåbentligt har det hjulpet dig til at tænke mere intuitivt, for at løse dette stadie.
                         </p>
-                        <hr class="separator">
                         <h2>2 Look OLL</h2>
                         <p>
-                            OLL står for Orientation of Last Layer, som er en metode til at orientere top laget, så alle brikkerne vender rigtigt (men ikke nødvendigvis placeret korrekt). OLL kræver at man lærer 57 forskellige algoritmer og kan være en mundfuld.
+                            OLL står for Orientation of Last Layer, som er en metode til at orientere top laget, så alle brikkerne vender rigtigt (men ikke nødvendigvis er placeret korrekt). OLL kræver at man lærer 57 forskellige algoritmer og kan være en mundfuld.
                         </p>
                         <p>
                             Der findes derfor også en lettere metode som kaldes 2 Look OLL og denne metode er en mellemting mellem begyndermetoden og den svære OLL. 2 Look OLL kræver kun at man lærer 9 algoritmer, men udføres i to steps og er derfor en smule langsommere end OLL.
@@ -724,6 +831,7 @@
                                     <div class="cube-example__piece cube-example__piece-none"></div>
                                 </div>
                             </div>
+                            <h3 class="cube-example-2d__algorithm">Prikken</h3>
                             <strong class="cube-example-2d__algorithm">[F (R U R' U') F'] U2 [F (U R U' R') F']</strong>
                         </div>
                         <div class="cube-example-grid">
@@ -740,6 +848,7 @@
                                     <div class="cube-example__piece cube-example__piece-none"></div>
                                 </div>
                             </div>
+                            <h3 class="cube-example-2d__algorithm">L'et</h3>
                             <strong class="cube-example-2d__algorithm">[F (U R U' R') F']</strong>
                         </div>
                         <div class="cube-example-grid">
@@ -756,6 +865,7 @@
                                     <div class="cube-example__piece cube-example__piece-none"></div>
                                 </div>
                             </div>
+                            <h3 class="cube-example-2d__algorithm">Stregen</h3>
                             <strong class="cube-example-2d__algorithm">[F (R U R' U') F']</strong>
                         </div>
                         <div class="cube-example-grid">
@@ -772,6 +882,7 @@
                                     <div class="cube-example__piece cube-example__piece-none"></div>
                                 </div>
                             </div>
+                            <h3 class="cube-example-2d__algorithm">Resultat</h3>
                             <p class="cube-example-2d__algorithm">Resultat af udførelsen af hver af ovenstående scenarier</p>
                         </div>
                         <h3>Andet step</h3>
@@ -2123,6 +2234,11 @@
                             </div>
                         </div>
                         <hr class="separator">
+                        <h2>Under 20 sekunder</h2>
+                        <p>
+                            Med den metode jeg har beskrevet på denne side, kan du, med træning (meget træning), komme helt ned og løse terningen på under 20 sekunder, hver gang! Faktisk tror jeg du kan komme helt ned på omkring 10 sekunder. Men vil du under 10 sekunder bør du nok
+                            overveje den fulde CFOP metode som f.eks. kræver at du lærer alle 57 algoritmer til OLL.
+                        </p>
                     </div>
                 </div>
             </main>
