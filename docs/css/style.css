@@ -9,10 +9,14 @@
 
 :root {
     /* Main colors */
-    --theme-light: #FDFFF8;
+    --theme-light: rgb(248, 249, 255);
+    --theme-mid: rgb(138, 166, 226);
+    --theme-dark: rgb(63, 68, 108);
+    --theme-darkest: rgb(23, 24, 44);
+    /* --theme-light: #FDFFF8;
     --theme-mid: #C9E28A;
     --theme-dark: #5F6C3F;
-    --theme-darkest: #262C17;
+    --theme-darkest: #262C17; */
     /* Cube colors */
     --cube-blue: #366CD9;
     --cube-green: #59D955;

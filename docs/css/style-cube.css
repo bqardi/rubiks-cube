@@ -442,12 +442,16 @@
 .cube-example__invalid-icon {
     width: 8vw;
     height: 8vw;
+    max-width: 40px;
+    max-height: 40px;
     fill: var(--cube-red);
 }
 
 .cube-example__valid-icon {
     width: 8vw;
     height: 8vw;
+    max-width: 40px;
+    max-height: 40px;
     fill: var(--cube-green);
 }
 
