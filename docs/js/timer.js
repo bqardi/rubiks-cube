@@ -15,10 +15,17 @@ document.addEventListener("DOMContentLoaded", event => {
     const allTimesList = document.getElementById("all-times-list");
     const allTimesListItems = document.getElementById("all-times-list-items");
     const allTimesListClose = document.getElementById("all-times-list-close");
+    const allAverage = document.getElementById("all-average");
+    const allTimesAverage = document.getElementById("all-times-average");
+    const allTimesAverageClose = document.getElementById("all-times-average-close");
+    const averageBest = document.getElementById("average-best");
+    const averageMean = document.getElementById("average-mean");
 
     pressPad.addEventListener("mouseup", toggleTimer);
     allTimes.addEventListener("click", toggleAllTimesList);
     allTimesListClose.addEventListener("click", toggleAllTimesList);
+    allAverage.addEventListener("click", toggleAllAverage);
+    allTimesAverageClose.addEventListener("click", toggleAllAverage);
     window.addEventListener("keyup", function(evt) {
         if (evt.keyCode == 32) {
             toggleTimer();
@@ -51,6 +58,7 @@ document.addEventListener("DOMContentLoaded", event => {
 
     function toggleAllTimesList(evt, doToggle = true) {
         evt.preventDefault();
+        allTimesAverage.classList.remove("js-active");
         if (doToggle) {
             allTimesList.classList.toggle("js-active");
         }
@@ -82,6 +90,7 @@ document.addEventListener("DOMContentLoaded", event => {
                         if (savedTimes.length == 0) {
                             toggleAllTimesList(e);
                             allTimes.classList.remove("js-active");
+                            allAverage.classList.remove("js-active");
                         }
                     }, slideTime / 2);
                     record = minValueInArray(savedTimes);
@@ -92,11 +101,33 @@ document.addEventListener("DOMContentLoaded", event => {
         }
     }
 
+    function toggleAllAverage(evt, doToggle = true) {
+        evt.preventDefault();
+        allTimesList.classList.remove("js-active");
+        if (doToggle) {
+            allTimesAverage.classList.toggle("js-active");
+        }
+        if (allTimesAverage.classList.contains("js-active")) {
+            averageBest.textContent = recordTime.textContent;
+            let mean = 0;
+            let count = 0;
+            for (let i = 0; i < savedTimes.length; i++) {
+                mean += savedTimes[i].time;
+                count++;
+            }
+            mean /= count;
+            averageMean.textContent = concatTime(mean);
+        }
+    }
+
     function toggleTimer(evt = null) {
         if (evt) {
             showEffect(evt.offsetX, evt.offsetY);
         }
         if (allTimesList.classList.contains("js-active")) {
+            return;
+        }
+        if (allTimesAverage.classList.contains("js-active")) {
             return;
         }
         if (countDownInstance) {
@@ -136,6 +167,7 @@ document.addEventListener("DOMContentLoaded", event => {
         time = 0;
         visualTimer();
         allTimes.classList.add("js-active");
+        allAverage.classList.add("js-active");
 
         //RANDOM ALGORITHM
         generateAlg();
@@ -202,6 +234,7 @@ document.addEventListener("DOMContentLoaded", event => {
 
     function countDown() {
         allTimes.classList.remove("js-active");
+        allAverage.classList.remove("js-active");
         pressPadCountDown.classList.add("js-active");
         timerStartText.classList.remove("js-active");
         counter--;

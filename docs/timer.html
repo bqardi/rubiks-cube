@@ -64,6 +64,9 @@
                                 <a id="all-times" class="icon timer__all-times" href="#" aria-label="Se dine tider">
                                     <svg class="timer__all-times-icon" viewBox="0 0 24 24"><path d="M19.03 7.39L20.45 5.97C20 5.46 19.55 5 19.04 4.56L17.62 6C16.07 4.74 14.12 4 12 4C7.03 4 3 8.03 3 13S7.03 22 12 22C17 22 21 17.97 21 13C21 10.88 20.26 8.93 19.03 7.39M13 14H11V7H13V14M15 1H9V3H15V1Z"></path></svg>
                                 </a>
+                                <a id="all-average" class="icon timer__all-times" href="#" aria-label="Se dine gennemsnitlige tider">
+                                    <svg class="timer__all-times-icon" viewBox="0 0 24 24"><path d="M22,21H2V3H4V19H6V10H10V19H12V6H16V19H18V14H22V21Z"></path></svg>
+                                </a>
                             </section>
                         </div>
                         <div id="press-pad" class="timer__press-pad">
@@ -90,6 +93,21 @@
                                     <div class="all-times-list__items">
                                         <ol id="all-times-list-items" class="all-times-list__item font-mono"></ol>
                                     </div>
+                                </div>
+                            </div>
+                            <div id="all-times-average" class="all-times-list all-times-average">
+                                <div class="all-times-average__inner">
+                                    <div class="all-times-average__row">
+                                        <h2>Bedste</h2>
+                                        <p id="average-best">00:00:00.000</p>
+                                    </div>
+                                    <div class="all-times-average__row">
+                                        <h2>Gennemsnit</h2>
+                                        <p id="average-mean">00:00:00.000</p>
+                                    </div>
+                                    <a id="all-times-average-close" class="icon all-times-list__close" href="#">
+                                        <svg viewBox="0 0 24 24"><path d="M19,3H16.3H7.7H5A2,2 0 0,0 3,5V7.7V16.4V19A2,2 0 0,0 5,21H7.7H16.4H19A2,2 0 0,0 21,19V16.3V7.7V5A2,2 0 0,0 19,3M15.6,17L12,13.4L8.4,17L7,15.6L10.6,12L7,8.4L8.4,7L12,10.6L15.6,7L17,8.4L13.4,12L17,15.6L15.6,17Z"></path></svg>
+                                    </a>
                                 </div>
                             </div>
                         </div>

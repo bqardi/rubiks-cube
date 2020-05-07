@@ -82,15 +82,18 @@
     margin-left: 0.5rem;
 }
 
-#all-times {
+#all-times,
+#all-average {
     --name-show-duration: 800ms;
     --name-hide-duration: 300ms;
+    --all-times-icon-width: 40px;
     width: 0;
     transition: width var(--name-hide-duration);
 }
 
-#all-times.js-active {
-    width: 20px;
+#all-times.js-active,
+#all-average.js-active {
+    width: var(--all-times-icon-width);
     transition: width var(--name-show-duration);
 }
 
@@ -103,8 +106,8 @@
 }
 
 .timer__all-times-icon {
-    width: 24px;
-    height: 24px;
+    width: var(--all-times-icon-width);
+    height: var(--all-times-icon-width);
     fill: var(--theme-darkest);
 }
 
@@ -140,7 +143,42 @@
 
 .all-times-list__titles {
     display: grid;
-    grid-template-columns: 80px auto 32px;
+    grid-template-columns: 65px auto;
+}
+
+.all-times-average {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.all-times-average__inner {
+    height: 100%;
+    margin-top: 1rem;
+    color: var(--theme-light);
+}
+
+.all-times-average__row {
+    text-align: start;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: baseline;
+    padding: 0 1rem;
+}
+
+.all-times-average__row:hover {
+    background-color: var(--theme-dark);
+}
+
+.all-times-average__row p {
+    transition: all 300ms;
+}
+
+.all-times-average__row:hover p {
+    transform: scale(1.2);
+}
+
+.all-times-average__row h2 {
+    font-size: 1.1rem;
 }
 
 .all-times-list__titles h2 {
@@ -149,15 +187,21 @@
     text-align: left;
 }
 
+.all-times-list__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
 .all-times-list__items ol {
-    margin-left: 20px;
+    margin-left: 40px;
 }
 
 .all-times-list__items ol>li {
     font-size: 1.1em;
     font-weight: 300;
     text-align: left;
-    padding-left: 60px;
+    padding-left: 25px;
 }
 
 .all-times-list__items {
