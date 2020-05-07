@@ -1,4 +1,8 @@
 document.addEventListener("DOMContentLoaded", event => {
+    const notationReference = document.getElementById("notation-reference");
+    const notationReferenceIntersection = document.getElementById("notation-reference-intersection");
+    const notationReferenceButton = document.getElementById("notation-reference-button");
+
     //#region BURGER MENU
     const burger = document.getElementById("burger");
     const burgerNav = document.getElementById("navigation-burger");
@@ -14,6 +18,8 @@ document.addEventListener("DOMContentLoaded", event => {
         preventClickThrough(evt)
         burgerNav.classList.toggle("js-active");
         main.classList.toggle("js-pushed");
+        notationReference.classList.remove("js-active");
+        notationReferenceButton.classList.remove("js-active");
     }
 
     function hideMenu() {
@@ -161,9 +167,6 @@ document.addEventListener("DOMContentLoaded", event => {
     //#endregion To Top
 
     //#region Notationlist
-    const notationReference = document.getElementById("notation-reference");
-    const notationReferenceIntersection = document.getElementById("notation-reference-intersection");
-    const notationReferenceButton = document.getElementById("notation-reference-button");
 
     if (notationReference) {
         notationReferenceButton.addEventListener("click", function(evt) {
