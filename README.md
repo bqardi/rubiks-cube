@@ -24,4 +24,6 @@ Intersection Observer er en API der "observerer" eller "holder øje" med HTML-el
 * Denne event har jeg brugt til at animere mine "CSS konstruerede billeder" ind på plads når man scroller ned til dem.
 * Den er også brugt til min To Top knap, som er skjult når man er scrollet helt op til toppen af siden og når man scroller helt ned til footeren, skifter den fra `position: fixed;` til `position: absolute;`, så den ikke "er i vejen" for footeren.
 
+Jeg har brugt en del energi på den animerede CSS terning, for at få funktionaliteten af at den "følger" musen (tryk pause for at aktivere denne funktion). Jeg var nødt til at bruge en del matematik til beregning og konvertering af musekoordinaterne til rotationsgrader af terningen (koordinater i `px` til `deg` brugt i CSS property'erne `transform: rotateX()` og `transform: rotateY()`).
+
 Held og lykke med løsning af professor terningen.
