@@ -1,7 +1,7 @@
-# Rubiks Cube
+# Professor Terning
 
 ### Hvordan man løser en Rubiks Cube/professor terning.
-:scroll:Her på siden vil jeg vise dig den [nemmeste måde](https://bqardi.github.io/professor/index.html) at løse en professor terning/Rubiks Cube på, med udførlige trin for trin forklaringer.
+:scroll:På https://bqardi.github.io/professor/ vil jeg vise dig den nemmeste måde at løse en professor terning/Rubiks Cube på, med udførlige trin for trin forklaringer.
 
 :1st_place_medal:[Min metode](https://bqardi.github.io/professor/my-method.html) -siden indeholder den metode jeg bruger til at løse terningen på, som er lidt mere avanceret end begyndermetoden. Den indeholder også en liste over de algoritmer, jeg personligt bruger/foretrækker sammen med forklaringer på forskellige fingerteknikker og metoder til at blive hurtigere til at løse terningen.
 
@@ -12,9 +12,7 @@
 * Ifølge officielle regler ved speedcubing konkurrencer har man 15 sekunder til at inspicere terningen før man går i gang med at løse. Derfor har jeg inkorporeret en countdown tæller der tæller ned fra 15 sekunder før tiden går i gang (man kan trykke i feltet for at starte timeren før tid).
 * Når man stopper tiden, sammenlignes tiden med dine andre tider og bliver sorteret på en liste over alle dine tider (tryk på :stopwatch: stopur-ikonet for at se listen).
 * Der er også en indikator til at sammenligne din nuværende tid med din rekordtid, som vises mens timeren kører (rød gradient box der fader ind og bliver mere og mere tydelig jo tættere du kommer på din rekord tid. Den skifter til komplet rød farve når du overskrider din rekordtid).
-
 ---
-
 ### Opbygning
 Siden er lavet med semantisk HTML og med ekstern CSS styling.
 
