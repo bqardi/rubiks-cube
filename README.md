@@ -17,13 +17,11 @@ hvis du bare vil lære at løse den hurtigt (f.eks. under 20 sek. hver gang). De
 ind i hukommelsen, men ja, det kan godt lade sig gøre!
 Det kræver blot lidt tålmodighed og måske lidt stædighed, hvis du virkelig vil lære det).
 
-Her på siden vil jeg vise dig den nemmeste måde at løse den på og så vil jeg fortælle lidt om de avancerede
-måder også.
+:scroll:Her på siden vil jeg vise dig den [nemmeste måde](https://bqardi.github.io/professor/index.html) at løse terningen på.
 
-Du kan finde en liste over de algoritmer, jeg personligt bruger/foretrækker og jeg vil også vise lidt alternative algoritmer
-du kan bruge til at løse den samme udfordring.
+:1st_place_medal:[Min metode](https://bqardi.github.io/professor/my-method.html) indeholder den metode jeg bruger til at løse terningen på, som er lidt mere avanceret end begyndermetoden. Den indeholder også en liste over de algoritmer, jeg personligt bruger/foretrækker sammen med forklaringer på forskellige fingerteknikker.
 
-Du kan også finde et lille program, jeg har lavet i [Unity](https://unity.com/), hvor du kan prøve at løse en professer terning
+:jigsaw:Du kan også finde et [lille program](https://bqardi.github.io/professor/online-cube.html), jeg har lavet i [Unity](https://unity.com/), hvor du kan prøve at løse en professer terning
 på tid, ved at pege med musen på en side og så dreje med WASD tasterne på keyboardet (er kun tilgængelig på stor skærm/desktop).
 
-Du kan også finde en "Timer" her på siden. Den er specifikt lavet til brug for at måle din tid med en fysisk terning.
+:hourglass_flowing_sand:Du kan også finde en [timer](https://bqardi.github.io/professor/timer.html) her på siden. Den er specifikt lavet til brug for at måle din tid med en fysisk terning.
