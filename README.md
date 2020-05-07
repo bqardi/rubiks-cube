@@ -10,8 +10,9 @@
 :hourglass_flowing_sand:Jeg har lavet en [timer](https://bqardi.github.io/professor/timer.html), som specifikt er lavet til at måle din tid med en fysisk terning.
 * Den indeholder en algoritme-blandings-generator der genererer en tilfældig algoritme du kan bruge til at blande din terning med (denne algoritme bliver "gemt" sammen med dine tidsregistreringer).
 * Ifølge officielle regler ved speedcubing konkurrencer har man 15 sekunder til at inspicere terningen før man går i gang med at løse. Derfor har jeg inkorporeret en countdown tæller der tæller ned fra 15 sekunder før tiden går i gang (man kan trykke i feltet for at starte timeren før tid).
-* Når man stopper tiden, sammenlignes tiden med dine andre tider og bliver sorteret på en liste over alle dine tider (tryk på :stopwatch: stopur-ikonet for at se listen).
 * Der er også en indikator til at sammenligne din nuværende tid med din rekordtid, som vises mens timeren kører (rød gradient box der fader ind og bliver mere og mere tydelig jo tættere du kommer på din rekord tid. Den skifter til komplet rød farve når du overskrider din rekordtid).
+* Når man stopper tiden, sammenlignes tiden med dine andre tider og bliver sorteret på en liste over alle dine tider (tryk på :stopwatch: stopur-ikonet for at se listen).
+* Man kan også se information om bedste tid og gennemsnitstid, hvis du trykker på :bar_chart: graf-ikonet.
 ---
 ### Opbygning
 Siden er lavet med semantisk HTML og med ekstern CSS styling.
@@ -23,5 +24,7 @@ JavaScript er benyttet til menuen på mobil, til timeren, til forskellige knappe
 Intersection Observer er en API der "observerer" eller "holder øje" med HTML-elementerne på siden og når et element "kommer til syne" i viewporten (eller et andet specificeret forældre-element) fyrer observeren en event af.
 * Denne event har jeg brugt til at animere mine "CSS konstruerede billeder" ind på plads når man scroller ned til dem.
 * Den er også brugt til min To Top knap, som er skjult når man er scrollet helt op til toppen af siden og når man scroller helt ned til footeren, skifter den fra `position: fixed;` til `position: absolute;`, så den ikke "er i vejen" for footeren.
+
+Jeg har brugt en del energi på den animerede CSS terning, for at få funktionaliteten af at den "følger" musen (tryk pause for at aktivere denne funktion). Jeg var nødt til at bruge en del matematik til beregning og konvertering af musekoordinaterne til rotationsgrader af terningen (koordinater i `px` til `deg` brugt i CSS property'erne `transform: rotateX()` og `transform: rotateY()`).
 
 Held og lykke med løsning af professor terningen.
