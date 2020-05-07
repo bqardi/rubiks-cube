@@ -346,6 +346,14 @@ ol>li a.all-times-list__item-delete:hover {
     display: none;
 }
 
+.main {
+    padding-bottom: 0;
+}
+
+.author {
+    margin-top: 0;
+}
+
 @media only screen and (max-height: 320px) {
     .timer {
         height: calc(100vh - var(--header-height) - var(--footer-height));
