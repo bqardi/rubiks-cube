@@ -1,6 +1,6 @@
 # Rubiks Cube
-Hvordan man løser en Rubiks Cube/professor terning.
----
+### Hvordan man løser en Rubiks Cube/professor terning.
+
 Det er mega svært at løse en Rubiks Cube! NEJ, det er det faktisk ikke...
 Det er klart at det er svært at løse den, hvis du prøver at dreje nogle sider tilfældigt.
 Du har måske endda været nået så langt at du har løst én side, men sidder fast og du prøver virkelig
@@ -17,11 +17,11 @@ hvis du bare vil lære at løse den hurtigt (f.eks. under 20 sek. hver gang). De
 ind i hukommelsen, men ja, det kan godt lade sig gøre!
 Det kræver blot lidt tålmodighed og måske lidt stædighed, hvis du virkelig vil lære det).
 
-:scroll:Her på siden vil jeg vise dig den [nemmeste måde](https://bqardi.github.io/professor/index.html) at løse terningen på.
+:scroll:Her på siden vil jeg vise dig den [nemmeste måde](https://bqardi.github.io/professor/index.html) at løse terningen på, med udførlige trin for trin forklaringer.
 
-:1st_place_medal:[Min metode](https://bqardi.github.io/professor/my-method.html) indeholder den metode jeg bruger til at løse terningen på, som er lidt mere avanceret end begyndermetoden. Den indeholder også en liste over de algoritmer, jeg personligt bruger/foretrækker sammen med forklaringer på forskellige fingerteknikker.
+:1st_place_medal:[Min metode](https://bqardi.github.io/professor/my-method.html) -siden indeholder den metode jeg bruger til at løse terningen på, som er lidt mere avanceret end begyndermetoden. Den indeholder også en liste over de algoritmer, jeg personligt bruger/foretrækker sammen med forklaringer på forskellige fingerteknikker.
 
 :jigsaw:Du kan også finde et [lille program](https://bqardi.github.io/professor/online-cube.html), jeg har lavet i [Unity](https://unity.com/), hvor du kan prøve at løse en professer terning
-på tid, ved at pege med musen på en side og så dreje med WASD tasterne på keyboardet (er kun tilgængelig på stor skærm/desktop).
+på tid, ved at pege med musen på en side og så dreje med WASD tasterne på keyboardet (fungerer bedst på stor skærm/desktop).
 
-:hourglass_flowing_sand:Du kan også finde en [timer](https://bqardi.github.io/professor/timer.html) her på siden. Den er specifikt lavet til brug for at måle din tid med en fysisk terning.
+:hourglass_flowing_sand:Du kan også finde en [timer](https://bqardi.github.io/professor/timer.html). Den er specifikt lavet til brug for at måle din tid med en fysisk terning. Den indeholder en algoritme-blandings-generator der genererer en tilfældig algoritme du kan bruge til at blande din terning med (denne algoritme bliver "gemt" sammen med dine tidsregistreringer).
