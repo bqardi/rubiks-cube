@@ -166,6 +166,10 @@ a.icon:hover svg {
     background-color: var(--theme-dark);
 }
 
+.main__placement {
+    position: relative;
+}
+
 .main__placement,
 .footer__placement {
     padding: 1rem;

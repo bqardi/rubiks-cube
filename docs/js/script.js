@@ -159,4 +159,50 @@ document.addEventListener("DOMContentLoaded", event => {
         removeObserver.observe(toTopRemove);
     }
     //#endregion To Top
+
+    //#region Notationlist
+    const notationReference = document.getElementById("notation-reference");
+    const notationReferenceIntersection = document.getElementById("notation-reference-intersection");
+    const notationReferenceButton = document.getElementById("notation-reference-button");
+
+    if (notationReference) {
+        notationReferenceButton.addEventListener("click", function(evt) {
+            evt.preventDefault();
+            notationReference.classList.toggle("js-active");
+            notationReferenceButton.classList.toggle("js-active");
+        });
+
+        let notationReferenceOptions = {
+            root: null,
+            rootMargin: "0px",
+            threshold: 0
+        }
+
+        let footerNotationObserver = new IntersectionObserver(function(entries, observer) {
+            for (let i = 0; i < entries.length; i++) {
+                const entry = entries[i];
+                if (entry.isIntersecting) {
+                    notationReferenceButton.classList.add("js-absolute");
+                } else {
+                    notationReferenceButton.classList.remove("js-absolute");
+                }
+            }
+        }, notationReferenceOptions);
+
+        footerNotationObserver.observe(footer);
+
+        let notationReferenceObserver = new IntersectionObserver(function(entries, observer) {
+            for (let i = 0; i < entries.length; i++) {
+                const entry = entries[i];
+                if (entry.isIntersecting) {
+                    notationReferenceButton.classList.add("js-hidden");
+                } else {
+                    notationReferenceButton.classList.remove("js-hidden");
+                }
+            }
+        }, notationReferenceOptions);
+
+        notationReferenceObserver.observe(notationReferenceIntersection);
+    }
+    //#endregion Notationlist
 });
