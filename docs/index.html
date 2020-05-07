@@ -104,10 +104,11 @@
                             bruger/foretrækker og også lidt om fingerteknikker.
                         </p>
                         <p class="desktop-only">
-                            Du kan også finde et lille program, jeg har lavet i Unity, hvor du kan prøve at løse en professor terning på tid, ved at pege med musen på en side og så dreje med WASD tasterne på keyboardet (er kun tilgængelig på stor skærm/desktop).
+                            Du kan også finde et <a href="online-cube.html">lille program</a>, jeg har lavet i Unity, hvor du kan prøve at løse en professor terning på tid, ved at pege med musen på en side og så dreje med WASD tasterne på keyboardet (fungerer
+                            bedst på stor skærm/laptop/desktop).
                         </p>
                         <p>
-                            Du kan også finde en "Timer" her på siden. Den er specifikt lavet til brug for at måle din tid med en fysisk terning.
+                            Jeg har lavet en <a href="timer.html">timer</a>, som specifikt er lavet til at måle din tid med en fysisk terning.
                         </p>
                         <div id="solution" class="anchor">
                             <h2>Den nemme løsning</h2>
@@ -388,7 +389,7 @@
                         </div>
                         <p>
                             Nu hvor vi kender notationerne, kan vi for alvor begynde at løse terningen (uhh). Som nævnt før, starter vi med Daisy (marguerit blomsten) og de hvide kant-brikker skal flyttes op ved siden af den gule center brik. Hver gang vi flytter en hvid brik op,
-                            skal vi passe på ikke at "fjerne" en allerede løst hvid brik. Dette gøres ved at justere det gule lag (top siden) så der er en "tom" brik på den plads hvor vi flytter en "ny" hvid brik op:
+                            skal vi passe på ikke at "fjerne" en allerede løst hvid brik. Dette gøres ved at justere det gule lag (top laget) så der er en "tom" brik på den plads hvor vi flytter en "ny" hvid brik op:
                         </p>
                         <div class="cube-example-container">
                             <div class="cube-example">
@@ -598,6 +599,9 @@
                             </div>
                         </div>
                         <h3 class="cube-example__notation">F U' R</h3>
+                        <p><strong>F</strong>ront/forsiden drejes <strong>med</strong> uret.</p>
+                        <p><strong>U</strong>p/top laget drejes <strong>mod</strong> uret (bemærk apostrof'en).</p>
+                        <p><strong>R</strong>ight/højre side drejes <strong>med</strong> uret.</p>
                         <hr class="separator">
                         <p>
                             Hvis brikken sidder nederst, drejer du topsiden så den "tomme plads" er lige over den hvide brik, efterfulgt af en simpel algoritme:
@@ -606,9 +610,9 @@
                             <div class="cube-example">
                                 <div class="cube-example__wrapper cube-example__top">
                                     <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-white"></div>
                                     <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-white"></div>
                                     <div class="cube-example__piece cube-example__piece-yellow"></div>
                                     <div class="cube-example__piece cube-example__piece-white"></div>
                                     <div class="cube-example__piece cube-example__piece-none"></div>
@@ -647,11 +651,11 @@
                             <div class="cube-example">
                                 <div class="cube-example__wrapper cube-example__top">
                                     <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-white"></div>
                                     <div class="cube-example__piece cube-example__piece-none"></div>
                                     <div class="cube-example__piece cube-example__piece-none"></div>
                                     <div class="cube-example__piece cube-example__piece-yellow"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-white"></div>
                                     <div class="cube-example__piece cube-example__piece-none"></div>
                                     <div class="cube-example__piece cube-example__piece-white"><svg class="cube-example__pointer cube-example__pointer-dark" viewBox="0 0 24 24"><path d="M9,4H15V12H19.84L12,19.84L4.16,12H9V4Z"></path></svg></div>
                                     <div class="cube-example__piece cube-example__piece-none"></div>
@@ -691,9 +695,9 @@
                             <div class="cube-example">
                                 <div class="cube-example__wrapper cube-example__top">
                                     <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-white"></div>
                                     <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
-                                    <div class="cube-example__piece cube-example__piece-none"></div>
+                                    <div class="cube-example__piece cube-example__piece-white"></div>
                                     <div class="cube-example__piece cube-example__piece-yellow"></div>
                                     <div class="cube-example__piece cube-example__piece-white"></div>
                                     <div class="cube-example__piece cube-example__piece-none"></div>
@@ -1404,7 +1408,7 @@
                         <h3 class="cube-example__notation">U<span class="cube-example__notation-text">Den blå/røde/hvide brik skal placeres over det "tomme" hjørne (pilen).</span></h3>
                         <hr class="separator">
                         <p>
-                            Her er algoritmen (den har et lækkert navn):
+                            Med hjørnebrikken placeret korrekt (over hjørnet den skal ned i), kan vi nu udføre algoritmen:
                         </p>
                         <div class="algorithm algorithm--block">
                             <span class="algorithm__title">Algoritme navn:</span>
@@ -2095,7 +2099,7 @@
                             <div class="algorithm__notation">R U R' U R U2 R' U</div>
                         </div>
                         <p>
-                            Denne algoritme bytter rundt på to kantbrikker, nemlig den forreste i top laget og den i venstre side (også i top laget):
+                            Denne algoritme bytter rundt på to kantbrikker, nemlig den forreste i top laget og den i venstre side (også i top laget, se pilene):
                         </p>
                         <div class="cube-example-container">
                             <div class="cube-example">
@@ -2550,7 +2554,13 @@
                         </div>
                         <h3 class="cube-example__notation">R U R' U'<span class="cube-example__notation-text">Efter flere udførelser af algoritmen, vender den gule/blå/orange brik nu korrekt.</span></h3>
                         <p>
-                            Når hjørnebrikken vender korrekt (med den gule flade vendende nedad), skal du nu dreje bunden en enkelt gang (retningen er ligegyldig: D eller D', det vigtige er at dreje bunden så en <i>ikke korrekt orienteret hjørnebrik</i>                            sidder nede i højre hjørne) og så udfører du algoritmen igen (og igen) indtil hjørnebrikken vender rigtigt. Dette fortsætter du med indtil alle fire hjørnebrikker vender korrekt.
+                            Når hjørnebrikken vender korrekt (med den gule flade vendende nedad), skal du nu dreje bunden en enkelt gang (retningen er ligegyldig: D eller D', det vigtige er at dreje bunden så en <i>ikke korrekt orienteret hjørnebrik</i>                            sidder nede i højre hjørne) og så udfører du algoritmen igen (og igen) indtil hjørnebrikken vender rigtigt.
+                        </p>
+                        <p>
+                            <strong>Vær ekstra opmærksom</strong> på at du husker det sidste <strong>U'</strong> i algoritmen. Jeg har lagt mærke til at mange nybegyndere "glemmer" denne når de fokuserer på orienteringen af hjørnebrikken!
+                        </p>
+                        <p>
+                            Dette fortsætter du med indtil alle fire hjørnebrikker vender korrekt.
                         </p>
                         <p>
                             Når du har vendt alle hjørnebrikkerne til deres korrekte orientering vil du opdage at terningen er løst (what? Really? Wuhuuu!!!). Bunden skal eventuelt lige drejes en enkelt gang for at terningen er fuldstændig løst, men det burde være enkelt nok at

@@ -456,7 +456,7 @@
 }
 
 .cube-example__notation {
-    margin: -20px 0 20px;
+    margin-bottom: 1rem;
 }
 
 .cube-example__notation-text:before {

@@ -512,7 +512,7 @@ a.main__page-navigation-button:hover {
         background-color: unset;
     }
     #active-page:hover {
-        color: var(--theme-darkest);
+        color: var(--theme-mid);
         background-color: unset;
     }
     .navigation--main {
@@ -533,7 +533,7 @@ a.main__page-navigation-button:hover {
         width: unset;
     }
     .navigation__link:hover {
-        color: var(--theme-darkest);
+        color: var(--theme-mid);
         background-color: unset;
         font-weight: unset;
     }
