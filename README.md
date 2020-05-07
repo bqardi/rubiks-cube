@@ -22,6 +22,6 @@ JavaScript er benyttet til menuen på mobil, til timeren, til forskellige knappe
 
 Intersection Observer er en API der "observerer" eller "holder øje" med HTML-elementerne på siden og når et element "kommer til syne" i viewporten (eller et andet specificeret forældre-element) fyrer observeren en event af.
 * Denne event har jeg brugt til at animere mine "CSS konstruerede billeder" ind på plads når man scroller ned til dem.
-* Den er også brugt til min To Top knap, som er skjult når man er scrollet helt op til toppen af siden og nåe man scroller helt ned til footeren, skifter den fra `position: fixed;` til `position: absolute;`, så den ikke "er i vejen" for footeren.
+* Den er også brugt til min To Top knap, som er skjult når man er scrollet helt op til toppen af siden og når man scroller helt ned til footeren, skifter den fra `position: fixed;` til `position: absolute;`, så den ikke "er i vejen" for footeren.
 
 Held og lykke med løsning af professor terningen.
