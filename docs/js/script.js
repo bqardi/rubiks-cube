@@ -71,11 +71,11 @@ document.addEventListener("DOMContentLoaded", event => {
     //#endregion CUBE ANIMATION
 
     //#region Intersection Observer
-    let cubeExamples = document.querySelectorAll('.cube-example-container');
+    const cubeExamples = document.querySelectorAll(".cube-example-container");
 
     let options = {
         root: null,
-        rootMargin: '0px',
+        rootMargin: "0px",
         threshold: 0.5
     }
 
@@ -101,11 +101,6 @@ document.addEventListener("DOMContentLoaded", event => {
                     default:
                         break;
                 }
-                // if (rnd == 0) {
-                //     entry.target.classList.add("js-anim-slide-in-top-left");
-                // } else {
-                //     entry.target.classList.add("js-anim-slide-in-top-right");
-                // }
                 observer.unobserve(entry.target);
             } else {
                 entry.target.classList.add("js-anim-hidden");
@@ -123,4 +118,42 @@ document.addEventListener("DOMContentLoaded", event => {
         return Math.floor(Math.random() * (max - min)) + min;
     }
     //#endregion Random function
+
+    //#region To Top
+    const footer = document.querySelector(".footer");
+    const toTop = document.getElementById("to-top");
+    const toTopRemove = document.getElementById("to-top-remove");
+
+    let toTopOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0
+    }
+
+    let footerObserver = new IntersectionObserver(function(entries, observer) {
+        for (let i = 0; i < entries.length; i++) {
+            const entry = entries[i];
+            if (entry.isIntersecting) {
+                toTop.classList.add("js-absolute");
+            } else {
+                toTop.classList.remove("js-absolute");
+            }
+        }
+    }, toTopOptions);
+
+    footerObserver.observe(footer);
+
+    let removeObserver = new IntersectionObserver(function(entries, observer) {
+        for (let i = 0; i < entries.length; i++) {
+            const entry = entries[i];
+            if (entry.isIntersecting) {
+                toTop.classList.add("js-hidden");
+            } else {
+                toTop.classList.remove("js-hidden");
+            }
+        }
+    }, toTopOptions);
+
+    removeObserver.observe(toTopRemove);
+    //#endregion To Top
 });
