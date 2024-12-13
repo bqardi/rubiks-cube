@@ -28,7 +28,7 @@ Siden er lavet med semantisk HTML og med ekstern CSS styling.
 
 Hero billedet er tegnet af vores ældste søn, Simon (og er det eneste reele billede der er på samtlige sider), og terningen er udelukkende bygget med CSS. Den er animeret med CSS animations for at dreje den rundt (i 3D space).
 
-JavaScript er benyttet til menuen på mobil, til timeren, til forskellige knapper og så er jeg for nyligt blevet introduceret for [Intersection Observer](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) (tak [Ronny](https://github.com/ronfrontweb) fordi du fandt denne geniale API).
+JavaScript er benyttet til menuen på mobil, til timeren, til forskellige knapper og så er jeg for nyligt blevet introduceret for [Intersection Observer](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) (tak [Ronny](https://github.com/ronfrontweb) fordi du fandt dette geniale API).
 
 Intersection Observer er en API der "observerer" eller "holder øje" med HTML-elementerne på siden og når et element "kommer til syne" i viewporten (eller et andet specificeret forældre-element) fyrer observeren en event af.
 
